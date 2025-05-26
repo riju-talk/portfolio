@@ -1,21 +1,19 @@
-// HeadComponent.jsx
-"use client";                    // make sure this is a Client Component
-import React from "react";
+import Link from "next/link";
 
-// Pull in the CommonJS build of Layout (which always has the sub-components attached):
-import Layout from "antd/lib/layout";
-//import "antd/dist/antd";     // load the CSS so the component actually renders
-
-// Now Layout.Header is guaranteed to be defined:
-const { Header } = Layout;
-
-export default function HeadComponent() {
+export default function HeaderComponent() {
   return (
-    <Header style={{ background: "#fff", padding: "0 20px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <span>Home</span>
-        <span>About</span>
+    <header className="text-white py-6 mt-9">
+      <div className="max-w-3xl mx-auto px-4">
+        <nav className="flex justify-start items-center space-x-12">
+          <Link href="/" className="text-gray-300 hover:text-white text-lg uppercase tracking-wider font-bold">
+            Home
+          </Link>
+          <Link href="/about" className="text-gray-300 hover:text-white text-lg uppercase tracking-wider font-bold">
+            About
+          </Link>
+        </nav>
+        <div className="h-1 w-full mt-4 bg-gray-300"></div>
       </div>
-    </Header>
+    </header>
   );
 }
