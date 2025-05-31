@@ -29,7 +29,7 @@ export default function HomePage() {
       "Built an multi-modal sarcasm detection tool that combines image and text analysis to identify sarcastic content. \
       Combined BART Encoders to  a backbone of VIT, along with extracted segments from images. Orignal paper: 'Target-Augmented Shared Fusion-based Multimodal Sarcasm Explanation Generation' (Palaash Goel, Dushyant Singh Chauhan, Md Shad Akhtar, 2025).",
     tech: ["Python", "TensorFlow", "Docker", "Kubernetes", "PostgreSQL"],
-    github: "https://github.com/yourusername/ml-pipeline",
+    github: "https://github.com/riju-talk/TURBO",
     live: "#",
     featured: true,
   },
@@ -38,7 +38,7 @@ export default function HomePage() {
   description:
     "Developed a scalable, creator-first social media platform using a robust microservices architecture. Integrated content monetization, real-time chat, media sharing, and an NFT marketplace powered by Razorpay, with blockchain used solely for secure transaction logging. Designed for high performance, modularity, and seamless UX to support a global creator economy across web and mobile platforms.",
   tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
-  github: "https://github.com/yourusername/iac-platform",
+  github: "https://github.com/riju-talk/DreamDot",
   live: "#",
   featured: true,
 },
@@ -47,7 +47,7 @@ export default function HomePage() {
   description:
     "Implemented a state-of-the-art QA system by integrating SpanBERT with CRF layers to boost span-level prediction accuracy. Developed the complete pipeline—from data ingestion and preprocessing to training, evaluation, and REST API deployment. Fine-tuned on SQuAD v2 to extract context-aware answers from complex texts, demonstrating improved performance on challenging, ambiguous input queries.",
   tech: ["Python", "PyTorch", "Transformers", "spaCy", "Flask"],
-  github: "https://github.com/yourusername/analytics-dashboard",
+  github: "https://github.com/riju-talk/SpanBERT-CRF",
   live: "#",
   featured: true,
 }
