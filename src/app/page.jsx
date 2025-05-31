@@ -97,9 +97,9 @@ export default function HomePage() {
               </motion.h1>
 
               <motion.div variants={fadeInUp} className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
-                <p className="mb-4">DevOps & MLOps Engineer building scalable, intelligent infrastructure.</p>
+                <p className="mb-4">Machine Learning Developer and Full Stack Deveopler advancing to Devops</p>
                 <p className="text-lg text-gray-200">
-                  I am a final year student at IIIT-Delhi pursuing a B.Tech in Computer Science and Majoring in Economics. I am passionate about building scalable, intelligent systems that power the next generation of applications. With a strong foundation in DevOps and MLOps, I specialize in creating AI oriented applications that are not only efficient but also capable of handling complex tasks with ease.
+                  I'm a final-year B.Tech student at IIIT-Delhi majoring in Computer Science and Economics, with a strong foundation in Full Stack Development and Machine Learning. Currently, I’m expanding my skills in DevOps and MLOps, focusing on building scalable, AI-driven applications that solve complex problems efficiently.
                 </p>
               </motion.div>
 
