@@ -22,45 +22,30 @@ const staggerContainer = {
 export default function AboutPage() {
   const experience = [
     {
-      title: "DevOps Engineer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
+      key: 1,
+      title: "Undergraduate Researcher",
+      company: "MIDAS Lab",
+      name: "Pretraining and Benchmarking Small Language Models (LLMs)",
+      period: "2025",
       description:
-        "Lead infrastructure automation and ML pipeline development. Implemented CI/CD pipelines reducing deployment time by 70% and built scalable Kubernetes clusters serving ML models.",
+        "Led the pretraining and benchmarking of lightweight LLMs optimized for specialized tasks across healthcare, legal, and technical domains. \
+        Focused on maximizing performance-to-cost ratio through careful dataset curation, architecture tuning, and efficient training strategies. \
+        Evaluated model effectiveness on standard NLP benchmarks (e.g., QA, NER, summarization) with an emphasis on minimizing compute requirements while preserving high accuracy. \
+        This work contributes to making AI more accessible and deployable in constrained environments such as mobile devices, embedded systems, and low-latency applications.",
     },
     {
-      title: "Full-Stack Developer",
-      company: "Digital Innovation Co.",
-      period: "2020 - 2022",
+      key: 2,
+      title: "Undergraduate Researcher",
+      company: "Complex Systems Lab",
+      name: "Real-Time Data Integration & Interactive Web Visualization",
+      period: "2024",
       description:
-        "Developed cloud-native applications and automated deployment processes. Built microservices architecture handling 1M+ requests daily with 99.9% uptime.",
-    },
-    {
-      title: "Software Engineer",
-      company: "StartUp Ventures",
-      period: "2019 - 2020",
-      description:
-        "Built scalable web applications and implemented monitoring solutions. Gained expertise in containerization and cloud platforms while working in agile environments.",
-    },
-  ]
-
-  const skills = [
-    {
-      category: "DevOps & Cloud",
-      items: ["Docker", "Kubernetes", "AWS/GCP", "Terraform", "Jenkins", "GitLab CI/CD"],
-    },
-    {
-      category: "MLOps & AI",
-      items: ["TensorFlow", "PyTorch", "MLflow", "Kubeflow", "Model Deployment", "Data Pipelines"],
-    },
-    {
-      category: "Programming",
-      items: ["Python", "Go", "JavaScript", "TypeScript", "Java", "SQL"],
-    },
-    {
-      category: "Databases & Tools",
-      items: ["PostgreSQL", "MongoDB", "Redis", "Prometheus", "Grafana", "ELK Stack"],
-    },
+        "Designed and developed a dynamic web application to visualize and interpret complex datasets in real-time. \
+        Led the full-stack development—from designing the frontend UI/UX to updating the backend codebase for optimized performance. \
+        Integrated multiple open-source datasets including OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS.\
+        Applied machine learning models to perform exploratory and spatial data analysis, uncovering trends and patterns in food, nutrition, and environmental data across regions. \
+        Enabled real-time deployment of visualized insights to support data-driven storytelling, sustainability awareness, and informed decision-making.",
+    }
   ]
 
   return (
@@ -106,28 +91,30 @@ export default function AboutPage() {
 
               <motion.div variants={fadeInUp} className="text-lg text-gray-100 leading-relaxed space-y-6">
                 <p>
-                  I'm a passionate DevOps and MLOps engineer with expertise spanning infrastructure automation, machine
-                  learning operations, and full-stack development. My journey combines the precision of systems
-                  engineering with the innovation of AI/ML technologies.
+                  I'm a passionate engineer with a deep interest in building smart, end-to-end systems that combine the best of full-stack development, DevOps, and AI. 
+                  My journey began with a curiosity for how things work—whether it's the backend of a web app or the inner workings of a neural network. 
+                  That curiosity quickly turned into a hands-on pursuit of creating meaningful, scalable applications. 
+                  I thrive on merging creativity with engineering discipline, and I’m especially driven by projects where NLP, deep learning, and system design come together to solve real-world problems in elegant ways.
                 </p>
                 <p>
-                  With a strong foundation in both traditional software development and modern cloud-native
-                  architectures, I specialize in building robust, scalable systems that bridge the gap between
-                  development and operations. My experience ranges from containerized microservices to complex ML
-                  pipeline orchestration.
+                  With a solid foundation in both traditional software engineering and modern cloud-native architectures, I focus on building robust systems that bridge development and production. 
+                  My experience spans containerized microservices, real-time APIs, and scalable ML deployment pipelines. 
+                  I've developed intelligent apps, integrated ML models, and automated everything from CI/CD workflows to end-to-end ML lifecycles—always aiming for performance, simplicity, and reproducibility.
                 </p>
+
                 <p>
-                  I'm particularly passionate about automating complex workflows, optimizing system performance, and
-                  implementing best practices that enable teams to deploy with confidence. Whether it's setting up CI/CD
-                  pipelines, orchestrating ML model deployments, or architecting cloud infrastructure, I focus on
-                  creating solutions that scale.
+                  I’m particularly passionate about developing applications that bring cutting-edge research to life—making NLP and deep learning models usable, efficient, and accessible. 
+                  From orchestrating deployments to scaling training jobs and fine-tuning transformers, I enjoy working across the stack to deliver production-ready solutions. 
+                  I love building tools that not only function well but also empower others—whether it's a user-friendly interface for a complex AI model or an automated pipeline that lets teams ship faster and smarter. 
+                  I believe great engineering is about empathy, creativity, and clarity—and I'm excited to keep pushing boundaries at the intersection of DevOps, AI, and modern software development.
                 </p>
+
               </motion.div>
 
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mt-8">
                 <div className="flex items-center text-gray-200">
                   <MapPin className="mr-2 h-4 w-4" />
-                  Your Location
+                  New Delhi
                 </div>
                 <div className="flex items-center text-gray-200">
                   <Calendar className="mr-2 h-4 w-4" />
@@ -137,7 +124,7 @@ export default function AboutPage() {
 
               <motion.div variants={fadeInUp} className="mt-8">
                 <a
-                  href="/resume.pdf"
+                  href="https://drive.google.com/uc?export=download&id=1m3woSryg1-CGR3q-rZJgmJF5oQAnsC_4"
                   download
                   className="inline-flex items-center px-6 py-3 bg-teal-500 hover:bg-teal-400 text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25"
                 >
@@ -146,44 +133,6 @@ export default function AboutPage() {
                 </a>
               </motion.div>
             </motion.div>
-          </div>
-        </section>
-
-        {/* Skills Section */}
-        <section className="py-20 px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Skills & Expertise</h2>
-              <div className="w-20 h-1 bg-teal-400 rounded"></div>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {skills.map((skillGroup, index) => (
-                <motion.div
-                  key={skillGroup.category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gray-800/40 backdrop-blur-sm border border-gray-600/30 rounded-lg p-6"
-                >
-                  <h3 className="text-xl font-semibold text-white mb-4">{skillGroup.category}</h3>
-                  <div className="space-y-2">
-                    {skillGroup.items.map((skill) => (
-                      <div key={skill} className="text-gray-200 py-1">
-                        {skill}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -204,7 +153,7 @@ export default function AboutPage() {
             <div className="space-y-8">
               {experience.map((job, index) => (
                 <motion.div
-                  key={job.title}
+                  key={job.key}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -215,6 +164,7 @@ export default function AboutPage() {
                     <div>
                       <h3 className="text-xl font-semibold text-white mb-1">{job.title}</h3>
                       <p className="text-teal-300 font-medium">{job.company}</p>
+                      <p className="text-gray-400 text-sm mt-2 md:mt-0">{job.name}</p>
                     </div>
                     <span className="text-gray-400 text-sm mt-2 md:mt-0">{job.period}</span>
                   </div>
@@ -241,7 +191,7 @@ export default function AboutPage() {
                 together.
               </p>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:rijusmit2004@gmail.com"
                 className="inline-flex items-center px-8 py-4 bg-teal-500 hover:bg-teal-400 text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25 text-lg"
               >
                 Get in Touch

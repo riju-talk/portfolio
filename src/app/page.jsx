@@ -23,34 +23,36 @@ const staggerContainer = {
 
 export default function HomePage() {
   const projects = [
-    {
-      title: "Multi-Modal Image and Caption based Sarcasm Detection Tool (Self Implementation)",
-      description:
-        "End-to-end MLOps pipeline with automated model training, validation, and deployment using Docker, Kubernetes, and TensorFlow. Features CI/CD integration and monitoring.",
-      tech: ["Python", "TensorFlow", "Docker", "Kubernetes", "PostgreSQL"],
-      github: "https://github.com/yourusername/ml-pipeline",
-      live: "#",
-      featured: true,
-    },
-    {
-      title: "DreamDot (Microservices-based SaaS Platform)",
-      description:
-        "Scalable cloud infrastructure management platform with automated provisioning, monitoring, and cost optimization. Built with modern DevOps practices.",
-      tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
-      github: "https://github.com/yourusername/iac-platform",
-      live: "#",
-      featured: true,
-    },
-    {
-      title: "Real-time Analytics Dashboard",
-      description:
-        "High-performance analytics platform processing millions of events with real-time visualization, built with microservices architecture and event streaming.",
-      tech: ["Python", "Next.js", "Socket.io", "MongoDB", "Docker"],
-      github: "https://github.com/yourusername/analytics-dashboard",
-      live: "#",
-      featured: false,
-    },
-  ]
+  {
+    title: "Multi-Modal Image and Caption based Sarcasm Detection Tool (Self Implementation)",
+    description:
+      "Built an multi-modal sarcasm detection tool that combines image and text analysis to identify sarcastic content. \
+      Combined BART Encoders to  a backbone of VIT, along with extracted segments from images. Orignal paper: 'Target-Augmented Shared Fusion-based Multimodal Sarcasm Explanation Generation' (Palaash Goel, Dushyant Singh Chauhan, Md Shad Akhtar, 2025).",
+    tech: ["Python", "TensorFlow", "Docker", "Kubernetes", "PostgreSQL"],
+    github: "https://github.com/yourusername/ml-pipeline",
+    live: "#",
+    featured: true,
+  },
+  {
+  title: "DreamDot (Microservices-based Platform)",
+  description:
+    "Developed a scalable, creator-first social media platform using a robust microservices architecture. Integrated content monetization, real-time chat, media sharing, and an NFT marketplace powered by Razorpay, with blockchain used solely for secure transaction logging. Designed for high performance, modularity, and seamless UX to support a global creator economy across web and mobile platforms.",
+  tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
+  github: "https://github.com/yourusername/iac-platform",
+  live: "#",
+  featured: true,
+},
+{
+  title: "SpanBERT-CRF for Question Answering",
+  description:
+    "Implemented a state-of-the-art QA system by integrating SpanBERT with CRF layers to boost span-level prediction accuracy. Developed the complete pipeline—from data ingestion and preprocessing to training, evaluation, and REST API deployment. Fine-tuned on SQuAD v2 to extract context-aware answers from complex texts, demonstrating improved performance on challenging, ambiguous input queries.",
+  tech: ["Python", "PyTorch", "Transformers", "spaCy", "Flask"],
+  github: "https://github.com/yourusername/analytics-dashboard",
+  live: "#",
+  featured: true,
+}
+];
+
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -67,7 +69,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6 }}
                 className="text-xl font-bold text-white"
               >
-                Portfolio
+                Hello There
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -97,8 +99,7 @@ export default function HomePage() {
               <motion.div variants={fadeInUp} className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
                 <p className="mb-4">DevOps & MLOps Engineer building scalable, intelligent infrastructure.</p>
                 <p className="text-lg text-gray-200">
-                  I architect and deploy robust systems that bridge development and operations, specializing in ML
-                  pipeline automation, cloud infrastructure, and full-stack solutions that scale.
+                  I am a final year student at IIIT-Delhi pursuing a B.Tech in Computer Science and Majoring in Economics. I am passionate about building scalable, intelligent systems that power the next generation of applications. With a strong foundation in DevOps and MLOps, I specialize in creating AI oriented applications that are not only efficient but also capable of handling complex tasks with ease.
                 </p>
               </motion.div>
 
@@ -112,7 +113,7 @@ export default function HomePage() {
                 </Link>
 
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:rijusmit2004@gmail.com"
                   className="inline-flex items-center px-6 py-3 border border-teal-400 text-teal-300 hover:text-white hover:border-teal-300 rounded-lg transition-all duration-300"
                 >
                   Get in Touch
@@ -123,7 +124,7 @@ export default function HomePage() {
         </section>
 
         {/* Technologies Section */}
-        <section className="py-20 px-6">
+        <section className="pb-10 px-6 ">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -168,7 +169,7 @@ export default function HomePage() {
               className="text-center mt-12"
             >
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/riju-talk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 border border-teal-400 text-teal-300 hover:text-white hover:border-teal-300 rounded-lg transition-all duration-300"
@@ -181,7 +182,7 @@ export default function HomePage() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 px-6 border-t border-gray-700/30">
+        <footer className="py-12 px-6">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -192,7 +193,7 @@ export default function HomePage() {
               <p className="text-gray-300 mb-4">Let's build scalable, intelligent systems together.</p>
               <div className="flex justify-center gap-6">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/riju-talk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-teal-300 transition-colors duration-300"
@@ -200,7 +201,7 @@ export default function HomePage() {
                   GitHub
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/rijusmit-biswas/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-teal-300 transition-colors duration-300"
@@ -208,7 +209,7 @@ export default function HomePage() {
                   LinkedIn
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:rijusmit2004@gmail.com"
                   className="text-gray-400 hover:text-teal-300 transition-colors duration-300"
                 >
                   Email
