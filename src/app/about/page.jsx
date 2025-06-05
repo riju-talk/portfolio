@@ -124,7 +124,7 @@ export default function AboutPage() {
 
               <motion.div variants={fadeInUp} className="mt-8">
                 <a
-                  href="https://drive.google.com/uc?export=download&id=1m3woSryg1-CGR3q-rZJgmJF5oQAnsC_4"
+                  href="https://drive.google.com/uc?export=download&id=15GJJ1hBnv1jkQDGqw6AGF20U9IHD-YMx"
                   download
                   className="inline-flex items-center px-6 py-3 bg-teal-500 hover:bg-teal-400 text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25"
                 >
