@@ -1,7 +1,8 @@
-"use client";
 
-import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+"use client"
+
+import { motion } from "framer-motion"
+import { Github, ExternalLink } from "lucide-react"
 
 export default function ProjectCard({ project, index }) {
   return (
@@ -10,25 +11,28 @@ export default function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group bg-gray-800/40 backdrop-blur-sm border border-gray-600/30 rounded-lg p-6 hover:border-teal-400/50 hover:bg-gray-700/40 transition-all duration-300"
+      className="bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-6 hover:border-green-400/50 transition-all duration-300 group tron-border hover:tron-glow"
     >
-      {project.featured && (
-        <div className="inline-block px-3 py-1 bg-teal-500/20 text-teal-300 text-sm rounded-full mb-4">
-          Featured
-        </div>
-      )}
+      <div className="flex items-start justify-between mb-4">
+        <h3 className="text-xl font-semibold text-green-400 group-hover:text-green-300 transition-colors duration-300">
+          {project.title}
+        </h3>
+        {project.featured && (
+          <span className="px-2 py-1 text-xs bg-green-500/20 text-green-400 border border-green-500/30 rounded animate-pulse-green">
+            [FEATURED]
+          </span>
+        )}
+      </div>
 
-      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-teal-100 transition-colors duration-300">
-        {project.title}
-      </h3>
+      <p className="text-green-100 mb-4 leading-relaxed border-l-2 border-green-500/50 pl-3">
+        {project.description}
+      </p>
 
-      <p className="text-gray-200 mb-4 leading-relaxed">{project.description}</p>
-
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-4">
         {project.tech.map((tech) => (
           <span
             key={tech}
-            className="px-2 py-1 bg-gray-700/50 text-gray-300 text-sm rounded"
+            className="px-2 py-1 text-xs bg-green-500/10 text-green-300 border border-green-500/30 rounded hover:bg-green-500/20 transition-colors duration-300"
           >
             {tech}
           </span>
@@ -40,22 +44,22 @@ export default function ProjectCard({ project, index }) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-gray-300 hover:text-white transition-colors duration-300"
+          className="inline-flex items-center text-green-300 hover:text-green-400 transition-colors duration-300 hover:glow"
         >
           <Github className="mr-2 h-4 w-4" />
-          Code
+          [CODE]
         </a>
         <div className="relative group/tooltip">
           <button
             disabled
-            className="inline-flex items-center text-gray-500 cursor-not-allowed"
+            className="inline-flex items-center text-green-500/50 cursor-not-allowed"
           >
             <ExternalLink className="mr-2 h-4 w-4" />
-            Live Demo
+            [DEMO]
           </button>
-          <div className="absolute bottom-full left-0 mb-2 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
-            Deployment in development
-            <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+          <div className="absolute bottom-full left-0 mb-2 px-3 py-2 bg-black border border-green-500/30 text-green-300 text-sm rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+            &gt; Deployment in progress...
+            <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-green-500/30"></div>
           </div>
         </div>
       </div>

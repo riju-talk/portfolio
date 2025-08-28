@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 html {
@@ -5,7 +6,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+  background: linear-gradient(135deg, #0a0f0a 0%, #0f1a0f 25%, #1a2e1a 50%, #0d1f0d 75%, #0a140a 100%);
   min-height: 100vh;
 }
 
@@ -15,20 +16,46 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.3);
+  background: rgba(10, 15, 10, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(45, 212, 191, 0.5);
+  background: rgba(34, 197, 94, 0.5);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(45, 212, 191, 0.7);
+  background: rgba(34, 197, 94, 0.7);
 }
 
 /* Selection */
 ::selection {
-  background: rgba(45, 212, 191, 0.3);
+  background: rgba(34, 197, 94, 0.3);
   color: #ffffff;
+}
+
+/* Tron-style glowing borders */
+.tron-border {
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+}
+
+.tron-glow {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+/* Grid overlay for Tron effect */
+.tron-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  opacity: 0.3;
 }
