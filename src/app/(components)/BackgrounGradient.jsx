@@ -53,7 +53,7 @@ export default function LiveBackground() {
         className="absolute inset-0"
         animate={gradientControls}
         style={{
-          background: `linear-gradient(135deg, #0a0f0a 0%, #0f1a0f 25%, #1a2e1a 50%, #0d1f0d 75%, #0a140a 100%)`,
+          background: `linear-gradient(135deg, #0a0f0a 0%, #0f1a0f 15%, #0a1a1a 25%, #1a2e1a 35%, #0d1f1f 50%, #0a140a 65%, #0f0a1a 80%, #0a0f0a 100%)`,
         }}
       />
 
@@ -63,8 +63,8 @@ export default function LiveBackground() {
         style={{
           ...gridSpring,
           backgroundImage: `
-            linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px)
+            linear-gradient(rgba(34, 197, 94, 0.08) 1px, rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(20, 184, 166, 0.08) 1px, rgba(59, 130, 246, 0.04) 1px, transparent 1px)
           `,
           backgroundSize: '60px 60px',
         }}
@@ -82,8 +82,8 @@ export default function LiveBackground() {
             width: 600,
             height: 600,
             borderRadius: "50%",
-            border: "2px solid rgba(34, 197, 94, 0.2)",
-            background: "rgba(34, 197, 94, 0.05)",
+            border: `2px solid ${idx === 0 ? 'rgba(34, 197, 94, 0.2)' : idx === 1 ? 'rgba(6, 182, 212, 0.2)' : 'rgba(20, 184, 166, 0.2)'}`,
+            background: `${idx === 0 ? 'rgba(34, 197, 94, 0.05)' : idx === 1 ? 'rgba(6, 182, 212, 0.05)' : 'rgba(20, 184, 166, 0.05)'}`,
             transform: style.scale.to((s) => `translate(-50%, -50%) scale(${s})`),
           }}
         />
@@ -91,8 +91,10 @@ export default function LiveBackground() {
 
       {/* Floating geometric shapes */}
       <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-green-500/20 rotate-45 animate-pulse-green" />
-      <div className="absolute top-3/4 right-1/4 w-6 h-6 border border-green-500/30 animate-pulse-green" />
-      <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-lime-500/40 animate-pulse-green" />
+      <div className="absolute top-3/4 right-1/4 w-6 h-6 border border-cyan-500/30 animate-pulse-green" />
+      <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-teal-500/40 animate-pulse-green" />
+      <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-blue-500/25 rotate-12 animate-pulse-green" />
+      <div className="absolute bottom-1/4 right-1/5 w-5 h-5 border border-turquoise-500/30 rotate-45 animate-pulse-green" />
     </div>
   );
 }

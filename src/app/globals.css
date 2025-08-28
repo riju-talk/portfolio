@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #0a0f0a 0%, #0f1a0f 25%, #1a2e1a 50%, #0d1f0d 75%, #0a140a 100%);
+  background: linear-gradient(135deg, #0a0f0a 0%, #0f1a0f 15%, #0a1a1a 30%, #1a2e1a 45%, #0d1f1f 60%, #0a140a 75%, #0f0a1a 90%, #0a0f0a 100%);
   min-height: 100vh;
 }
 
@@ -20,17 +20,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(34, 197, 94, 0.5);
+  background: linear-gradient(45deg, rgba(34, 197, 94, 0.5), rgba(6, 182, 212, 0.5));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 197, 94, 0.7);
+  background: linear-gradient(45deg, rgba(34, 197, 94, 0.7), rgba(6, 182, 212, 0.7));
 }
 
 /* Selection */
 ::selection {
-  background: rgba(34, 197, 94, 0.3);
+  background: linear-gradient(45deg, rgba(34, 197, 94, 0.3), rgba(20, 184, 166, 0.3));
   color: #ffffff;
 }
 

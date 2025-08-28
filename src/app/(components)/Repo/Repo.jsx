@@ -11,10 +11,10 @@ export default function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="bg-black/50 backdrop-blur-sm border border-green-500/30 rounded-lg p-6 hover:border-green-400/50 transition-all duration-300 group tron-border hover:tron-glow"
+      className="bg-black/50 backdrop-blur-sm border border-green-500/30 hover:border-cyan-400/50 rounded-lg p-6 transition-all duration-300 group tron-border hover:shadow-lg hover:shadow-cyan-500/20"
     >
       <div className="flex items-start justify-between mb-4">
-        <h3 className="text-xl font-semibold text-green-400 group-hover:text-green-300 transition-colors duration-300">
+        <h3 className="text-xl font-semibold bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-blue-300 transition-all duration-300">
           {project.title}
         </h3>
         {project.featured && (

@@ -1,4 +1,3 @@
-
 "use client"
 
 import { motion } from "framer-motion"
@@ -26,54 +25,79 @@ export default function TechStack() {
 
   const categories = ["Frontend", "Backend", "DevOps", "Database", "ML/AI"]
 
+  // Define a color palette
+  const colors = [
+    "green", "cyan", "blue", "teal", "purple", "orange", "red", "yellow", "pink", "indigo"
+  ];
+
+  // Helper function to get a color based on category index
+  const getCategoryColorClass = (index) => {
+    const colorMap = {
+      0: "green",
+      1: "cyan",
+      2: "blue",
+      3: "teal",
+      4: "purple",
+    };
+    return colorMap[index % Object.keys(colorMap).length] || "green";
+  };
+
   return (
     <div className="relative">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-        {categories.map((category, categoryIndex) => (
-          <motion.div
-            key={category}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-            viewport={{ once: true }}
-            className="bg-black/40 backdrop-blur-sm border border-green-500/30 rounded-lg p-4 tron-border hover:tron-glow transition-all duration-300"
-          >
-            <h3 className="text-green-400 font-semibold mb-4 text-center border-b border-green-500/30 pb-2">
-              [{category.toUpperCase()}]
-            </h3>
-            <div className="space-y-3">
-              {technologies
-                .filter((tech) => tech.category === category)
-                .map((tech, index) => (
-                  <motion.div
-                    key={tech.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-3 p-2 rounded border border-green-500/20 hover:border-green-400/40 hover:bg-green-500/5 transition-all duration-300 group"
-                  >
-                    <div className="w-6 h-6 relative">
-                      <Image
-                        src={tech.icon}
-                        alt={tech.name}
-                        width={24}
-                        height={24}
-                        className="filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                      />
-                    </div>
-                    <span className="text-green-200 text-sm group-hover:text-green-100 transition-colors duration-300">
-                      {tech.name}
-                    </span>
-                  </motion.div>
-                ))}
-            </div>
-          </motion.div>
-        ))}
+        {categories.map((category, categoryIndex) => {
+          const categoryColor = getCategoryColorClass(categoryIndex);
+          const borderClass = `border-${categoryColor}-500/30`;
+          const hoverBorderClass = `hover:border-${categoryColor}-400/50`;
+          const hoverBgClass = `hover:from-${categoryColor}-500/5 hover:to-${colors[categoryIndex + 1 % colors.length]}-500/5`;
+          const shadowClass = `hover:shadow-${categoryColor}-500/20`;
+
+          return (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+              viewport={{ once: true }}
+              className={`bg-black/40 backdrop-blur-sm border ${borderClass} rounded-lg p-4 tron-border hover:tron-glow transition-all duration-300`}
+            >
+              <h3 className={`text-${categoryColor}-400 font-semibold mb-4 text-center border-b border-${categoryColor}-500/30 pb-2`}>
+                [{category.toUpperCase()}]
+              </h3>
+              <div className="space-y-3">
+                {technologies
+                  .filter((tech) => tech.category === category)
+                  .map((tech, index) => (
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.05 }}
+                      viewport={{ once: true }}
+                      className={`flex items-center gap-3 p-2 rounded border border-${categoryColor}-500/20 ${hoverBorderClass} hover:bg-${categoryColor}-500/5 transition-all duration-300 group`}
+                    >
+                      <div className="w-6 h-6 relative">
+                        <Image
+                          src={tech.icon}
+                          alt={tech.name}
+                          width={24}
+                          height={24}
+                          className="filter brightness-0 invert opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                        />
+                      </div>
+                      <span className={`text-${categoryColor}-200 text-sm group-hover:text-${categoryColor}-100 transition-colors duration-300`}>
+                        {tech.name}
+                      </span>
+                    </motion.div>
+                  ))}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Subtle animated border for the whole section */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 border border-green-500/10 rounded-2xl pointer-events-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

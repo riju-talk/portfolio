@@ -29,6 +29,12 @@ module.exports = {
           lime: "#84cc16",
           olive: "#65a30d",
           emerald: "#10b981",
+          cyan: "#06b6d4",
+          turquoise: "#14b8a6",
+          blue: "#3b82f6",
+          navy: "#1e3a8a",
+          teal: "#0d9488",
+          mint: "#6ee7b7",
         },
         gray: {
           950: "#030712",

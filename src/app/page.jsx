@@ -1,4 +1,3 @@
-
 "use client"
 
 import { motion } from "framer-motion"
@@ -135,7 +134,7 @@ export default function HomePage() {
               className="mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-green-400 mb-4">&gt; TECH_STACK.initialized</h2>
-              <div className="w-20 h-1 bg-green-400 rounded animate-pulse-green"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded animate-pulse-green"></div>
             </motion.div>
 
             <TechStack />
@@ -153,7 +152,7 @@ export default function HomePage() {
               className="mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-green-400 mb-4">&gt; FEATURED_PROJECTS.exe</h2>
-              <div className="w-20 h-1 bg-green-400 rounded animate-pulse-green"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-green-400 to-cyan-400 rounded animate-pulse-green"></div>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
