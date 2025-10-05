@@ -38,24 +38,6 @@ export default function AboutPage() {
       period: "2024",
       description:
         "Designed and developed dynamic web applications for real-time complex dataset visualization. Led full-stack development from UI/UX design to backend optimization. Integrated multiple open-source datasets including OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS. Applied ML models for exploratory and spatial data analysis, enabling real-time deployment of insights for data-driven decision-making.",
-    },
-    {
-      key: 3,
-      title: "Machine Learning Engineer",
-      company: "Independent Projects",
-      name: "Multi-Modal AI Systems Development",
-      period: "2024-2025",
-      description:
-        "Developed advanced multi-modal AI systems combining computer vision and NLP. Built sarcasm detection tools using BART encoders with VIT backbone architecture. Implemented SpanBERT-CRF systems for enhanced question-answering capabilities. Focused on creating production-ready AI solutions with Docker and Kubernetes deployment strategies.",
-    },
-    {
-      key: 4,
-      title: "Full Stack Developer",
-      company: "DreamDot Platform",
-      name: "Microservices Architecture & Social Platform",
-      period: "2024",
-      description:
-        "Architected and developed a scalable creator-first social media platform using microservices architecture. Implemented content monetization, real-time chat, media sharing, and NFT marketplace features. Utilized Go for backend services, PostgreSQL for data persistence, and React for frontend. Integrated blockchain technology for secure transaction logging with Razorpay payment processing.",
     }
   ]
 
@@ -129,7 +111,7 @@ export default function AboutPage() {
 
               <motion.div variants={fadeInUp} className="mt-10">
                 <a
-                  href="https://drive.google.com/uc?export=download&id=15GJJ1hBnv1jkQDGqw6AGF20U9IHD-YMx"
+                  href="https://drive.google.com/file/d/1Q-4PVssFwFDguvYlFkkRol9v7J5QM93x/view?usp=sharing"
                   download
                   className="inline-flex items-center px-6 py-3 btn-olive-primary text-olive-300/85 font-light text-sm tracking-wide rounded transition-all duration-300"
                 >
