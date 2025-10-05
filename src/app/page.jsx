@@ -62,7 +62,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-sm font-thin tracking-widest text-navy-300/70"
+                className="text-md font-light tracking-widest text-navy-300/70"
               >
                 Rijusmit Biswas
               </motion.div>
