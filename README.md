@@ -4,7 +4,7 @@ This is the personal portfolio website of **Rijusmit Biswas**, a Machine Learnin
 
 ## 🖼️ Preview
 
-![Portfolio Preview](./media/main.png)
+![Portfolio Preview](./media/main_page.png)
 
 ## 🚀 Tech Stack
 
