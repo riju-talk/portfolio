@@ -10,7 +10,7 @@ export default function TechStack() {
     { name: "TypeScript", icon: "/ts.svg", category: "Language" },
     { name: "React", icon: "/reactjs.svg", category: "Fullstack" },
     { name: "Next.js", icon: "/nextjs.svg", category: "Fullstack" },
-    { name: "Tailwind CSS", icon: "/tailwind.svg", category: "Fullstack" },
+    { name: "Tailwind CSS", icon: "/tailwindcss.svg", category: "Fullstack" },
     { name: "R", icon: "/r.svg", category: "Language" },
     { name: "Go", icon: "/go.svg", category: "Language" },
     { name: "Java", icon: "/java.svg", category: "Language" },
