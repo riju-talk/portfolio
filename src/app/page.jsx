@@ -87,10 +87,9 @@ export default function HomePage() {
         <section className="pt-40 pb-24 px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-4xl">
-              <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-thin text-navy-300/90 mb-8 leading-tight tracking-tight">
-                RIJUSMIT BISWAS
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-8xl font-thin text-navy-300/90 mb-8 leading-tight tracking-tight">
+                Hello There
               </motion.h1>
-
               <motion.div variants={fadeInUp} className="space-y-4 mb-12">
                 <p className="text-lg font-light text-olive-400/70 tracking-wide">
                   Machine Learning Developer / Full Stack Engineer / DevOps Specialist
@@ -180,7 +179,7 @@ export default function HomePage() {
         </section>
 
         {/* Footer */}
-        <footer className="py-16 px-6 border-t border-navy-400/10">
+        <footer className="py-16 px-6 border-navy-400/10">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
