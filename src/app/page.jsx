@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Github } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import TechStack from "./(components)/Tech/Tech"
 import ProjectCard from "./(components)/Repo/Repo"
 
@@ -87,18 +88,70 @@ export default function HomePage() {
         <section className="pt-40 pb-24 px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-4xl">
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-thin text-navy-300/90 mb-8 leading-tight tracking-tight">
-                Hello There
-              </motion.h1>
-              <motion.div variants={fadeInUp} className="space-y-4 mb-12">
-                <p className="text-lg font-light text-olive-400/70 tracking-wide">
-                  Machine Learning Developer / Full Stack Engineer / DevOps Specialist
-                </p>
-                <p className="text-base font-extralight text-navy-200/60 leading-relaxed max-w-2xl">
-                  Final-year B.Tech student at IIIT-Delhi specializing in Computer Science and Economics. 
-                  Building scalable AI-driven applications with expertise in ML, full-stack development, and emerging DevOps/MLOps practices.
-                </p>
-              </motion.div>
+              <div className="flex items-start gap-8 mb-8">
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex-1"
+                >
+                  <motion.h1 className="text-4xl md:text-6xl font-thin text-navy-300/90 mb-8 leading-tight tracking-tight">
+                    Hello There
+                  </motion.h1>
+                  <motion.div variants={fadeInUp} className="space-y-4 mb-12">
+                    <p className="text-lg font-light text-olive-400/70 tracking-wide">
+                      Machine Learning Developer / Full Stack Engineer / DevOps Specialist
+                    </p>
+                    <p className="text-base font-extralight text-navy-200/60 leading-relaxed max-w-2xl">
+                      Final-year B.Tech student at IIIT-Delhi specializing in Computer Science and Economics.
+                      Building scalable AI-driven applications with expertise in ML, full-stack development, and emerging DevOps/MLOps practices.
+                    </p>
+                  </motion.div>
+                </motion.div>
+
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex-shrink-0"
+                  style={{
+                    perspective: '1000px',
+                    transformStyle: 'preserve-3d'
+                  }}
+                >
+                  <motion.div
+                    initial={{ rotateY: -15, rotateX: 5, opacity: 0 }}
+                    animate={{ rotateY: 0, rotateX: 0, opacity: 1 }}
+                    transition={{ duration: 1.2, delay: 0.2 }}
+                    whileHover={{
+                      rotateY: 15,
+                      rotateX: -5,
+                      scale: 1.05,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{
+                      transformStyle: 'preserve-3d',
+                      filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))',
+                    }}
+                    className="relative"
+                  >
+                    <div
+                      className="absolute inset-0 rounded-full opacity-20"
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(110, 142, 92, 0.3), rgba(52, 78, 85, 0.3))',
+                        transform: 'translateZ(-10px)',
+                        filter: 'blur(10px)',
+                      }}
+                    />
+                    <div className="relative z-10 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-gray-400/20">
+                      <Image
+                        src="/logo.png"
+                        alt="Logo"
+                        width={208}
+                        height={208}
+                        className="w-full h-full object-cover"
+                        priority
+                      />
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </div>
 
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
                 <Link
