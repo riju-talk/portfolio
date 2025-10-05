@@ -20,12 +20,11 @@ This portfolio is built using:
 
 - `src/app/` — Main application source (pages, components, styles)
 - `public/` — Static assets
-- `.github/workflows/` — GitHub Actions for Azure deployment
 - `media/` — Contains `main.png`, a screenshot of the homepage
 
 ## 🌐 Deployment
 
-Deployed via **Azure Static Web Apps** and **Vercel**.
+Deployed via **Vercel**.
 
 ## 🛠️ Features
 
