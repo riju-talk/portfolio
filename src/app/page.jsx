@@ -64,7 +64,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8 }}
                 className="text-sm font-thin tracking-widest text-navy-300/70"
               >
-                SYSTEM ACTIVE
+                Rijusmit Biswas
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -73,10 +73,10 @@ export default function HomePage() {
                 className="flex gap-8"
               >
                 <Link href="/" className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide">
-                  HOME
+                  Home
                 </Link>
                 <Link href="/about" className="text-olive-400/60 hover:text-olive-300/80 transition-colors duration-300 text-sm font-light tracking-wide">
-                  ABOUT
+                  About
                 </Link>
               </motion.div>
             </div>

@@ -53,7 +53,7 @@ export default function AboutPage() {
                 className="inline-flex items-center text-olive-400/70 hover:text-olive-300/90 transition-colors duration-300 text-sm font-light tracking-wide"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                BACK
+                Back
               </Link>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -62,10 +62,10 @@ export default function AboutPage() {
                 className="flex gap-8"
               >
                 <Link href="/" className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide">
-                  HOME
+                  Home
                 </Link>
                 <Link href="/about" className="text-olive-400/80 text-sm font-light tracking-wide">
-                  ABOUT
+                  About
                 </Link>
               </motion.div>
             </div>
