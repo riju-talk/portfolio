@@ -55,14 +55,14 @@ export default function HomePage() {
     <div className="min-h-screen relative overflow-hidden minimal-grid">
       <div className="relative z-10">
         {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-glass-blue/10">
+        <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-navy-400/10">
           <div className="max-w-6xl mx-auto px-6 py-4">
             <div className="flex justify-between items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-sm font-thin tracking-widest text-glass-blue/70"
+                className="text-sm font-thin tracking-widest text-navy-300/70"
               >
                 SYSTEM ACTIVE
               </motion.div>
@@ -72,10 +72,10 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="flex gap-8"
               >
-                <Link href="/" className="text-glass-slate/60 hover:text-glass-blue/80 transition-colors duration-300 text-sm font-light tracking-wide">
+                <Link href="/" className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide">
                   HOME
                 </Link>
-                <Link href="/about" className="text-glass-slate/60 hover:text-glass-blue/80 transition-colors duration-300 text-sm font-light tracking-wide">
+                <Link href="/about" className="text-olive-400/60 hover:text-olive-300/80 transition-colors duration-300 text-sm font-light tracking-wide">
                   ABOUT
                 </Link>
               </motion.div>
@@ -87,15 +87,15 @@ export default function HomePage() {
         <section className="pt-40 pb-24 px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-4xl">
-              <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-thin text-glass-blue/90 mb-8 leading-tight tracking-tight">
+              <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-thin text-navy-300/90 mb-8 leading-tight tracking-tight">
                 RIJUSMIT BISWAS
               </motion.h1>
 
               <motion.div variants={fadeInUp} className="space-y-4 mb-12">
-                <p className="text-lg font-light text-glass-green/70 tracking-wide">
+                <p className="text-lg font-light text-olive-400/70 tracking-wide">
                   Machine Learning Developer / Full Stack Engineer / DevOps Specialist
                 </p>
-                <p className="text-base font-extralight text-glass-slate/60 leading-relaxed max-w-2xl">
+                <p className="text-base font-extralight text-navy-200/60 leading-relaxed max-w-2xl">
                   Final-year B.Tech student at IIIT-Delhi specializing in Computer Science and Economics. 
                   Building scalable AI-driven applications with expertise in ML, full-stack development, and emerging DevOps/MLOps practices.
                 </p>
@@ -104,7 +104,7 @@ export default function HomePage() {
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
                 <Link
                   href="/about"
-                  className="group inline-flex items-center px-6 py-3 glass-panel hover:border-glass-blue/30 text-glass-blue/80 font-light text-sm tracking-wide rounded transition-all duration-300"
+                  className="group inline-flex items-center px-6 py-3 glass-panel hover:border-navy-400/30 text-navy-300/80 font-light text-sm tracking-wide rounded transition-all duration-300"
                 >
                   VIEW PROFILE
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -112,7 +112,7 @@ export default function HomePage() {
 
                 <a
                   href="mailto:rijusmit2004@gmail.com"
-                  className="inline-flex items-center px-6 py-3 border border-glass-green/20 text-glass-green/70 hover:border-glass-green/30 font-light text-sm tracking-wide rounded transition-all duration-300"
+                  className="inline-flex items-center px-6 py-3 border border-olive-500/20 text-olive-400/70 hover:border-olive-400/30 font-light text-sm tracking-wide rounded transition-all duration-300"
                 >
                   CONTACT
                 </a>
@@ -131,8 +131,8 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-thin text-glass-blue/80 mb-3 tracking-wide">TECH STACK</h2>
-              <div className="w-16 h-px bg-glass-green/30"></div>
+              <h2 className="text-3xl md:text-4xl font-thin text-navy-300/80 mb-3 tracking-wide">TECH STACK</h2>
+              <div className="w-16 h-px bg-olive-500/30"></div>
             </motion.div>
 
             <TechStack />
@@ -149,8 +149,8 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-thin text-glass-blue/80 mb-3 tracking-wide">FEATURED PROJECTS</h2>
-              <div className="w-16 h-px bg-glass-green/30"></div>
+              <h2 className="text-3xl md:text-4xl font-thin text-navy-300/80 mb-3 tracking-wide">FEATURED PROJECTS</h2>
+              <div className="w-16 h-px bg-olive-500/30"></div>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -170,7 +170,7 @@ export default function HomePage() {
                 href="https://github.com/riju-talk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 border border-glass-blue/20 text-glass-blue/70 hover:border-glass-blue/30 font-light text-sm tracking-wide rounded transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 border border-navy-400/20 text-navy-300/70 hover:border-navy-300/30 font-light text-sm tracking-wide rounded transition-all duration-300"
               >
                 <Github className="mr-2 h-4 w-4" />
                 VIEW REPOSITORY
@@ -180,7 +180,7 @@ export default function HomePage() {
         </section>
 
         {/* Footer */}
-        <footer className="py-16 px-6 border-t border-glass-blue/10">
+        <footer className="py-16 px-6 border-t border-navy-400/10">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -188,13 +188,13 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <p className="text-glass-slate/50 mb-6 font-extralight text-sm tracking-wide">Building intelligent systems for the future</p>
+              <p className="text-navy-300/50 mb-6 font-extralight text-sm tracking-wide">Building intelligent systems for the future</p>
               <div className="flex justify-center gap-8">
                 <a
                   href="https://github.com/riju-talk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-glass-blue/60 hover:text-glass-blue/80 transition-colors duration-300 text-sm font-light tracking-wide"
+                  className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide"
                 >
                   GITHUB
                 </a>
@@ -202,13 +202,13 @@ export default function HomePage() {
                   href="https://www.linkedin.com/in/rijusmit-biswas/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-glass-blue/60 hover:text-glass-blue/80 transition-colors duration-300 text-sm font-light tracking-wide"
+                  className="text-olive-400/60 hover:text-olive-300/80 transition-colors duration-300 text-sm font-light tracking-wide"
                 >
                   LINKEDIN
                 </a>
                 <a
                   href="mailto:rijusmit2004@gmail.com"
-                  className="text-glass-blue/60 hover:text-glass-blue/80 transition-colors duration-300 text-sm font-light tracking-wide"
+                  className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide"
                 >
                   EMAIL
                 </a>
