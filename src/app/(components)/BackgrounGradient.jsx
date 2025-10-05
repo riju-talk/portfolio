@@ -34,7 +34,7 @@ export default function LiveBackground() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Subtle ripples */}
+      {/* Subtle ripples with navy/olive tones */}
       {ripples.map((style, idx) => (
         <animated.div
           key={idx}
@@ -46,25 +46,28 @@ export default function LiveBackground() {
             width: 800,
             height: 800,
             borderRadius: "50%",
-            border: `1px solid ${idx === 0 ? 'rgba(96, 165, 250, 0.08)' : 'rgba(52, 211, 153, 0.08)'}`,
-            background: `radial-gradient(circle, ${idx === 0 ? 'rgba(96, 165, 250, 0.02)' : 'rgba(52, 211, 153, 0.02)'} 0%, transparent 70%)`,
+            border: `1px solid ${idx === 0 ? 'rgba(91, 124, 153, 0.12)' : 'rgba(156, 163, 114, 0.1)'}`,
+            background: `radial-gradient(circle, ${idx === 0 ? 'rgba(91, 124, 153, 0.04)' : 'rgba(156, 163, 114, 0.03)'} 0%, transparent 70%)`,
             transform: style.scale.to((s) => `translate(-50%, -50%) scale(${s})`),
           }}
         />
       ))}
 
-      {/* Minimal floating elements */}
-      <motion.div 
+      {/* Minimal floating elements with refined colors */}
+      <motion.div
         animate={floatControls}
-        className="absolute top-1/4 left-1/5 w-2 h-2 bg-glass-blue/20 rounded-sm" 
+        className="absolute top-1/4 left-1/5 w-2 h-2 rounded-sm"
+        style={{ background: 'rgba(91, 124, 153, 0.15)' }}
       />
-      <motion.div 
+      <motion.div
         animate={floatControls}
-        className="absolute top-2/3 right-1/4 w-3 h-3 border border-glass-green/15 rounded-sm rotate-45" 
+        className="absolute top-2/3 right-1/4 w-3 h-3 border rounded-sm rotate-45"
+        style={{ borderColor: 'rgba(156, 163, 114, 0.18)' }}
       />
-      <motion.div 
+      <motion.div
         animate={floatControls}
-        className="absolute bottom-1/3 left-2/3 w-2 h-2 bg-glass-teal/15" 
+        className="absolute bottom-1/3 left-2/3 w-2 h-2"
+        style={{ background: 'rgba(121, 150, 179, 0.12)' }}
       />
     </div>
   );
