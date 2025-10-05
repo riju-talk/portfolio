@@ -25,10 +25,23 @@ export default function TechStack() {
 
   const categories = ["Frontend", "Backend", "DevOps", "Database", "ML/AI"]
 
+  const categoryColors = {
+    "Frontend": "navy",
+    "Backend": "olive",
+    "DevOps": "navy",
+    "Database": "olive",
+    "ML/AI": "navy"
+  }
+
   return (
     <div className="relative">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
         {categories.map((category, categoryIndex) => {
+          const colorType = categoryColors[category]
+          const borderColor = colorType === "navy" ? "border-navy-400/10" : "border-olive-500/10"
+          const textColor = colorType === "navy" ? "text-navy-300/70" : "text-olive-400/70"
+          const hoverBorder = colorType === "navy" ? "hover:border-navy-400/20" : "hover:border-olive-500/20"
+          
           return (
             <motion.div
               key={category}
@@ -36,9 +49,9 @@ export default function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="glass-panel rounded p-5 hover:border-glass-blue/20 transition-all duration-300"
+              className={`glass-panel rounded p-5 ${hoverBorder} transition-all duration-300`}
             >
-              <h3 className="text-glass-blue/70 font-light text-xs tracking-widest mb-5 text-center border-b border-glass-blue/10 pb-3 uppercase">
+              <h3 className={`${textColor} font-light text-xs tracking-widest mb-5 text-center border-b ${borderColor} pb-3 uppercase`}>
                 {category}
               </h3>
               <div className="space-y-3">
@@ -51,7 +64,7 @@ export default function TechStack() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.05 }}
                       viewport={{ once: true }}
-                      className="flex items-center gap-3 p-2 rounded border border-glass-blue/5 hover:border-glass-green/15 hover:bg-glass-blue/5 transition-all duration-300 group"
+                      className={`flex items-center gap-3 p-2 rounded border ${borderColor} ${hoverBorder} hover:bg-navy-400/5 transition-all duration-300 group`}
                     >
                       <div className="w-5 h-5 relative">
                         <Image
@@ -62,7 +75,7 @@ export default function TechStack() {
                           className="filter brightness-0 invert opacity-50 group-hover:opacity-70 transition-opacity duration-300"
                         />
                       </div>
-                      <span className="text-glass-slate/50 text-xs group-hover:text-glass-slate/70 transition-colors duration-300 font-light">
+                      <span className="text-navy-200/50 text-xs group-hover:text-navy-200/70 transition-colors duration-300 font-light">
                         {tech.name}
                       </span>
                     </motion.div>
