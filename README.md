@@ -1,4 +1,4 @@
-# 💼 Rijusmit Biswas — Portfolio Website
+Portfolio Website
 
 This is the personal portfolio website of **Rijusmit Biswas**, a Machine Learning and Full Stack Developer currently expanding into DevOps.
 
