@@ -10,41 +10,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "#f0fdf4",
-          100: "#dcfce7",
-          200: "#bbf7d0",
-          300: "#86efac",
-          400: "#4ade80",
-          500: "#22c55e",
-          600: "#16a34a",
-          700: "#15803d",
-          800: "#166534",
-          900: "#14532d",
+        glass: {
+          blue: "#60a5fa",
+          green: "#34d399",
+          teal: "#2dd4bf",
+          slate: "#94a3b8",
         },
-        tron: {
-          dark: "#0a0f0a",
-          darker: "#050805",
-          green: "#22c55e",
-          lime: "#84cc16",
-          olive: "#65a30d",
-          emerald: "#10b981",
-          cyan: "#06b6d4",
-          turquoise: "#14b8a6",
-          blue: "#3b82f6",
-          navy: "#1e3a8a",
-          teal: "#0d9488",
-          mint: "#6ee7b7",
-        },
-        gray: {
-          950: "#030712",
+        minimal: {
+          bg: "#0a0e14",
+          surface: "#141b24",
+          border: "#1e2936",
         }
       },
+      fontWeight: {
+        thin: "200",
+        extralight: "250",
+        light: "300",
+      },
       animation: {
-        "fade-in": "fadeIn 0.6s ease-out",
-        "slide-up": "slideUp 0.6s ease-out",
-        "pulse-green": "pulseGreen 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "glow": "glow 2s ease-in-out infinite alternate",
+        "fade-in": "fadeIn 0.8s ease-out",
+        "slide-up": "slideUp 0.8s ease-out",
       },
       keyframes: {
         fadeIn: {
@@ -55,23 +40,10 @@ module.exports = {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        pulseGreen: {
-          "0%, 100%": {
-            opacity: "1",
-          },
-          "50%": {
-            opacity: "0.5",
-          },
-        },
-        glow: {
-          from: {
-            "box-shadow": "0 0 20px rgba(34, 197, 94, 0.2)",
-          },
-          to: {
-            "box-shadow": "0 0 30px rgba(34, 197, 94, 0.4)",
-          },
-        },
       },
+      backdropBlur: {
+        xs: "2px",
+      }
     },
   },
   plugins: [],
