@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Github } from "lucide-react"
 import Link from "next/link"
-import LiveBackground from "./(components)/BackgrounGradient"
 import TechStack from "./(components)/Tech/Tech"
 import ProjectCard from "./(components)/Repo/Repo"
 
@@ -54,8 +53,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden minimal-grid">
-      <LiveBackground />
-
       <div className="relative z-10">
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-glass-blue/10">

@@ -4,7 +4,6 @@
 import { motion } from "framer-motion"
 import { ArrowLeft, Download, MapPin, Calendar } from "lucide-react"
 import Link from "next/link"
-import LiveBackground from "../(components)/BackgrounGradient"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -62,8 +61,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden minimal-grid">
-      <LiveBackground />
-
       <div className="relative z-10">
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-glass-blue/10">
