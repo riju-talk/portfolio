@@ -1,61 +1,70 @@
-
 @import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
 body {
-  background: linear-gradient(135deg, #0a0f0a 0%, #0f1a0f 15%, #0a1a1a 30%, #1a2e1a 45%, #0d1f1f 60%, #0a140a 75%, #0f0a1a 90%, #0a0f0a 100%);
+  background: #0a0e14;
   min-height: 100vh;
+  font-weight: 300;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - minimal design */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(10, 15, 10, 0.3);
+  background: rgba(20, 27, 36, 0.4);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, rgba(34, 197, 94, 0.5), rgba(6, 182, 212, 0.5));
-  border-radius: 4px;
+  background: rgba(96, 165, 250, 0.2);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, rgba(34, 197, 94, 0.7), rgba(6, 182, 212, 0.7));
+  background: rgba(96, 165, 250, 0.3);
 }
 
-/* Selection */
+/* Selection - subtle blue */
 ::selection {
-  background: linear-gradient(45deg, rgba(34, 197, 94, 0.3), rgba(20, 184, 166, 0.3));
+  background: rgba(96, 165, 250, 0.2);
   color: #ffffff;
 }
 
-/* Tron-style glowing borders */
-.tron-border {
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+/* Glass effect borders */
+.glass-border {
+  border: 1px solid rgba(96, 165, 250, 0.15);
 }
 
-.tron-glow {
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+.glass-border-green {
+  border: 1px solid rgba(52, 211, 153, 0.15);
 }
 
-/* Grid overlay for Tron effect */
-.tron-grid::before {
+/* Subtle grid overlay - split blue and green */
+.minimal-grid::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(rgba(96, 165, 250, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(52, 211, 153, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
   pointer-events: none;
-  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Glass panel effect */
+.glass-panel {
+  background: rgba(20, 27, 36, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(96, 165, 250, 0.1);
 }
