@@ -5,14 +5,16 @@ import Image from "next/image"
 
 export default function TechStack() {
   const technologies = [
-    { name: "Python", icon: "/python.svg", category: "Backend" },
-    { name: "JavaScript", icon: "/js.svg", category: "Frontend" },
-    { name: "TypeScript", icon: "/ts.svg", category: "Frontend" },
-    { name: "React", icon: "/reactjs.svg", category: "Frontend" },
-    { name: "Next.js", icon: "/nextjs.svg", category: "Frontend" },
-    { name: "Go", icon: "/go.svg", category: "Backend" },
-    { name: "Java", icon: "/java.svg", category: "Backend" },
-    { name: "C++", icon: "/cpp.svg", category: "Backend" },
+    { name: "Python", icon: "/python.svg", category: "Language" },
+    { name: "JavaScript", icon: "/js.svg", category: "Language" },
+    { name: "TypeScript", icon: "/ts.svg", category: "Language" },
+    { name: "React", icon: "/reactjs.svg", category: "Fullstack" },
+    { name: "Next.js", icon: "/nextjs.svg", category: "Fullstack" },
+    { name: "Tailwind CSS", icon: "/tailwind.svg", category: "Fullstack" },
+    { name: "R", icon: "/r.svg", category: "Language" },
+    { name: "Go", icon: "/go.svg", category: "Language" },
+    { name: "Java", icon: "/java.svg", category: "Language" },
+    { name: "C++", icon: "/cpp.svg", category: "Language" },
     { name: "Docker", icon: "/docker.svg", category: "DevOps" },
     { name: "Kubernetes", icon: "/kubernetes.svg", category: "DevOps" },
     { name: "PostgreSQL", icon: "/pgsql.svg", category: "Database" },
@@ -20,13 +22,27 @@ export default function TechStack() {
     { name: "Redis", icon: "/redis.svg", category: "Database" },
     { name: "PyTorch", icon: "/pytorch.svg", category: "ML/AI" },
     { name: "TensorFlow", icon: "/tensorflow.svg", category: "ML/AI" },
-    { name: "Flask", icon: "/flask.svg", category: "Backend" },
+    { name: "Flask", icon: "/flask.svg", category: "Fullstack" },
+    { name: "Express", icon: "/express.svg", category: "Fullstack" },
+    { name: "FastAPI", icon: "/fastapi.svg", category: "Fullstack"},
+    { name: "MySQL", icon: "/mysql.svg", category: "Database"},
+    { name: "Firebase", icon: "/firebase.svg", category: "Database"},
+    { name: "Unsloth", icon: "/unsloth.svg", category: "ML/AI"},
+    { name: "OpenCV", icon: "/opencv.svg", category: "ML/AI"},
+    { name: "Huggingface", icon: "/huggingface.svg", category: "ML/AI"},
+    { name: "ElasticSearch", icon: "/elasticsearch.svg", category: "Database"},
+    { name: "Github Actions", icon: "/github.svg", category: "DevOps"},
+    { name: "Git", icon: "/git.svg", category: "DevOps"},
+    { name: "GitLab", icon: "/gitlab.svg", category: "DevOps"},
+    { name: "LangSmith", icon: "/langsmith.svg", category: "ML/AI"},
+    { name: "LangChain", icon: "/langchain.svg", category: "ML/AI"}
   ]
 
-  const categories = ["Frontend", "Backend", "DevOps", "Database", "ML/AI"]
+  const categories = ["Language", "Fullstack", "DevOps", "Database", "ML/AI"]
 
   const categoryColors = {
-    "Frontend": "olive",
+    "Language": "olive",
+    "Fullstack": "olive",
     "Backend": "olive",
     "DevOps": "olive",
     "Database": "olive",
@@ -35,7 +51,7 @@ export default function TechStack() {
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {categories.map((category, categoryIndex) => {
           return (
             <motion.div
@@ -67,7 +83,7 @@ export default function TechStack() {
                           alt={tech.name}
                           width={20}
                           height={20}
-                          className="filter brightness-0 invert opacity-50 group-hover:opacity-75 transition-opacity duration-300"
+                          className="transition-opacity duration-300"
                         />
                       </div>
                       <span className="text-olive-300/60 text-xs group-hover:text-olive-300/80 transition-colors duration-300 font-light">

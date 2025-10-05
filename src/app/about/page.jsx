@@ -32,13 +32,31 @@ export default function AboutPage() {
     },
     {
       key: 2,
-      title: "Undergraduate Researcher",
+      title: "Data Science Intern",
       company: "Complex Systems Lab",
       name: "Real-Time Data Integration & Interactive Web Visualization",
       period: "2024",
       description:
         "Designed and developed dynamic web applications for real-time complex dataset visualization. Led full-stack development from UI/UX design to backend optimization. Integrated multiple open-source datasets including OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS. Applied ML models for exploratory and spatial data analysis, enabling real-time deployment of insights for data-driven decision-making.",
-    }
+    },
+    {
+      key: 3,
+      title: "Research Intern",
+      company: "Computational Social Science (Econometrics) Lab",
+      name: "Ground Work on SICKLE++",
+      period: "2025",
+      description:
+        "Did initial ground work study on SICKLE++ a research to study crop patterns in India using satellite data. Extending the orginal study from Cauvery delta to Andhra Pradesh, Using google earth engine to extract crop patterns and using machine learning to predict crop patterns.",
+    },
+    {
+      key: 4,
+      title: "Open Source Contributor",
+      company: "Meshery, Layer5",
+      name: "Layer5 Documentation and Meshery.io",
+      period: "2025",
+      description:
+        "Contributed to Meshery and Layer5 open-source projects by submitting bug reports, feature requests, editing documentation, and pull requests. Participated in code reviews and provided constructive feedback to improve the codebase.",
+    },
   ]
 
   return (
@@ -76,8 +94,8 @@ export default function AboutPage() {
         <section className="pt-40 pb-24 px-6">
           <div className="max-w-4xl mx-auto">
             <motion.div variants={staggerContainer} initial="initial" animate="animate">
-              <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-thin text-navy-300/90 mb-10 tracking-tight">
-                PROFILE
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-thin text-navy-300/90 mb-10 tracking-tight">
+                About Me
               </motion.h1>
 
               <motion.div variants={fadeInUp} className="text-base font-extralight text-navy-200/60 leading-relaxed space-y-6">

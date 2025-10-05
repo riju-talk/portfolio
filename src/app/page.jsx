@@ -87,7 +87,7 @@ export default function HomePage() {
         <section className="pt-40 pb-24 px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-4xl">
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-8xl font-thin text-navy-300/90 mb-8 leading-tight tracking-tight">
+              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-thin text-navy-300/90 mb-8 leading-tight tracking-tight">
                 Hello There
               </motion.h1>
               <motion.div variants={fadeInUp} className="space-y-4 mb-12">
