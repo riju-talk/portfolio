@@ -104,7 +104,7 @@ export default function HomePage() {
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
                 <Link
                   href="/about"
-                  className="group inline-flex items-center px-6 py-3 glass-panel hover:border-navy-400/30 text-navy-300/80 font-light text-sm tracking-wide rounded transition-all duration-300"
+                  className="group inline-flex items-center px-6 py-3 btn-olive-primary text-olive-300/85 font-light text-sm tracking-wide rounded transition-all duration-300"
                 >
                   VIEW PROFILE
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -112,7 +112,7 @@ export default function HomePage() {
 
                 <a
                   href="mailto:rijusmit2004@gmail.com"
-                  className="inline-flex items-center px-6 py-3 border border-olive-500/20 text-olive-400/70 hover:border-olive-400/30 font-light text-sm tracking-wide rounded transition-all duration-300"
+                  className="inline-flex items-center px-6 py-3 btn-olive-secondary text-olive-400/75 font-light text-sm tracking-wide rounded transition-all duration-300"
                 >
                   CONTACT
                 </a>
@@ -170,7 +170,7 @@ export default function HomePage() {
                 href="https://github.com/riju-talk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 border border-navy-400/20 text-navy-300/70 hover:border-navy-300/30 font-light text-sm tracking-wide rounded transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 btn-olive-secondary text-olive-400/75 font-light text-sm tracking-wide rounded transition-all duration-300"
               >
                 <Github className="mr-2 h-4 w-4" />
                 VIEW REPOSITORY

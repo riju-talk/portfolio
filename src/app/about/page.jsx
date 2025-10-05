@@ -68,7 +68,7 @@ export default function AboutPage() {
             <div className="flex justify-between items-center">
               <Link
                 href="/"
-                className="inline-flex items-center text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide"
+                className="inline-flex items-center text-olive-400/70 hover:text-olive-300/90 transition-colors duration-300 text-sm font-light tracking-wide"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 BACK
@@ -117,11 +117,11 @@ export default function AboutPage() {
               </motion.div>
 
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mt-10">
-                <div className="flex items-center text-navy-300/50 border border-navy-400/15 px-4 py-2 rounded text-sm font-light">
+                <div className="flex items-center text-olive-400/60 tech-badge-olive px-4 py-2 rounded text-sm font-light">
                   <MapPin className="mr-2 h-4 w-4" />
                   New Delhi, India
                 </div>
-                <div className="flex items-center text-olive-400/50 border border-olive-500/15 px-4 py-2 rounded text-sm font-light">
+                <div className="flex items-center text-olive-400/60 tech-badge-olive px-4 py-2 rounded text-sm font-light">
                   <Calendar className="mr-2 h-4 w-4" />
                   Open to opportunities
                 </div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
                 <a
                   href="https://drive.google.com/uc?export=download&id=15GJJ1hBnv1jkQDGqw6AGF20U9IHD-YMx"
                   download
-                  className="inline-flex items-center px-6 py-3 glass-panel hover:border-navy-400/30 text-navy-300/80 font-light text-sm tracking-wide rounded transition-all duration-300"
+                  className="inline-flex items-center px-6 py-3 btn-olive-primary text-olive-300/85 font-light text-sm tracking-wide rounded transition-all duration-300"
                 >
                   <Download className="mr-2 h-4 w-4" />
                   DOWNLOAD RESUME
@@ -163,7 +163,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="glass-panel rounded p-8 hover:border-navy-400/20 transition-all duration-300"
+                  className="glass-panel rounded p-8 transition-all duration-300"
                 >
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                     <div>
@@ -171,7 +171,7 @@ export default function AboutPage() {
                       <p className="text-olive-400/70 font-extralight text-sm">{job.company}</p>
                       <p className="text-navy-200/50 text-sm mt-2 font-extralight italic">{job.name}</p>
                     </div>
-                    <span className="text-navy-300/60 text-xs mt-2 md:mt-0 border border-navy-400/15 px-3 py-1 rounded font-light">{job.period}</span>
+                    <span className="text-olive-400/70 text-xs mt-2 md:mt-0 tech-badge-olive px-3 py-1 rounded font-light">{job.period}</span>
                   </div>
                   <p className="text-navy-200/60 leading-relaxed border-l border-olive-500/15 pl-6 font-extralight text-sm">{job.description}</p>
                 </motion.div>
@@ -197,7 +197,7 @@ export default function AboutPage() {
               </p>
               <a
                 href="mailto:rijusmit2004@gmail.com"
-                className="inline-flex items-center px-8 py-4 glass-panel hover:border-navy-400/30 text-navy-300/80 font-light text-sm tracking-wide rounded transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 btn-olive-primary text-olive-300/85 font-light text-sm tracking-wide rounded transition-all duration-300"
               >
                 SEND MESSAGE
               </a>
