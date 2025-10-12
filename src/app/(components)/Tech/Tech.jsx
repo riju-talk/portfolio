@@ -51,7 +51,7 @@ export default function TechStack() {
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
         {categories.map((category, categoryIndex) => {
           return (
             <motion.div
@@ -60,12 +60,12 @@ export default function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="glass-panel rounded p-5 transition-all duration-300"
+              className="glass-panel rounded p-4 md:p-5 transition-all duration-300"
             >
-              <h3 className="text-olive-300/75 font-light text-xs tracking-widest mb-5 text-center border-b border-olive-500/25 pb-3 uppercase">
+              <h3 className="text-olive-300/75 font-light text-xs md:text-xs tracking-widest mb-4 md:mb-5 text-center border-b border-olive-500/25 pb-2 md:pb-3 uppercase">
                 {category}
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-2 md:space-y-3">
                 {technologies
                   .filter((tech) => tech.category === category)
                   .map((tech, index) => (
@@ -75,9 +75,9 @@ export default function TechStack() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.05 }}
                       viewport={{ once: true }}
-                      className="flex items-center gap-3 p-2 rounded tech-badge-olive transition-all duration-300 group"
+                      className="flex items-center gap-2.5 md:gap-3 p-1.5 md:p-2 rounded tech-badge-olive transition-all duration-300 group"
                     >
-                      <div className="w-5 h-5 relative">
+                      <div className="w-4 h-4 md:w-5 md:h-5 relative flex-shrink-0">
                         <Image
                           src={tech.icon}
                           alt={tech.name}

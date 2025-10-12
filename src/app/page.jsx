@@ -57,13 +57,13 @@ export default function HomePage() {
       <div className="relative z-10">
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-navy-400/10">
-          <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4">
             <div className="flex justify-between items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-md font-light tracking-widest text-navy-300/70"
+                className="text-xs md:text-sm font-light tracking-wider md:tracking-widest text-navy-300/70"
               >
                 Rijusmit Biswas
               </motion.div>
@@ -71,12 +71,12 @@ export default function HomePage() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="flex gap-8"
+                className="flex gap-4 md:gap-8"
               >
-                <Link href="/" className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide">
+                <Link href="/" className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-xs md:text-sm font-light tracking-wide">
                   Home
                 </Link>
-                <Link href="/about" className="text-olive-400/60 hover:text-olive-300/80 transition-colors duration-300 text-sm font-light tracking-wide">
+                <Link href="/about" className="text-olive-400/60 hover:text-olive-300/80 transition-colors duration-300 text-xs md:text-sm font-light tracking-wide">
                   About
                 </Link>
               </motion.div>
@@ -85,31 +85,13 @@ export default function HomePage() {
         </nav>
 
         {/* Hero Section */}
-        <section className="pt-40 pb-24 px-6">
+        <section className="pt-32 md:pt-40 pb-16 md:pb-24 px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-4xl">
-              <div className="flex items-start gap-8 mb-8">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-8">
                 <motion.div
                   variants={fadeInUp}
-                  className="flex-1"
-                >
-                  <motion.h1 className="text-4xl md:text-6xl font-thin text-navy-300/90 mb-8 leading-tight tracking-tight">
-                    Hello There
-                  </motion.h1>
-                  <motion.div variants={fadeInUp} className="space-y-4 mb-12">
-                    <p className="text-lg font-light text-olive-400/70 tracking-wide">
-                      Machine Learning Developer / Full Stack Engineer / DevOps Specialist
-                    </p>
-                    <p className="text-base font-extralight text-navy-200/60 leading-relaxed max-w-2xl">
-                      Final-year B.Tech student at IIIT-Delhi specializing in Computer Science and Economics.
-                      Building scalable AI-driven applications with expertise in ML, full-stack development, and emerging DevOps/MLOps practices.
-                    </p>
-                  </motion.div>
-                </motion.div>
-
-                <motion.div
-                  variants={fadeInUp}
-                  className="flex-shrink-0"
+                  className="flex-shrink-0 order-1 md:order-2"
                   style={{
                     perspective: '1000px',
                     transformStyle: 'preserve-3d'
@@ -139,7 +121,7 @@ export default function HomePage() {
                         filter: 'blur(10px)',
                       }}
                     />
-                    <div className="relative z-10 w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-gray-400/20">
+                    <div className="relative z-10 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 rounded-full overflow-hidden border-2 border-gray-400/20">
                       <Image
                         src="/logo.png"
                         alt="Logo"
@@ -151,20 +133,38 @@ export default function HomePage() {
                     </div>
                   </motion.div>
                 </motion.div>
+
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex-1 order-2 md:order-1 text-center md:text-left"
+                >
+                  <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thin text-navy-300/90 mb-6 md:mb-8 leading-tight tracking-tight">
+                    Hello There
+                  </motion.h1>
+                  <motion.div variants={fadeInUp} className="space-y-3 md:space-y-4 mb-8 md:mb-12">
+                    <p className="text-base sm:text-lg font-light text-olive-400/70 tracking-wide">
+                      Machine Learning Developer / Full Stack Engineer / DevOps Specialist
+                    </p>
+                    <p className="text-sm sm:text-base font-extralight text-navy-200/60 leading-relaxed max-w-2xl mx-auto md:mx-0">
+                      Final-year B.Tech student at IIIT-Delhi specializing in Computer Science and Economics.
+                      Building scalable AI-driven applications with expertise in ML, full-stack development, and emerging DevOps/MLOps practices.
+                    </p>
+                  </motion.div>
+                </motion.div>
               </div>
 
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
                 <Link
                   href="/about"
-                  className="group inline-flex items-center px-6 py-3 btn-olive-primary text-olive-300/85 font-light text-sm tracking-wide rounded transition-all duration-300"
+                  className="group inline-flex items-center px-5 md:px-6 py-2.5 md:py-3 btn-olive-primary text-olive-300/85 font-light text-xs md:text-sm tracking-wide rounded transition-all duration-300"
                 >
                   VIEW PROFILE
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 h-3.5 md:h-4 w-3.5 md:w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
 
                 <a
                   href="mailto:rijusmit2004@gmail.com"
-                  className="inline-flex items-center px-6 py-3 btn-olive-secondary text-olive-400/75 font-light text-sm tracking-wide rounded transition-all duration-300"
+                  className="inline-flex items-center px-5 md:px-6 py-2.5 md:py-3 btn-olive-secondary text-olive-400/75 font-light text-xs md:text-sm tracking-wide rounded transition-all duration-300"
                 >
                   CONTACT
                 </a>
@@ -174,17 +174,17 @@ export default function HomePage() {
         </section>
 
         {/* Technologies Section */}
-        <section className="pb-16 px-6">
+        <section className="pb-12 md:pb-16 px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-8 md:mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-thin text-navy-300/80 mb-3 tracking-wide">TECH STACK</h2>
-              <div className="w-16 h-px bg-olive-500/30"></div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-thin text-navy-300/80 mb-2 md:mb-3 tracking-wide">TECH STACK</h2>
+              <div className="w-12 md:w-16 h-px bg-olive-500/30"></div>
             </motion.div>
 
             <TechStack />
