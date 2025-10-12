@@ -109,8 +109,8 @@ body {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(156, 163, 114, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(156, 163, 114, 0.15) 1px, transparent 1px);
+    linear-gradient(rgba(91, 124, 153, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 124, 153, 0.2) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
