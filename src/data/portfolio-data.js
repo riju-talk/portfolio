@@ -6,7 +6,7 @@
 export const personalInfo = {
   name: "Rijusmit Biswas",
   title: "Software & ML Engineer",
-  subtitle: "Full Stack Development",
+  subtitle: "Software Development Engineer DevOps & MLOps Enthusiast",
   location: {
     country: "India",
     city: "New Delhi",

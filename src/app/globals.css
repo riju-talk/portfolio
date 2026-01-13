@@ -5,12 +5,24 @@ html {
   font-weight: 300;
   letter-spacing: 0.02em;
   background-color: #020617;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   background: #020617;
   min-height: 100vh;
   font-weight: 300;
+  overscroll-behavior: none;
+}
+
+/* Mobile-optimized touch targets */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+  }
 }
 
 /* Custom scrollbar - minimal design */

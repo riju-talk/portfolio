@@ -53,22 +53,31 @@ export default function LiveBackground() {
         />
       ))}
 
-      {/* Minimal floating elements with refined colors */}
-      <motion.div
-        animate={floatControls}
-        className="absolute top-1/4 left-1/5 w-2 h-2 rounded-sm"
-        style={{ background: 'rgba(91, 124, 153, 0.15)' }}
-      />
-      <motion.div
-        animate={floatControls}
-        className="absolute top-2/3 right-1/4 w-3 h-3 border rounded-sm rotate-45"
-        style={{ borderColor: 'rgba(156, 163, 114, 0.18)' }}
-      />
-      <motion.div
-        animate={floatControls}
-        className="absolute bottom-1/3 left-2/3 w-2 h-2"
-        style={{ background: 'rgba(121, 150, 179, 0.12)' }}
-      />
+      {/* Minimal floating elements replaced with accessible SVG icons */}
+      <motion.div animate={floatControls} className="absolute top-1/4 left-1/5 w-6 h-6">
+        <svg viewBox="0 0 24 24" aria-hidden="true" className="w-full h-full">
+          <title>Subtle circle accent</title>
+          <circle cx="12" cy="12" r="10" fill="rgba(91,124,153,0.12)" />
+        </svg>
+      </motion.div>
+
+      <motion.div animate={floatControls} className="absolute top-2/3 right-1/4 w-6 h-6">
+        <svg viewBox="0 0 64 64" aria-hidden="true" className="w-full h-full">
+          <title>Subtle cube accent</title>
+          <g fill="none" stroke="rgba(156,163,114,0.18)" strokeWidth="1.5">
+            <polygon points="32,6 56,18 56,42 32,54 8,42 8,18" fill="rgba(28,76,63,0.04)" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M32 6 L32 54" stroke="rgba(156,163,114,0.12)" />
+            <path d="M8 18 L32 30 L56 18" stroke="rgba(156,163,114,0.14)" />
+          </g>
+        </svg>
+      </motion.div>
+
+      <motion.div animate={floatControls} className="absolute bottom-1/3 left-2/3 w-4 h-4">
+        <svg viewBox="0 0 12 12" aria-hidden="true" className="w-full h-full">
+          <title>Small accent</title>
+          <rect x="1" y="1" width="10" height="10" rx="1" fill="rgba(121,150,179,0.12)" />
+        </svg>
+      </motion.div>
     </div>
   );
 }

@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '480px',
+      },
       colors: {
         glass: {
           blue: "#60a5fa",

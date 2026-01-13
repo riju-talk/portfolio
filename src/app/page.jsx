@@ -17,16 +17,13 @@ const fadeIn = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="max-w-6xl mx-auto px-4 lg:px-0 py-10 md:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
+    <div className="min-h-screen bg-teal-950 text-emerald-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4 sm:gap-6">
           {/* Sidebar */}
-          <aside className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden">
-            <div className="p-6 border-b border-white/5">
+          <aside className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden">
+            <div className="p-4 sm:p-6 lg:p-8 border-b border-white/5">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden border border-white/10 bg-slate-800/70">
-                  <Image src="/logo.png" alt="Profile" width={96} height={96} className="w-full h-full object-cover" />
-                </div>
                 <div>
                   <p className="text-sm uppercase tracking-[0.2em] text-white/70">{personalInfo.title}</p>
                   <h1 className="text-xl font-semibold text-white">{personalInfo.name}</h1>
@@ -35,7 +32,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="p-6 space-y-5 border-b border-white/5">
+            <div className="p-8 space-y-6 border-b border-white/5">
               <div className="flex items-center justify-between text-sm text-white/70">
                 <span className="text-white/50">Residence:</span>
                 <span>{personalInfo.location.country}</span>
@@ -50,19 +47,19 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="p-6 border-b border-white/5">
-              <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-4">Languages</p>
-              <div className="grid grid-cols-3 gap-3">
+            <div className="p-4 sm:p-6 lg:p-8 border-b border-white/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-3 sm:mb-4">Languages</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                 {languages.map((lang) => (
-                  <div key={lang.label} className="relative h-16 rounded-lg bg-slate-800/70 border border-white/5 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-white/5 rounded-lg" style={{ clipPath: `inset(${100 - lang.value}% 0 0 0)` }} />
+                  <div key={lang.label} className="relative h-14 sm:h-16 rounded-lg bg-teal-950 border border-cyan-500/10 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-emerald-400/20 rounded-lg" style={{ clipPath: `inset(${100 - lang.value}% 0 0 0)` }} />
                     <span className="relative text-xs text-white/80">{lang.label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="p-6 space-y-4 border-b border-white/5">
+            <div className="p-8 space-y-6 border-b border-white/5">
               <p className="text-xs uppercase tracking-[0.2em] text-white/60">Skills</p>
               <div className="space-y-3">
                 {skills.map((skill) => (
@@ -71,88 +68,86 @@ export default function HomePage() {
                       <span>{skill.label}</span>
                       <span>{skill.value}%</span>
                     </div>
-                    <div className="h-2 rounded-full bg-slate-800">
-                      <div className="h-2 rounded-full bg-white" style={{ width: `${skill.value}%` }} />
+                    <div className="h-2 rounded-full bg-teal-950">
+                      <div className="h-2 rounded-full bg-emerald-400" style={{ width: `${skill.value}%` }} />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="p-6 space-y-3 border-b border-white/5">
+            <div className="p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4 border-b border-white/5">
               <p className="text-xs uppercase tracking-[0.2em] text-white/60">Tooling</p>
               <ul className="space-y-2 text-sm text-white/70">
                 {toolkit.map((item) => (
                   <li key={item} className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-white/60" />
+                    <span className="h-1 w-1 rounded-full bg-cyan-400" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <button className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-white/20 text-sm text-white hover:bg-white/5 transition">
+              <button className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-cyan-500/30 text-sm text-cyan-300 hover:bg-cyan-500/10 transition">
                 <Download className="h-4 w-4" />
                 Download CV
               </button>
             </div>
 
-            <div className="p-6 flex flex-col gap-4 text-sm text-white/70">
+            <div className="p-4 sm:p-6 lg:p-8 flex flex-col gap-3 sm:gap-4 lg:gap-5 text-xs sm:text-sm text-white/70">
               <div className="flex items-center gap-2"><Mail className="h-4 w-4" /> {personalInfo.contact.email}</div>
               <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> {personalInfo.contact.phone}</div>
               <div className="flex items-center gap-2"><MapPin className="h-4 w-4" /> {personalInfo.location.city}, {personalInfo.location.country}</div>
-              <div className="flex gap-3 pt-2 text-white/50">
-                <a href={personalInfo.contact.github} target="_blank" rel="noreferrer" className="hover:text-white"><Github className="h-4 w-4" /></a>
-                <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-white"><Linkedin className="h-4 w-4" /></a>
+              <div className="flex gap-3 pt-2 text-cyan-400/70">
+                <a href={personalInfo.contact.github} target="_blank" rel="noreferrer" className="hover:text-cyan-300"><Github className="h-4 w-4" /></a>
+                <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-cyan-300"><Linkedin className="h-4 w-4" /></a>
               </div>
             </div>
           </aside>
 
           {/* Main Content */}
           <main className="space-y-6">
-            <nav className="flex items-center justify-end gap-6 text-xs uppercase tracking-[0.2em] text-white/60">
-              <Link href="/">Home</Link>
-              <Link href="/about" className="text-white">About</Link>
+            <nav className="flex items-center justify-end gap-4 sm:gap-6 text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-cyan-300/60">
+              <Link href="/" className="hover:text-cyan-300">Home</Link>
+              <Link href="/about" className="text-emerald-300 hover:text-emerald-200">About</Link>
             </nav>
 
-            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 items-center">
+            <motion.section {...fadeIn} className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl p-4 sm:p-6 lg:p-8">
+              <div className="grid grid-cols-1 gap-4 sm:gap-6 items-center">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.25em] text-white/60 mb-2">Welcome to My Portfolio</p>
-                  <h2 className="text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">{personalInfo.tagline}</h2>
-                  <Link href="/about" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-white text-slate-900 font-semibold text-sm tracking-wide hover:bg-slate-100 transition">
+                  <p className="text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white/60 mb-2">Welcome to My Portfolio</p>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">{personalInfo.tagline}</h2>
+                  <Link href="/about" className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-md bg-emerald-400 text-teal-950 font-semibold text-sm tracking-wide hover:bg-emerald-300 transition touch-manipulation">
                     Explore More
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="relative h-48 rounded-lg bg-slate-800/70 border border-white/10 flex items-center justify-center text-white/50 text-sm">
-                  Banner placeholder
-                </div>
+
               </div>
             </motion.section>
 
-            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-semibold text-white">Tech Stack</h3>
-                <div className="h-px flex-1 ml-4 bg-white/10" />
+            <motion.section {...fadeIn} className="bg-teal-900/70 rounded-xl border border-cyan-500/10 shadow-2xl p-4 sm:p-6 lg:p-8">
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-emerald-100">Tech Stack</h3>
+                <div className="h-px flex-1 ml-3 sm:ml-4 bg-cyan-500/20" />
               </div>
               <TechStack />
             </motion.section>
 
-            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-semibold text-white">Featured Projects</h3>
-                <div className="h-px flex-1 ml-4 bg-white/10" />
+            <motion.section {...fadeIn} className="bg-teal-900/70 rounded-xl border border-cyan-500/10 shadow-2xl p-4 sm:p-6 lg:p-8">
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-emerald-100">Featured Projects</h3>
+                <div className="h-px flex-1 ml-3 sm:ml-4 bg-cyan-500/20" />
               </div>
               <div className="grid grid-cols-1 gap-4">
                 {projects.map((project, index) => (
                   <ProjectCard key={project.title} project={project} index={index} />
                 ))}
               </div>
-              <div className="mt-6 text-center">
+              <div className="mt-4 sm:mt-6 text-center">
                 <a
                   href={personalInfo.contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-white/20 text-sm text-white hover:bg-white/5 transition"
+                  className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-md border border-cyan-500/30 text-sm text-cyan-300 hover:bg-cyan-500/10 transition touch-manipulation"
                 >
                   <Github className="h-4 w-4" />
                   View All Projects

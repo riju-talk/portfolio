@@ -8,12 +8,13 @@ export const metadata = {
   title: "Rijusmit Biswas - DevOps & MLOps ",
   description:
     "DevOps & MLOps Engineer building scalable, intelligent infrastructure. Specializing in cloud automation, ML pipelines, and full-stack solutions.",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes",
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-900 text-white`}>{children}</body>
+      <body className={`${inter.className} bg-teal-950 text-white`}>{children}</body>
     </html>
   )
 }
