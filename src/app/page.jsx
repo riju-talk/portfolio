@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { ArrowRight, Download, Github, Mail, MapPin, Phone, Linkedin } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -9,24 +8,17 @@ import ProjectCard from "./(components)/Repo/Repo"
 import ScrollToTop from "./(components)/ScrollToTop/ScrollToTop"
 import { personalInfo, languages, skills, toolkit, projects, stats } from "@/data/portfolio-data"
 
-const fadeIn = {
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.7 },
-}
-
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-teal-950 text-emerald-100">
+    <div className="min-h-screen bg-teal-950 text-emerald-100 page-enter">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4 sm:gap-6">
           {/* Sidebar */}
-          <aside className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden">
+          <aside className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden sidebar-enter">
             <div className="p-4 sm:p-6 lg:p-8 border-b border-white/5">
               <div className="flex items-center gap-4">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.2em] text-white/70">{personalInfo.title}</p>
-                  <h1 className="text-xl font-semibold text-white">{personalInfo.name}</h1>
+                <div className="gap-8">
+                  <h1 className="text-2xl font-semibold text-white my-2">{personalInfo.name}</h1>
                   <p className="text-xs text-white/60">{personalInfo.subtitle}</p>
                 </div>
               </div>
@@ -104,16 +96,16 @@ export default function HomePage() {
           </aside>
 
           {/* Main Content */}
-          <main className="space-y-6">
+          <main className="space-y-6 main-enter">
             <nav className="flex items-center justify-end gap-4 sm:gap-6 text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-cyan-300/60">
-              <Link href="/" className="hover:text-cyan-300">Home</Link>
-              <Link href="/about" className="text-emerald-300 hover:text-emerald-200">About</Link>
+              <Link href="/" className="hover:text-cyan-300 transition">Home</Link>
+              <Link href="/about" className="text-emerald-300 hover:text-emerald-200 transition">About</Link>
             </nav>
 
-            <motion.section {...fadeIn} className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl p-4 sm:p-6 lg:p-8">
+            <section className="section-enter bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl p-4 sm:p-6 lg:p-8">
               <div className="grid grid-cols-1 gap-4 sm:gap-6 items-center">
                 <div>
-                  <p className="text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white/60 mb-2">Welcome to My Portfolio</p>
+                  <p className="text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white/60 mb-2">Hello There,</p>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">{personalInfo.tagline}</h2>
                   <Link href="/about" className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-md bg-emerald-400 text-teal-950 font-semibold text-sm tracking-wide hover:bg-emerald-300 transition touch-manipulation">
                     Explore More
@@ -122,20 +114,20 @@ export default function HomePage() {
                 </div>
 
               </div>
-            </motion.section>
+            </section>
 
-            <motion.section {...fadeIn} className="bg-teal-900/70 rounded-xl border border-cyan-500/10 shadow-2xl p-4 sm:p-6 lg:p-8">
+            <section className="section-enter bg-teal-950/90 rounded-xl border border-cyan-500/20 shadow-2xl p-4 sm:p-6 lg:p-8">
               <div className="flex items-center justify-between mb-4 sm:mb-6">
-                <h3 className="text-xl sm:text-2xl font-semibold text-emerald-100">Tech Stack</h3>
-                <div className="h-px flex-1 ml-3 sm:ml-4 bg-cyan-500/20" />
+                <h3 className="text-xl sm:text-2xl font-semibold text-white">Tech Stack</h3>
+                <div className="h-px flex-1 ml-3 sm:ml-4 bg-cyan-500/30" />
               </div>
               <TechStack />
-            </motion.section>
+            </section>
 
-            <motion.section {...fadeIn} className="bg-teal-900/70 rounded-xl border border-cyan-500/10 shadow-2xl p-4 sm:p-6 lg:p-8">
+            <section className="section-enter bg-teal-950/90 rounded-xl border border-cyan-500/20 shadow-2xl p-4 sm:p-6 lg:p-8">
               <div className="flex items-center justify-between mb-4 sm:mb-6">
-                <h3 className="text-xl sm:text-2xl font-semibold text-emerald-100">Featured Projects</h3>
-                <div className="h-px flex-1 ml-3 sm:ml-4 bg-cyan-500/20" />
+                <h3 className="text-xl sm:text-2xl font-semibold text-white">Featured Projects</h3>
+                <div className="h-px flex-1 ml-3 sm:ml-4 bg-cyan-500/30" />
               </div>
               <div className="grid grid-cols-1 gap-4">
                 {projects.map((project, index) => (
@@ -153,7 +145,7 @@ export default function HomePage() {
                   View All Projects
                 </a>
               </div>
-            </motion.section>
+            </section>
           </main>
         </div>
       </div>

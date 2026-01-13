@@ -14,6 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="view-transition" content="same-origin" />
+      </head>
       <body className={`${inter.className} bg-teal-950 text-white`}>{children}</body>
     </html>
   )

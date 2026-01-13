@@ -4,18 +4,74 @@ html {
   scroll-behavior: smooth;
   font-weight: 300;
   letter-spacing: 0.02em;
-  background-color: #020617;
+  background-color: #0f3730;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
+/* Enable smooth view transitions */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: smoothFadeOut;
+}
+
+::view-transition-new(root) {
+  animation-name: smoothFadeIn;
+}
+
+@keyframes smoothFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+@keyframes smoothFadeIn {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
-  background: #020617;
+  background: #0f3730;
   min-height: 100vh;
   font-weight: 300;
   overscroll-behavior: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Prevent layout shift and flicker during navigation */
+main {
+  contain: layout style;
+  will-change: contents;
+}
+
+/* Smooth transitions for all links */
+a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  transition: color 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Mobile-optimized touch targets */
@@ -122,4 +178,102 @@ body {
     0 0 40px rgba(156, 163, 114, 0.05),
     inset 0 1px 0 rgba(156, 163, 114, 0.12),
     inset 0 -1px 0 rgba(91, 124, 153, 0.08);
+}
+
+/* Page entrance animation */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth page transition wrapper */
+.page-transition {
+  animation: pageTransition 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sidebar staggered entrance animation */
+@keyframes sidebarSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Main content staggered entrance animation */
+@keyframes mainSlide {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Section stagger entrance */
+@keyframes sectionEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply page entrance animation */
+.page-enter {
+  animation: pageEnter 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Apply sidebar animation */
+.sidebar-enter {
+  animation: sidebarSlide 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Apply main content animation */
+.main-enter {
+  animation: mainSlide 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+/* Section stagger animation */
+.section-enter {
+  animation: sectionEnter 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Individual section timing */
+.section-enter:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.section-enter:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.section-enter:nth-child(3) {
+  animation-delay: 0.4s;
 }

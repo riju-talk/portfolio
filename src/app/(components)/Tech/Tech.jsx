@@ -18,9 +18,9 @@ export default function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="bg-teal-900/60 border border-emerald-500/10 rounded-lg p-3 sm:p-4 transition-all duration-300 hover:border-emerald-400/30 touch-manipulation"
+              className="bg-teal-950/80 border border-emerald-500/20 rounded-lg p-3 sm:p-4 transition-all duration-300 hover:border-emerald-400/40 touch-manipulation"
             >
-              <h3 className="text-emerald-300/75 font-light text-xs tracking-widest mb-3 sm:mb-4 text-center border-b border-emerald-500/20 pb-2 sm:pb-3 uppercase">
+              <h3 className="text-emerald-200 font-light text-xs tracking-widest mb-3 sm:mb-4 text-center border-b border-emerald-500/30 pb-2 sm:pb-3 uppercase">
                 {category}
               </h3>
               <div className="space-y-1.5 sm:space-y-2">
@@ -33,7 +33,7 @@ export default function TechStack() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.05 }}
                       viewport={{ once: true }}
-                      className="flex items-center gap-2 sm:gap-2.5 p-1 sm:p-1.5 rounded bg-teal-800/30 hover:bg-teal-800/50 transition-all duration-300 group touch-manipulation"
+                      className="flex items-center gap-2 sm:gap-2.5 p-1 sm:p-1.5 rounded bg-teal-900/60 hover:bg-teal-900/80 transition-all duration-300 group touch-manipulation"
                     >
                       <div className="w-4 h-4 relative flex-shrink-0">
                         <Image
@@ -44,7 +44,7 @@ export default function TechStack() {
                           className="transition-opacity duration-300"
                         />
                       </div>
-                      <span className="text-emerald-300/70 text-xs group-hover:text-emerald-200 transition-colors duration-300 font-light">
+                      <span className="text-emerald-100/90 text-xs group-hover:text-white transition-colors duration-300 font-light">
                         {tech.name}
                       </span>
                     </motion.div>

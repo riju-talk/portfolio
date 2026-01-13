@@ -1,37 +1,26 @@
 
 "use client"
 
-import { motion } from "framer-motion"
 import { ArrowLeft, Download, MapPin, Calendar, Github, Linkedin, Mail, Phone } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import ScrollToTop from "../(components)/ScrollToTop/ScrollToTop"
 import { personalInfo, experience, languages, skills, toolkit } from "@/data/portfolio-data"
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8 },
-}
-
-const fadeIn = {
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.7 },
-}
-
 export default function AboutPage() {
+  const router = useRouter()
+
   return (
-    <div className="min-h-screen bg-teal-950 text-emerald-100">
+    <div className="min-h-screen bg-teal-950 text-emerald-100 page-enter">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4 sm:gap-6">
           {/* Sidebar */}
-          <aside className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden">
+          <aside className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden sidebar-enter">
             <div className="p-4 sm:p-6 lg:p-8 border-b border-white/5">
               <div className="flex items-center gap-4">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.2em] text-white/70">{personalInfo.title}</p>
-                  <h1 className="text-xl font-semibold text-white">{personalInfo.name}</h1>
+                  <h1 className="text-xl font-semibold text-white my-2">{personalInfo.name}</h1>
                   <p className="text-xs text-white/60">{personalInfo.subtitle}</p>
                 </div>
               </div>
@@ -109,20 +98,23 @@ export default function AboutPage() {
           </aside>
 
           {/* Main Content */}
-          <main className="space-y-6">
+          <main className="space-y-6 main-enter">
             <nav className="flex items-center justify-between text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-cyan-300/60">
-              <Link href="/" className="inline-flex items-center hover:text-cyan-300 transition touch-manipulation">
+              <button 
+                onClick={() => router.back()} 
+                className="inline-flex items-center hover:text-cyan-300 transition touch-manipulation cursor-pointer"
+              >
                 <ArrowLeft className="mr-2 h-3 w-3" />
                 Back
-              </Link>
+              </button>
               <div className="flex gap-6">
-                <Link href="/" className="hover:text-cyan-300">Home</Link>
-                <Link href="/about" className="text-emerald-300">About</Link>
+                <Link href="/" className="hover:text-cyan-300 transition">Home</Link>
+                <Link href="/about" className="text-emerald-300 transition">About</Link>
               </div>
             </nav>
 
             {/* About Section */}
-            <motion.section {...fadeIn} className="bg-teal-900/70 rounded-xl border border-cyan-500/10 shadow-2xl p-4 sm:p-6 lg:p-8">
+            <section className="section-enter bg-teal-900/70 rounded-xl border border-cyan-500/10 shadow-2xl p-4 sm:p-6 lg:p-8">
               <h2 className="text-2xl sm:text-3xl font-semibold text-emerald-100 mb-4 sm:mb-6">About Me</h2>
               <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-white/70 leading-relaxed">
                 {personalInfo.bio.map((paragraph, index) => (
@@ -139,35 +131,35 @@ export default function AboutPage() {
                   Open to opportunities
                 </div>
               </div>
-            </motion.section>
+            </section>
 
             {/* Experience Section */}
-            <motion.section {...fadeIn} className="bg-teal-900/70 rounded-xl border border-cyan-500/10 shadow-2xl p-4 sm:p-6 lg:p-8">
+            <section className="section-enter bg-teal-950/90 rounded-xl border border-cyan-500/20 shadow-2xl p-4 sm:p-6 lg:p-8">
               <div className="flex items-center justify-between mb-4 sm:mb-6">
-                <h3 className="text-xl sm:text-2xl font-semibold text-emerald-100">Experience</h3>
-                <div className="h-px flex-1 ml-3 sm:ml-4 bg-cyan-500/20" />
+                <h3 className="text-xl sm:text-2xl font-semibold text-white">Experience</h3>
+                <div className="h-px flex-1 ml-3 sm:ml-4 bg-cyan-500/30" />
               </div>
               <div className="space-y-3 sm:space-y-4">
                 {experience.map((job) => (
-                  <div key={job.key} className="rounded-lg bg-teal-950/60 border border-cyan-500/10 p-4 sm:p-5 hover:border-cyan-400/30 transition">
+                  <div key={job.key} className="rounded-lg bg-teal-950/80 border border-emerald-500/20 p-4 sm:p-5 hover:border-emerald-400/40 transition">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2 sm:mb-3">
                       <div>
                         <h4 className="text-sm sm:text-base font-semibold text-white">{job.title}</h4>
-                        <p className="text-xs sm:text-sm text-white/60 mt-1">{job.company}</p>
-                        <p className="text-xs text-white/50 mt-1 italic">{job.name}</p>
+                        <p className="text-xs sm:text-sm text-white/80 mt-1">{job.company}</p>
+                        <p className="text-xs text-white/70 mt-1 italic">{job.name}</p>
                       </div>
-                      <span className="text-xs text-emerald-300/70 bg-teal-950/60 border border-cyan-500/20 px-2 sm:px-3 py-1 rounded mt-2 md:mt-0 inline-block">{job.period}</span>
+                      <span className="text-xs text-emerald-200 bg-teal-900/60 border border-emerald-500/20 px-2 sm:px-3 py-1 rounded mt-2 md:mt-0 inline-block">{job.period}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-white/60 leading-relaxed border-l-2 border-cyan-500/30 pl-3 sm:pl-4">{job.description}</p>
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed border-l-2 border-emerald-500/40 pl-3 sm:pl-4">{job.description}</p>
                   </div>
                 ))}
               </div>
-            </motion.section>
+            </section>
 
             {/* Contact Section */}
-            <motion.section {...fadeIn} className="bg-teal-900/70 rounded-xl border border-cyan-500/10 shadow-2xl p-4 sm:p-6 lg:p-8 text-center">
-              <h3 className="text-xl sm:text-2xl font-semibold text-emerald-100 mb-3 sm:mb-4">Let's Connect</h3>
-              <p className="text-xs sm:text-sm text-white/60 mb-4 sm:mb-6 max-w-2xl mx-auto">
+            <section className="section-enter bg-teal-950/90 rounded-xl border border-cyan-500/20 shadow-2xl p-4 sm:p-6 lg:p-8 text-center">
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4">Let's Connect</h3>
+              <p className="text-xs sm:text-sm text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto">
                 I'm always interested in challenging opportunities in software engineering, machine learning, and DevOps. 
                 Let's discuss how we can collaborate to build innovative solutions.
               </p>
@@ -178,7 +170,7 @@ export default function AboutPage() {
                 <Mail className="h-4 w-4" />
                 Get In Touch
               </a>
-            </motion.section>
+            </section>
           </main>
         </div>
       </div>

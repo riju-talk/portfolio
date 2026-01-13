@@ -11,20 +11,20 @@ export default function ProjectCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="bg-teal-900/60 border border-emerald-500/10 rounded-lg p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:border-emerald-400/30 group touch-manipulation"
+      className="bg-teal-950/80 border border-emerald-500/20 rounded-lg p-4 sm:p-5 lg:p-6 transition-all duration-300 hover:border-emerald-400/40 group touch-manipulation"
     >
       <div className="flex items-start justify-between mb-3 sm:mb-4 gap-2">
-        <h3 className="text-sm sm:text-base font-light text-white/90 group-hover:text-white transition-all duration-300 tracking-wide">
+        <h3 className="text-sm sm:text-base font-light text-white group-hover:text-white transition-all duration-300 tracking-wide">
           {project.title}
         </h3>
         {project.featured && (
-          <span className="px-2 py-0.5 sm:py-1 text-xs bg-emerald-500/10 border border-emerald-500/30 text-emerald-300/90 rounded font-extralight tracking-wide whitespace-nowrap">
+          <span className="px-2 py-0.5 sm:py-1 text-xs bg-emerald-500/20 border border-emerald-500/40 text-emerald-200 rounded font-extralight tracking-wide whitespace-nowrap">
             FEATURED
           </span>
         )}
       </div>
 
-      <p className="text-white/60 mb-4 sm:mb-5 leading-relaxed border-l-2 border-emerald-500/30 pl-3 sm:pl-4 font-extralight text-xs sm:text-sm">
+      <p className="text-white/80 mb-4 sm:mb-5 leading-relaxed border-l-2 border-emerald-500/40 pl-3 sm:pl-4 font-extralight text-xs sm:text-sm">
         {project.description}
       </p>
 
@@ -32,7 +32,7 @@ export default function ProjectCard({ project, index }) {
         {project.tech.map((tech) => (
           <span
             key={tech}
-            className="px-2 py-1 text-xs bg-teal-800/40 border border-emerald-500/10 text-emerald-300/80 rounded font-extralight hover:bg-teal-800/60 transition"
+            className="px-2 py-1 text-xs bg-teal-900/60 border border-emerald-500/20 text-emerald-100 rounded font-extralight hover:bg-teal-900/80 transition"
           >
             {tech}
           </span>
@@ -44,7 +44,7 @@ export default function ProjectCard({ project, index }) {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-emerald-300/70 hover:text-emerald-200 transition-colors duration-300 text-xs sm:text-sm font-light touch-manipulation"
+          className="inline-flex items-center text-emerald-200 hover:text-white transition-colors duration-300 text-xs sm:text-sm font-light touch-manipulation"
         >
           <Github className="mr-2 h-4 w-4" />
           CODE
