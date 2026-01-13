@@ -2,56 +2,14 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { techStack } from "@/data/portfolio-data"
 
 export default function TechStack() {
-  const technologies = [
-    { name: "Python", icon: "/python.svg", category: "Language" },
-    { name: "JavaScript", icon: "/js.svg", category: "Language" },
-    { name: "TypeScript", icon: "/ts.svg", category: "Language" },
-    { name: "React", icon: "/reactjs.svg", category: "Fullstack" },
-    { name: "Next.js", icon: "/nextjs.svg", category: "Fullstack" },
-    { name: "Tailwind CSS", icon: "/tailwindcss.svg", category: "Fullstack" },
-    { name: "R", icon: "/r.svg", category: "Language" },
-    { name: "Go", icon: "/go.svg", category: "Language" },
-    { name: "Java", icon: "/java.svg", category: "Language" },
-    { name: "C++", icon: "/cpp.svg", category: "Language" },
-    { name: "Docker", icon: "/docker.svg", category: "DevOps" },
-    { name: "Kubernetes", icon: "/kubernetes.svg", category: "DevOps" },
-    { name: "PostgreSQL", icon: "/pgsql.svg", category: "Database" },
-    { name: "MongoDB", icon: "/mongo.svg", category: "Database" },
-    { name: "Redis", icon: "/redis.svg", category: "Database" },
-    { name: "PyTorch", icon: "/pytorch.svg", category: "ML/AI" },
-    { name: "TensorFlow", icon: "/tensorflow.svg", category: "ML/AI" },
-    { name: "Flask", icon: "/flask.svg", category: "Fullstack" },
-    { name: "Express", icon: "/express.svg", category: "Fullstack" },
-    { name: "FastAPI", icon: "/fastapi.svg", category: "Fullstack"},
-    { name: "MySQL", icon: "/mysql.svg", category: "Database"},
-    { name: "Firebase", icon: "/firebase.svg", category: "Database"},
-    { name: "Unsloth", icon: "/unsloth.svg", category: "ML/AI"},
-    { name: "OpenCV", icon: "/opencv.svg", category: "ML/AI"},
-    { name: "Huggingface", icon: "/huggingface.svg", category: "ML/AI"},
-    { name: "ElasticSearch", icon: "/elasticsearch.svg", category: "Database"},
-    { name: "Github Actions", icon: "/github.svg", category: "DevOps"},
-    { name: "Git", icon: "/git.svg", category: "DevOps"},
-    { name: "GitLab", icon: "/gitlab.svg", category: "DevOps"},
-    { name: "LangSmith", icon: "/langsmith.svg", category: "ML/AI"},
-    { name: "LangChain", icon: "/langchain.svg", category: "ML/AI"}
-  ]
-
-  const categories = ["Language", "Fullstack", "DevOps", "Database", "ML/AI"]
-
-  const categoryColors = {
-    "Language": "olive",
-    "Fullstack": "olive",
-    "Backend": "olive",
-    "DevOps": "olive",
-    "Database": "olive",
-    "ML/AI": "olive"
-  }
+  const categories = ["Language", "Full Stack", "DevOps", "Database", "ML/AI"]
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
         {categories.map((category, categoryIndex) => {
           return (
             <motion.div
@@ -60,13 +18,13 @@ export default function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="glass-panel rounded p-4 md:p-5 transition-all duration-300"
+              className="bg-slate-800/60 border border-white/5 rounded-lg p-4 transition-all duration-300 hover:border-white/15"
             >
-              <h3 className="text-olive-300/75 font-light text-xs md:text-xs tracking-widest mb-4 md:mb-5 text-center border-b border-olive-500/25 pb-2 md:pb-3 uppercase">
+              <h3 className="text-white/75 font-light text-xs tracking-widest mb-4 text-center border-b border-white/10 pb-3 uppercase">
                 {category}
               </h3>
-              <div className="space-y-2 md:space-y-3">
-                {technologies
+              <div className="space-y-2">
+                {techStack
                   .filter((tech) => tech.category === category)
                   .map((tech, index) => (
                     <motion.div
@@ -75,9 +33,9 @@ export default function TechStack() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.05 }}
                       viewport={{ once: true }}
-                      className="flex items-center gap-2.5 md:gap-3 p-1.5 md:p-2 rounded tech-badge-olive transition-all duration-300 group"
+                      className="flex items-center gap-2.5 p-1.5 rounded bg-slate-700/30 hover:bg-slate-700/50 transition-all duration-300 group"
                     >
-                      <div className="w-4 h-4 md:w-5 md:h-5 relative flex-shrink-0">
+                      <div className="w-4 h-4 relative flex-shrink-0">
                         <Image
                           src={tech.icon}
                           alt={tech.name}
@@ -86,7 +44,7 @@ export default function TechStack() {
                           className="transition-opacity duration-300"
                         />
                       </div>
-                      <span className="text-olive-300/60 text-xs group-hover:text-olive-300/80 transition-colors duration-300 font-light">
+                      <span className="text-white/60 text-xs group-hover:text-white/80 transition-colors duration-300 font-light">
                         {tech.name}
                       </span>
                     </motion.div>

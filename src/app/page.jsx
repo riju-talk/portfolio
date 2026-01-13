@@ -1,274 +1,168 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Github } from "lucide-react"
+import { ArrowRight, Download, Github, Mail, MapPin, Phone, Linkedin } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import TechStack from "./(components)/Tech/Tech"
 import ProjectCard from "./(components)/Repo/Repo"
+import ScrollToTop from "./(components)/ScrollToTop/ScrollToTop"
+import { personalInfo, languages, skills, toolkit, projects, stats } from "@/data/portfolio-data"
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8 },
-}
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+const fadeIn = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.7 },
 }
 
 export default function HomePage() {
-  const projects = [
-    {
-      title: "Multi-Modal Image and Caption based Sarcasm Detection Tool",
-      description:
-        "Built a multi-modal sarcasm detection tool combining image and text analysis. Combined BART Encoders with VIT backbone and extracted image segments. Based on 'Target-Augmented Shared Fusion-based Multimodal Sarcasm Explanation Generation' (Palaash Goel, Dushyant Singh Chauhan, Md Shad Akhtar, 2025).",
-      tech: ["Python", "TensorFlow", "Docker", "Kubernetes", "PostgreSQL"],
-      github: "https://github.com/riju-talk/TURBO",
-      live: "#",
-      featured: true,
-    },
-    {
-      title: "DreamDot - Microservices Social Platform",
-      description:
-        "Scalable creator-first social media platform with microservices architecture. Features content monetization, real-time chat, media sharing, and NFT marketplace powered by Razorpay. Blockchain integration for secure transaction logging.",
-      tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
-      github: "https://github.com/riju-talk/DreamDot",
-      live: "#",
-      featured: true,
-    },
-    {
-      title: "SpanBERT-CRF Question Answering System",
-      description:
-        "State-of-the-art QA system integrating SpanBERT with CRF layers for enhanced span-level prediction. Complete pipeline from data preprocessing to REST API deployment. Fine-tuned on SQuAD v2 for context-aware answer extraction.",
-      tech: ["Python", "PyTorch", "Transformers", "spaCy", "Flask"],
-      github: "https://github.com/riju-talk/SpanBERT-CRF",
-      live: "#",
-      featured: true,
-    }
-  ];
-
   return (
-    <div className="min-h-screen relative overflow-hidden minimal-grid">
-      <div className="relative z-10">
-        {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-navy-400/10">
-          <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4">
-            <div className="flex justify-between items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-xs md:text-sm font-light tracking-wider md:tracking-widest text-navy-300/70"
-              >
-                Rijusmit Biswas
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="flex gap-4 md:gap-8"
-              >
-                <Link href="/" className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-xs md:text-sm font-light tracking-wide">
-                  Home
-                </Link>
-                <Link href="/about" className="text-olive-400/60 hover:text-olive-300/80 transition-colors duration-300 text-xs md:text-sm font-light tracking-wide">
-                  About
-                </Link>
-              </motion.div>
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <div className="max-w-6xl mx-auto px-4 lg:px-0 py-10 md:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
+          {/* Sidebar */}
+          <aside className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden">
+            <div className="p-6 border-b border-white/5">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden border border-white/10 bg-slate-800/70">
+                  <Image src="/logo.png" alt="Profile" width={96} height={96} className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <p className="text-sm uppercase tracking-[0.2em] text-white/70">{personalInfo.title}</p>
+                  <h1 className="text-xl font-semibold text-white">{personalInfo.name}</h1>
+                  <p className="text-xs text-white/60">{personalInfo.subtitle}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </nav>
 
-        {/* Hero Section */}
-        <section className="pt-32 md:pt-40 pb-16 md:pb-24 px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <motion.div variants={staggerContainer} initial="initial" animate="animate" className="max-w-4xl">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 mb-8">
-                <motion.div
-                  variants={fadeInUp}
-                  className="flex-shrink-0 order-1 md:order-2"
-                  style={{
-                    perspective: '1000px',
-                    transformStyle: 'preserve-3d'
-                  }}
-                >
-                  <motion.div
-                    initial={{ rotateY: -15, rotateX: 5, opacity: 0 }}
-                    animate={{ rotateY: 0, rotateX: 0, opacity: 1 }}
-                    transition={{ duration: 1.2, delay: 0.2 }}
-                    whileHover={{
-                      rotateY: 15,
-                      rotateX: -5,
-                      scale: 1.05,
-                      transition: { duration: 0.3 }
-                    }}
-                    style={{
-                      transformStyle: 'preserve-3d',
-                      filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))',
-                    }}
-                    className="relative"
-                  >
-                    <div
-                      className="absolute inset-0 rounded-full opacity-20"
-                      style={{
-                        background: 'linear-gradient(135deg, rgba(110, 142, 92, 0.3), rgba(52, 78, 85, 0.3))',
-                        transform: 'translateZ(-10px)',
-                        filter: 'blur(10px)',
-                      }}
-                    />
-                    <div className="relative z-10 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 rounded-full overflow-hidden border-2 border-gray-400/20">
-                      <Image
-                        src="/logo.png"
-                        alt="Logo"
-                        width={208}
-                        height={208}
-                        className="w-full h-full object-cover"
-                        priority
-                      />
+            <div className="p-6 space-y-5 border-b border-white/5">
+              <div className="flex items-center justify-between text-sm text-white/70">
+                <span className="text-white/50">Residence:</span>
+                <span>{personalInfo.location.country}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm text-white/70">
+                <span className="text-white/50">City:</span>
+                <span>{personalInfo.location.city}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm text-white/70">
+                <span className="text-white/50">Age:</span>
+                <span>{personalInfo.location.age}</span>
+              </div>
+            </div>
+
+            <div className="p-6 border-b border-white/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-4">Languages</p>
+              <div className="grid grid-cols-3 gap-3">
+                {languages.map((lang) => (
+                  <div key={lang.label} className="relative h-16 rounded-lg bg-slate-800/70 border border-white/5 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-white/5 rounded-lg" style={{ clipPath: `inset(${100 - lang.value}% 0 0 0)` }} />
+                    <span className="relative text-xs text-white/80">{lang.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-6 space-y-4 border-b border-white/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60">Skills</p>
+              <div className="space-y-3">
+                {skills.map((skill) => (
+                  <div key={skill.label} className="space-y-1">
+                    <div className="flex justify-between text-xs text-white/60">
+                      <span>{skill.label}</span>
+                      <span>{skill.value}%</span>
                     </div>
-                  </motion.div>
-                </motion.div>
-
-                <motion.div
-                  variants={fadeInUp}
-                  className="flex-1 order-2 md:order-1 text-center md:text-left"
-                >
-                  <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thin text-navy-300/90 mb-6 md:mb-8 leading-tight tracking-tight">
-                    Hello There
-                  </motion.h1>
-                  <motion.div variants={fadeInUp} className="space-y-3 md:space-y-4 mb-8 md:mb-12">
-                    <p className="text-base sm:text-lg font-light text-olive-400/70 tracking-wide">
-                      Machine Learning Developer / Full Stack Engineer / DevOps Specialist
-                    </p>
-                    <p className="text-sm sm:text-base font-extralight text-navy-200/60 leading-relaxed max-w-2xl mx-auto md:mx-0">
-                      Final-year B.Tech student at IIIT-Delhi specializing in Computer Science and Economics.
-                      Building scalable AI-driven applications with expertise in ML, full-stack development, and emerging DevOps/MLOps practices.
-                    </p>
-                  </motion.div>
-                </motion.div>
+                    <div className="h-2 rounded-full bg-slate-800">
+                      <div className="h-2 rounded-full bg-white" style={{ width: `${skill.value}%` }} />
+                    </div>
+                  </div>
+                ))}
               </div>
-
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
-                <Link
-                  href="/about"
-                  className="group inline-flex items-center px-5 md:px-6 py-2.5 md:py-3 btn-olive-primary text-olive-300/85 font-light text-xs md:text-sm tracking-wide rounded transition-all duration-300"
-                >
-                  VIEW PROFILE
-                  <ArrowRight className="ml-2 h-3.5 md:h-4 w-3.5 md:w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-
-                <a
-                  href="mailto:rijusmit2004@gmail.com"
-                  className="inline-flex items-center px-5 md:px-6 py-2.5 md:py-3 btn-olive-secondary text-olive-400/75 font-light text-xs md:text-sm tracking-wide rounded transition-all duration-300"
-                >
-                  CONTACT
-                </a>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Technologies Section */}
-        <section className="pb-12 md:pb-16 px-4 md:px-6">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mb-8 md:mb-12"
-            >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-thin text-navy-300/80 mb-2 md:mb-3 tracking-wide">TECH STACK</h2>
-              <div className="w-12 md:w-16 h-px bg-olive-500/30"></div>
-            </motion.div>
-
-            <TechStack />
-          </div>
-        </section>
-
-        {/* Projects Section */}
-        <section className="py-24 px-6">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-thin text-navy-300/80 mb-3 tracking-wide">FEATURED PROJECTS</h2>
-              <div className="w-16 h-px bg-olive-500/30"></div>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projects.map((project, index) => (
-                <ProjectCard key={project.title} project={project} index={index} />
-              ))}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center mt-16"
-            >
-              <a
-                href="https://github.com/riju-talk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 btn-olive-secondary text-olive-400/75 font-light text-sm tracking-wide rounded transition-all duration-300"
-              >
-                <Github className="mr-2 h-4 w-4" />
-                VIEW REPOSITORY
-              </a>
-            </motion.div>
-          </div>
-        </section>
+            <div className="p-6 space-y-3 border-b border-white/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60">Tooling</p>
+              <ul className="space-y-2 text-sm text-white/70">
+                {toolkit.map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-white/60" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-white/20 text-sm text-white hover:bg-white/5 transition">
+                <Download className="h-4 w-4" />
+                Download CV
+              </button>
+            </div>
 
-        {/* Footer */}
-        <footer className="py-16 px-6 border-navy-400/10">
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-navy-300/50 mb-6 font-extralight text-sm tracking-wide">Building intelligent systems for the future</p>
-              <div className="flex justify-center gap-8">
+            <div className="p-6 flex flex-col gap-4 text-sm text-white/70">
+              <div className="flex items-center gap-2"><Mail className="h-4 w-4" /> {personalInfo.contact.email}</div>
+              <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> {personalInfo.contact.phone}</div>
+              <div className="flex items-center gap-2"><MapPin className="h-4 w-4" /> {personalInfo.location.city}, {personalInfo.location.country}</div>
+              <div className="flex gap-3 pt-2 text-white/50">
+                <a href={personalInfo.contact.github} target="_blank" rel="noreferrer" className="hover:text-white"><Github className="h-4 w-4" /></a>
+                <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-white"><Linkedin className="h-4 w-4" /></a>
+              </div>
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <main className="space-y-6">
+            <nav className="flex items-center justify-end gap-6 text-xs uppercase tracking-[0.2em] text-white/60">
+              <Link href="/">Home</Link>
+              <Link href="/about" className="text-white">About</Link>
+            </nav>
+
+            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 items-center">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.25em] text-white/60 mb-2">Welcome to My Portfolio</p>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-white leading-tight mb-4">{personalInfo.tagline}</h2>
+                  <Link href="/about" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-white text-slate-900 font-semibold text-sm tracking-wide hover:bg-slate-100 transition">
+                    Explore More
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+                <div className="relative h-48 rounded-lg bg-slate-800/70 border border-white/10 flex items-center justify-center text-white/50 text-sm">
+                  Banner placeholder
+                </div>
+              </div>
+            </motion.section>
+
+            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-semibold text-white">Tech Stack</h3>
+                <div className="h-px flex-1 ml-4 bg-white/10" />
+              </div>
+              <TechStack />
+            </motion.section>
+
+            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-semibold text-white">Featured Projects</h3>
+                <div className="h-px flex-1 ml-4 bg-white/10" />
+              </div>
+              <div className="grid grid-cols-1 gap-4">
+                {projects.map((project, index) => (
+                  <ProjectCard key={project.title} project={project} index={index} />
+                ))}
+              </div>
+              <div className="mt-6 text-center">
                 <a
-                  href="https://github.com/riju-talk"
+                  href={personalInfo.contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-white/20 text-sm text-white hover:bg-white/5 transition"
                 >
-                  GITHUB
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/rijusmit-biswas/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-olive-400/60 hover:text-olive-300/80 transition-colors duration-300 text-sm font-light tracking-wide"
-                >
-                  LINKEDIN
-                </a>
-                <a
-                  href="mailto:rijusmit2004@gmail.com"
-                  className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide"
-                >
-                  EMAIL
+                  <Github className="h-4 w-4" />
+                  View All Projects
                 </a>
               </div>
-            </motion.div>
-          </div>
-        </footer>
+            </motion.section>
+          </main>
+        </div>
       </div>
+      <ScrollToTop />
     </div>
   )
 }

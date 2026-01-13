@@ -2,8 +2,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Download, MapPin, Calendar } from "lucide-react"
+import { ArrowLeft, Download, MapPin, Calendar, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import ScrollToTop from "../(components)/ScrollToTop/ScrollToTop"
+import { personalInfo, experience, languages, skills, toolkit } from "@/data/portfolio-data"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -11,200 +14,176 @@ const fadeInUp = {
   transition: { duration: 0.8 },
 }
 
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+const fadeIn = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.7 },
 }
 
 export default function AboutPage() {
-  const experience = [
-    {
-      key: 1,
-      title: "Undergraduate Researcher",
-      company: "MIDAS Lab",
-      name: "Pretraining and Benchmarking Small Language Models (LLMs)",
-      period: "2025",
-      description:
-        "Leading the pretraining and benchmarking of lightweight LLMs optimized for specialized tasks across healthcare, legal, and technical domains. Focused on maximizing performance-to-cost ratio through careful dataset curation, architecture tuning, and efficient training strategies. Evaluating model effectiveness on standard NLP benchmarks with emphasis on minimizing compute requirements while preserving high accuracy.",
-    },
-    {
-      key: 2,
-      title: "Data Science Intern",
-      company: "Complex Systems Lab",
-      name: "Real-Time Data Integration & Interactive Web Visualization",
-      period: "2024",
-      description:
-        "Designed and developed dynamic web applications for real-time complex dataset visualization. Led full-stack development from UI/UX design to backend optimization. Integrated multiple open-source datasets including OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS. Applied ML models for exploratory and spatial data analysis, enabling real-time deployment of insights for data-driven decision-making.",
-    },
-    {
-      key: 3,
-      title: "Research Intern",
-      company: "Computational Social Science (Econometrics) Lab",
-      name: "Ground Work on SICKLE++",
-      period: "2025",
-      description:
-        "Did initial ground work study on SICKLE++ a research to study crop patterns in India using satellite data. Extending the orginal study from Cauvery delta to Andhra Pradesh, Using google earth engine to extract crop patterns and using machine learning to predict crop patterns.",
-    },
-    {
-      key: 4,
-      title: "Open Source Contributor",
-      company: "Meshery, Layer5",
-      name: "Layer5 Documentation and Meshery.io",
-      period: "2025",
-      description:
-        "Contributed to Meshery and Layer5 open-source projects by submitting bug reports, feature requests, editing documentation, and pull requests. Participated in code reviews and provided constructive feedback to improve the codebase.",
-    },
-  ]
-
   return (
-    <div className="min-h-screen relative overflow-hidden minimal-grid">
-      <div className="relative z-10">
-        {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-navy-400/10">
-          <div className="max-w-6xl mx-auto px-6 py-4">
-            <div className="flex justify-between items-center">
-              <Link
-                href="/"
-                className="inline-flex items-center text-olive-400/70 hover:text-olive-300/90 transition-colors duration-300 text-sm font-light tracking-wide"
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" />
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <div className="max-w-6xl mx-auto px-4 lg:px-0 py-10 md:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
+          {/* Sidebar - Same as home page */}
+          <aside className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden">
+            <div className="p-6 border-b border-white/5">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden border border-white/10 bg-slate-800/70">
+                  <Image src="/logo.png" alt="Profile" width={96} height={96} className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <p className="text-sm uppercase tracking-[0.2em] text-white/70">{personalInfo.title}</p>
+                  <h1 className="text-xl font-semibold text-white">{personalInfo.name}</h1>
+                  <p className="text-xs text-white/60">{personalInfo.subtitle}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 space-y-5 border-b border-white/5">
+              <div className="flex items-center justify-between text-sm text-white/70">
+                <span className="text-white/50">Residence:</span>
+                <span>{personalInfo.location.country}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm text-white/70">
+                <span className="text-white/50">City:</span>
+                <span>{personalInfo.location.city}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm text-white/70">
+                <span className="text-white/50">Age:</span>
+                <span>{personalInfo.location.age}</span>
+              </div>
+            </div>
+
+            <div className="p-6 border-b border-white/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-4">Languages</p>
+              <div className="grid grid-cols-3 gap-3">
+                {languages.map((lang) => (
+                  <div key={lang.label} className="relative h-16 rounded-lg bg-slate-800/70 border border-white/5 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-white/5 rounded-lg" style={{ clipPath: `inset(${100 - lang.value}% 0 0 0)` }} />
+                    <span className="relative text-xs text-white/80">{lang.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-6 space-y-4 border-b border-white/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60">Skills</p>
+              <div className="space-y-3">
+                {skills.map((skill) => (
+                  <div key={skill.label} className="space-y-1">
+                    <div className="flex justify-between text-xs text-white/60">
+                      <span>{skill.label}</span>
+                      <span>{skill.value}%</span>
+                    </div>
+                    <div className="h-2 rounded-full bg-slate-800">
+                      <div className="h-2 rounded-full bg-white" style={{ width: `${skill.value}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-6 space-y-3 border-b border-white/5">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60">Tooling</p>
+              <ul className="space-y-2 text-sm text-white/70">
+                {toolkit.map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-white/60" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-white/20 text-sm text-white hover:bg-white/5 transition">
+                <Download className="h-4 w-4" />
+                Download CV
+              </button>
+            </div>
+
+            <div className="p-6 flex flex-col gap-4 text-sm text-white/70">
+              <div className="flex items-center gap-2"><Mail className="h-4 w-4" /> {personalInfo.contact.email}</div>
+              <div className="flex gap-3 pt-2 text-white/50">
+                <a href={personalInfo.contact.github} target="_blank" rel="noreferrer" className="hover:text-white"><Github className="h-4 w-4" /></a>
+                <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-white"><Linkedin className="h-4 w-4" /></a>
+              </div>
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <main className="space-y-6">
+            <nav className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-white/60">
+              <Link href="/" className="inline-flex items-center hover:text-white transition">
+                <ArrowLeft className="mr-2 h-3 w-3" />
                 Back
               </Link>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="flex gap-8"
-              >
-                <Link href="/" className="text-navy-300/60 hover:text-navy-200/80 transition-colors duration-300 text-sm font-light tracking-wide">
-                  Home
-                </Link>
-                <Link href="/about" className="text-olive-400/80 text-sm font-light tracking-wide">
-                  About
-                </Link>
-              </motion.div>
-            </div>
-          </div>
-        </nav>
+              <div className="flex gap-6">
+                <Link href="/">Home</Link>
+                <Link href="/about" className="text-white">About</Link>
+              </div>
+            </nav>
 
-        {/* About Hero */}
-        <section className="pt-40 pb-24 px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div variants={staggerContainer} initial="initial" animate="animate">
-              <motion.h1 variants={fadeInUp} className="text-4xl md:text-6xl font-thin text-navy-300/90 mb-10 tracking-tight">
-                About Me
-              </motion.h1>
-
-              <motion.div variants={fadeInUp} className="text-base font-extralight text-navy-200/60 leading-relaxed space-y-6">
-                <p className="border-l border-olive-500/20 pl-6">
-                  I'm a passionate engineer with deep interest in building intelligent, end-to-end systems that combine full-stack development, DevOps, and AI. 
-                  My journey began with curiosity about system architectures—from web app backends to neural network internals. 
-                  That curiosity evolved into hands-on pursuit of creating meaningful, scalable applications where NLP, deep learning, and system design converge to solve real-world problems.
-                </p>
-                <p className="border-l border-navy-400/20 pl-6">
-                  With solid foundations in traditional software engineering and modern cloud-native architectures, I focus on building robust systems that bridge development and production. 
-                  My experience spans containerized microservices, real-time APIs, and scalable ML deployment pipelines. 
-                  I've developed intelligent applications, integrated ML models, and automated CI/CD workflows to end-to-end ML lifecycles—always optimizing for performance, simplicity, and reproducibility.
-                </p>
-                <p className="border-l border-olive-500/20 pl-6">
-                  I'm particularly passionate about developing applications that bring cutting-edge research to life—making NLP and deep learning models accessible and efficient. 
-                  From orchestrating deployments to scaling training jobs and fine-tuning transformers, I work across the stack to deliver production-ready solutions. 
-                  I believe great engineering combines empathy, creativity, and clarity—and I'm excited to push boundaries at the intersection of DevOps, AI, and modern software development.
-                </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mt-10">
-                <div className="flex items-center text-olive-400/60 tech-badge-olive px-4 py-2 rounded text-sm font-light">
+            {/* About Section */}
+            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8">
+              <h2 className="text-3xl font-semibold text-white mb-6">About Me</h2>
+              <div className="space-y-4 text-sm text-white/70 leading-relaxed">
+                {personalInfo.bio.map((paragraph, index) => (
+                  <p key={index} className="border-l-2 border-white/10 pl-4">{paragraph}</p>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-3 mt-6">
+                <div className="flex items-center text-white/60 bg-slate-800/60 px-4 py-2 rounded text-sm">
                   <MapPin className="mr-2 h-4 w-4" />
-                  New Delhi, India
+                  {personalInfo.location.city}, {personalInfo.location.country}
                 </div>
-                <div className="flex items-center text-olive-400/60 tech-badge-olive px-4 py-2 rounded text-sm font-light">
+                <div className="flex items-center text-white/60 bg-slate-800/60 px-4 py-2 rounded text-sm">
                   <Calendar className="mr-2 h-4 w-4" />
                   Open to opportunities
                 </div>
-              </motion.div>
+              </div>
+            </motion.section>
 
-              <motion.div variants={fadeInUp} className="mt-10">
-                <a
-                  href="https://drive.google.com/file/d/1Q-4PVssFwFDguvYlFkkRol9v7J5QM93x/view?usp=sharing"
-                  download
-                  className="inline-flex items-center px-6 py-3 btn-olive-primary text-olive-300/85 font-light text-sm tracking-wide rounded transition-all duration-300"
-                >
-                  <Download className="mr-2 h-4 w-4" />
-                  DOWNLOAD RESUME
-                </a>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Experience Section */}
-        <section className="py-24 px-6">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-thin text-navy-300/80 mb-3 tracking-wide">EXPERIENCE</h2>
-              <div className="w-16 h-px bg-olive-500/30"></div>
-            </motion.div>
-
-            <div className="space-y-6">
-              {experience.map((job, index) => (
-                <motion.div
-                  key={job.key}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="glass-panel rounded p-8 transition-all duration-300"
-                >
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                    <div>
-                      <h3 className="text-lg font-light text-navy-300/80 mb-1 tracking-wide">{job.title}</h3>
-                      <p className="text-olive-400/70 font-extralight text-sm">{job.company}</p>
-                      <p className="text-navy-200/50 text-sm mt-2 font-extralight italic">{job.name}</p>
+            {/* Experience Section */}
+            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-semibold text-white">Experience</h3>
+                <div className="h-px flex-1 ml-4 bg-white/10" />
+              </div>
+              <div className="space-y-4">
+                {experience.map((job) => (
+                  <div key={job.key} className="rounded-lg bg-slate-800/60 border border-white/5 p-5 hover:border-white/15 transition">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                      <div>
+                        <h4 className="text-base font-semibold text-white">{job.title}</h4>
+                        <p className="text-sm text-white/60 mt-1">{job.company}</p>
+                        <p className="text-xs text-white/50 mt-1 italic">{job.name}</p>
+                      </div>
+                      <span className="text-xs text-white/50 bg-slate-700/50 px-3 py-1 rounded mt-2 md:mt-0">{job.period}</span>
                     </div>
-                    <span className="text-olive-400/70 text-xs mt-2 md:mt-0 tech-badge-olive px-3 py-1 rounded font-light">{job.period}</span>
+                    <p className="text-sm text-white/60 leading-relaxed border-l-2 border-white/10 pl-4">{job.description}</p>
                   </div>
-                  <p className="text-navy-200/60 leading-relaxed border-l border-olive-500/15 pl-6 font-extralight text-sm">{job.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+                ))}
+              </div>
+            </motion.section>
 
-        {/* Contact Section */}
-        <section className="py-24 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-thin text-navy-300/80 mb-6 tracking-wide">CONNECT</h2>
-              <p className="text-base font-extralight text-navy-200/60 mb-10 max-w-2xl mx-auto leading-relaxed glass-panel p-6 rounded">
-                I'm always interested in challenging DevOps and MLOps opportunities. Whether you need infrastructure
-                automation, ML pipeline development, or scalable system architecture, let's discuss how we can collaborate
-                to build the future.
+            {/* Contact Section */}
+            <motion.section {...fadeIn} className="bg-slate-900/70 rounded-xl border border-white/5 shadow-2xl p-6 lg:p-8 text-center">
+              <h3 className="text-2xl font-semibold text-white mb-4">Let's Connect</h3>
+              <p className="text-sm text-white/60 mb-6 max-w-2xl mx-auto">
+                I'm always interested in challenging opportunities in software engineering, machine learning, and DevOps. 
+                Let's discuss how we can collaborate to build innovative solutions.
               </p>
               <a
-                href="mailto:rijusmit2004@gmail.com"
-                className="inline-flex items-center px-8 py-4 btn-olive-primary text-olive-300/85 font-light text-sm tracking-wide rounded transition-all duration-300"
+                href={`mailto:${personalInfo.contact.email}`}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-white text-slate-900 font-semibold text-sm tracking-wide hover:bg-slate-100 transition"
               >
-                SEND MESSAGE
+                <Mail className="h-4 w-4" />
+                Get In Touch
               </a>
-            </motion.div>
-          </div>
-        </section>
+            </motion.section>
+          </main>
+        </div>
       </div>
+      <ScrollToTop />
     </div>
   )
 }
