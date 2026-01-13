@@ -104,11 +104,19 @@ export const projects = [
     featured: true
   },
   {
-    title: "SpanBERT-CRF Question Answering System",
-    description: "State-of-the-art QA system integrating SpanBERT with CRF layers for enhanced span-level prediction. Complete pipeline from data preprocessing to REST API deployment. Fine-tuned on SQuAD v2 for context-aware answer extraction.",
-    tech: ["Python", "PyTorch", "Transformers", "spaCy", "Flask"],
-    github: "https://github.com/riju-talk/SpanBERT-CRF",
-    live: "#",
+    title: "Entropy - A Semi-Anonymous Doubt Solving Platform with 4 AI Study Agents",
+    description: "Entropy — A study ecospace and agentic study assistant: Built in Python with FastAPI, I developed async microservice endpoints that generate personalized quizzes and study content using pluggable LLM adapters (primary groq_service with LangChain-compatible fallback)",
+    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
+    github: "https://github.com/riju-talk/Entropy-Community-Forum",
+    live: "https://entropy-community-forum.vercel.app/",
+    featured: true
+  },
+  {
+    title: "Quench++ - Extending existing quench benchmark for LLM  capalibities in reasoning indic context",
+    description: "Quench++ extends Indic reasoning benchmarks with bias injection, three new languages, and structured Chain-of-Thought cause-effect generation in Boolean logic. It enables robust evaluation of LLM trustworthiness, reasoning, and bias mitigation through reproducible Jupyter notebooks.",
+    tech: ["Huggingface","Python","Pytorch","Unsloth"],
+    github: "https://github.com/riju-talk/Quench-plus-plus",
+    live: "",
     featured: true
   }
 ]
