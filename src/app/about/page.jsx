@@ -2,7 +2,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Download, MapPin, Calendar, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowLeft, Download, MapPin, Calendar, Github, Linkedin, Mail, Phone } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import ScrollToTop from "../(components)/ScrollToTop/ScrollToTop"
@@ -25,9 +25,9 @@ export default function AboutPage() {
     <div className="min-h-screen bg-teal-950 text-emerald-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4 sm:gap-6">
-          {/* Sidebar - Same as home page */}
+          {/* Sidebar */}
           <aside className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden">
-            <div className="p-4 sm:p-6 border-b border-white/5">
+            <div className="p-4 sm:p-6 lg:p-8 border-b border-white/5">
               <div className="flex items-center gap-4">
                 <div>
                   <p className="text-sm uppercase tracking-[0.2em] text-white/70">{personalInfo.title}</p>
@@ -37,7 +37,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="p-4 sm:p-6 space-y-4 sm:space-y-5 border-b border-white/5">
+            <div className="p-8 space-y-6 border-b border-white/5">
               <div className="flex items-center justify-between text-sm text-white/70">
                 <span className="text-white/50">Residence:</span>
                 <span>{personalInfo.location.country}</span>
@@ -52,7 +52,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="p-4 sm:p-6 border-b border-white/5">
+            <div className="p-4 sm:p-6 lg:p-8 border-b border-white/5">
               <p className="text-xs uppercase tracking-[0.2em] text-white/60 mb-3 sm:mb-4">Languages</p>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                 {languages.map((lang) => (
@@ -64,7 +64,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="p-4 sm:p-6 space-y-3 sm:space-y-4 border-b border-white/5">
+            <div className="p-8 space-y-6 border-b border-white/5">
               <p className="text-xs uppercase tracking-[0.2em] text-white/60">Skills</p>
               <div className="space-y-3">
                 {skills.map((skill) => (
@@ -81,7 +81,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="p-4 sm:p-6 space-y-3 border-b border-white/5">
+            <div className="p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4 border-b border-white/5">
               <p className="text-xs uppercase tracking-[0.2em] text-white/60">Tooling</p>
               <ul className="space-y-2 text-sm text-white/70">
                 {toolkit.map((item) => (
@@ -97,8 +97,10 @@ export default function AboutPage() {
               </button>
             </div>
 
-            <div className="p-4 sm:p-6 flex flex-col gap-3 sm:gap-4 text-xs sm:text-sm text-white/70">
+            <div className="p-4 sm:p-6 lg:p-8 flex flex-col gap-3 sm:gap-4 lg:gap-5 text-xs sm:text-sm text-white/70">
               <div className="flex items-center gap-2"><Mail className="h-4 w-4" /> {personalInfo.contact.email}</div>
+              <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> {personalInfo.contact.phone}</div>
+              <div className="flex items-center gap-2"><MapPin className="h-4 w-4" /> {personalInfo.location.city}, {personalInfo.location.country}</div>
               <div className="flex gap-3 pt-2 text-cyan-400/70">
                 <a href={personalInfo.contact.github} target="_blank" rel="noreferrer" className="hover:text-cyan-300"><Github className="h-4 w-4" /></a>
                 <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer" className="hover:text-cyan-300"><Linkedin className="h-4 w-4" /></a>
