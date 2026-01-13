@@ -165,7 +165,7 @@ export default function AboutPage() {
               </p>
               <a
                 href={`mailto:${personalInfo.contact.email}`}
-                className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-md bg-emerald-400 text-teal-950 font-semibold text-sm tracking-wide hover:bg-emerald-300 transition touch-manipulation"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-md border border-cyan-500/30 text-sm text-cyan-300 hover:bg-cyan-500/10 transition touch-manipulation"
               >
                 <Mail className="h-4 w-4" />
                 Get In Touch

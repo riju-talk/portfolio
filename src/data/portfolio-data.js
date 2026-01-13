@@ -116,14 +116,38 @@ export const projects = [
 export const experience = [
   {
     key: 1,
-    title: "Undergraduate Researcher",
-    company: "MIDAS Lab, IIIT-Delhi",
-    name: "Pretraining and Benchmarking Small Language Models",
-    period: "2025",
-    description: "Leading the pretraining and benchmarking of lightweight LLMs optimized for specialized tasks across healthcare, legal, and technical domains. Focused on maximizing performance-to-cost ratio through careful dataset curation, architecture tuning, and efficient training strategies."
+    title: "Product Developer",
+    company: "Student Council, IIIT-Delhi (Student Affairs, IIITD)",
+    name: "Student Council Web Eco-System",
+    period: "2025-2026",
+    description: [
+      "Revamped the IIIT-Delhi Student Council website, enhancing user experience and accessibility.",
+      "Developed a comprehensive Grievances Portal to streamline student issue reporting and resolution.",
+      "Built an Event Proposal Tracking system for efficient event management and approval workflows.",
+      "Designed and implemented a unified database to maintain complete records of all Student Council members and ongoing events.",
+      "Created a centralized system to manage detailed information for 30+ active student clubs.",
+      "Led the end-to-end design, development, and deployment of the entire web ecosystem.",
+      "Visit the live site: https://studentcouncil.iiitd.edu.in",
+    ].join("\n")
   },
   {
     key: 2,
+    title: "Undergraduate Researcher",
+    company: "MIDAS Lab, IIIT-Delhi",
+    name: "Pretraining and Benchmarking Small Language Models",
+    period: "2025-2026",
+    description: "Leading the pretraining and benchmarking of lightweight LLMs optimized for specialized tasks across healthcare, legal, and technical domains. Focused on maximizing performance-to-cost ratio through careful dataset curation, architecture tuning, and efficient training strategies."
+  },
+  {
+    key: 3,
+    title: "Research Intern",
+    company: "Computational Social Science Lab, IIIT-Delhi",
+    name: "Ground Work on SICKLE++",
+    period: "2025-2026",
+    description: "Did initial ground work study on SICKLE++ research to study crop patterns in India using satellite data. Extending the original study from Cauvery delta to Andhra Pradesh, using Google Earth Engine to extract crop patterns and ML to predict crop yields."
+  },
+  {
+    key: 4,
     title: "Data Science Intern",
     company: "Complex Systems Lab, IIIT-Delhi",
     name: "Real-Time Data Integration & Interactive Web Visualization",
@@ -131,21 +155,13 @@ export const experience = [
     description: "Designed and developed dynamic web applications for real-time complex dataset visualization. Led full-stack development from UI/UX design to backend optimization. Integrated multiple open-source datasets including OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS."
   },
   {
-    key: 3,
-    title: "Research Intern",
-    company: "Computational Social Science Lab, IIIT-Delhi",
-    name: "Ground Work on SICKLE++",
-    period: "2024",
-    description: "Did initial ground work study on SICKLE++ research to study crop patterns in India using satellite data. Extending the original study from Cauvery delta to Andhra Pradesh, using Google Earth Engine to extract crop patterns and ML to predict crop yields."
-  },
-  {
-    key: 4,
+    key: 5,
     title: "Open Source Contributor",
     company: "Meshery, Layer5",
     name: "Layer5 Documentation and Meshery.io",
-    period: "2024",
+    period: "2025",
     description: "Contributed to Meshery and Layer5 open-source projects by submitting bug reports, feature requests, editing documentation, and pull requests. Participated in code reviews and provided constructive feedback to improve the codebase."
-  }
+  },
 ]
 
 export const stats = [

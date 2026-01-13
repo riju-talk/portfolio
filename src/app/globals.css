@@ -87,16 +87,16 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(20, 27, 36, 0.4);
+  background: rgba(20, 36, 32, 0.4);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(96, 165, 250, 0.2);
+  background: rgba(41, 176, 255, 0.2);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(96, 165, 250, 0.3);
+  background: rgba(41, 255, 237, 0.3);
 }
 
 /* Selection - subtle blue */
