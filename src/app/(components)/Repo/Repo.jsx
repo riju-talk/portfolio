@@ -39,7 +39,7 @@ export default function ProjectCard({ project, index }) {
         ))}
       </div>
 
-      <div className="flex gap-4 sm:gap-5">
+      <div className="flex gap-4 sm:gap-5 flex-wrap">
         <a
           href={project.github}
           target="_blank"
@@ -49,18 +49,44 @@ export default function ProjectCard({ project, index }) {
           <Github className="mr-2 h-4 w-4" />
           CODE
         </a>
-        <div className="relative group/tooltip">
-          <button
-            disabled
-            className="inline-flex items-center text-white/30 cursor-not-allowed text-xs sm:text-sm font-light"
-          >
-            <ExternalLink className="mr-2 h-4 w-4" />
-            DEMO
-          </button>
-          <div className="absolute bottom-full left-0 mb-2 px-3 py-2 bg-teal-900 border border-emerald-500/20 text-emerald-200/70 text-xs rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10 font-extralight">
-            Deployment in progress
-          </div>
-        </div>
+        {project.type === "Web App" ? (
+          project.live && project.live !== "" ? (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-emerald-200 hover:text-white transition-colors duration-300 text-xs sm:text-sm font-light touch-manipulation"
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              LIVE
+            </a>
+          ) : (
+            <div className="relative group/tooltip">
+              <button
+                disabled
+                className="inline-flex items-center text-white/30 cursor-not-allowed text-xs sm:text-sm font-light"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                LIVE
+              </button>
+              <div className="absolute bottom-full left-0 mb-2 px-3 py-2 bg-teal-900 border border-emerald-500/20 text-emerald-200/70 text-xs rounded opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10 font-extralight">
+                Deployment in progress
+              </div>
+            </div>
+          )
+        ) : (
+          project.resource && project.resource !== "" && (
+            <a
+              href={project.resource}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-emerald-200 hover:text-white transition-colors duration-300 text-xs sm:text-sm font-light touch-manipulation"
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              RESOURCE
+            </a>
+          )
+        )}
       </div>
     </motion.div>
   );

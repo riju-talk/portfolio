@@ -92,7 +92,9 @@ export const projects = [
     description: "Built a multi-modal sarcasm detection tool combining image and text analysis. Combined BART Encoders with VIT backbone and extracted image segments. Based on 'Target-Augmented Shared Fusion-based Multimodal Sarcasm Explanation Generation'.",
     tech: ["Python", "TensorFlow", "BART", "Vision Transformers", "Docker"],
     github: "https://github.com/riju-talk/TURBO",
-    live: "#",
+    live: "",
+    type: "ML",
+    resource: "https://github.com/riju-talk/TURBO/blob/main/README.md",
     featured: true
   },
   {
@@ -100,7 +102,9 @@ export const projects = [
     description: "Scalable creator-first social media platform with microservices architecture. Features content monetization, real-time chat, media sharing, and NFT marketplace powered by Razorpay. Blockchain integration for secure transaction logging.",
     tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
     github: "https://github.com/riju-talk/DreamDot",
-    live: "#",
+    live: "",
+    type: "Web App",
+    resource: "",
     featured: true
   },
   {
@@ -109,6 +113,8 @@ export const projects = [
     tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
     github: "https://github.com/riju-talk/Entropy-Community-Forum",
     live: "https://entropy-community-forum.vercel.app/",
+    type: "Web App",
+    resource: "https://entropy-community-forum.vercel.app/",
     featured: true
   },
   {
@@ -117,6 +123,8 @@ export const projects = [
     tech: ["Huggingface","Python","Pytorch","Unsloth"],
     github: "https://github.com/riju-talk/Quench-plus-plus",
     live: "",
+    type: "Data Science",
+    resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
     featured: true
   }
 ]
