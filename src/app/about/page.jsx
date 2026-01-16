@@ -1,28 +1,56 @@
 
 "use client"
 
-import { ArrowLeft, Download, MapPin, Calendar, Github, Linkedin, Mail, Phone } from "lucide-react"
+import { ArrowLeft, Download, MapPin, Calendar, Github, Linkedin, Mail, Phone, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { useState } from "react"
 import Image from "next/image"
 import ScrollToTop from "../(components)/ScrollToTop/ScrollToTop"
 import { personalInfo, experience, languages, skills, toolkit } from "@/data/portfolio-data"
 
 export default function AboutPage() {
   const router = useRouter()
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-teal-950 text-emerald-100 page-enter">
+      {/* Mobile Sidebar Toggle Button - Floating Action Button */}
+      <button
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        className="lg:hidden fixed top-6 left-6 z-[9999] bg-emerald-400 text-teal-950 p-3 rounded-full shadow-2xl hover:bg-emerald-300 transition-all duration-300 hover:scale-110"
+        style={{ position: 'fixed' }}
+        aria-label="Toggle sidebar"
+      >
+        {sidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </button>
+
+      {/* Mobile Sidebar Backdrop */}
+      {sidebarOpen && (
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 z-[9998]"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4 sm:gap-6">
           {/* Sidebar */}
-          <aside className="bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden sidebar-enter">
+          <aside className={`bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden sidebar-enter lg:relative ${sidebarOpen ? 'fixed inset-0 z-[9998] lg:z-auto lg:block' : 'hidden lg:block'}`}>
             <div className="p-4 sm:p-6 lg:p-8 border-b border-white/5">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center justify-between">
                 <div>
                   <h1 className="text-xl font-semibold text-white my-2">{personalInfo.name}</h1>
                   <p className="text-xs text-white/60">{personalInfo.subtitle}</p>
                 </div>
+                <button
+                  onClick={() => setSidebarOpen(false)}
+                  className="lg:hidden text-white/60 hover:text-white transition-colors"
+                  aria-label="Close sidebar"
+                >
+                  <X className="h-6 w-6" />
+                </button>
               </div>
             </div>
 
