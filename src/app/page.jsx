@@ -17,8 +17,7 @@ export default function HomePage() {
       {/* Mobile Sidebar Toggle Button - Floating Action Button */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="lg:hidden fixed top-6 left-6 z-[9999] bg-emerald-400 text-teal-950 p-3 rounded-full shadow-2xl hover:bg-emerald-300 transition-all duration-300 hover:scale-110"
-        style={{ position: 'fixed' }}
+        className="fixed bottom-6 left-6 z-[9999] bg-emerald-400 text-teal-950 p-3 rounded-full shadow-2xl hover:bg-emerald-300 transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center lg:hidden"
         aria-label="Toggle sidebar"
       >
         {sidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -33,9 +32,9 @@ export default function HomePage() {
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4 sm:gap-6 items-start">
           {/* Sidebar */}
-          <aside className={`bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden sidebar-enter lg:relative ${sidebarOpen ? 'fixed inset-0 z-[9998] lg:z-auto lg:block' : 'hidden lg:block'}`}>
+          <aside className={`bg-emerald-900/70 rounded-xl border border-white/5 shadow-2xl flex flex-col overflow-hidden sidebar-enter lg:sticky lg:top-8 ${sidebarOpen ? 'fixed inset-0 z-[9998] lg:z-auto lg:block' : 'hidden lg:block'}`}>
             <div className="p-4 sm:p-6 lg:p-8 border-b border-white/5">
               <div className="flex items-center justify-between">
                 <div className="gap-8">
