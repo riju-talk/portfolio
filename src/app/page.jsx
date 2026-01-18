@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* Mobile Sidebar Toggle Button - Floating Action Button */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="fixed bottom-6 left-6 z-[9999] bg-emerald-400 text-teal-950 p-3 rounded-full shadow-2xl hover:bg-emerald-300 transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center lg:hidden"
+        className="!fixed bottom-6 left-6 z-[99999] bg-emerald-400 text-teal-950 p-3 rounded-full shadow-2xl hover:bg-emerald-300 transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center lg:hidden"
         aria-label="Toggle sidebar"
       >
         {sidebarOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
