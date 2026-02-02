@@ -5,8 +5,8 @@
 
 export const personalInfo = {
   name: "Rijusmit Biswas",
-  title: "Software & ML Engineer",
-  subtitle: "Software Development Engineer DevOps & MLOps Enthusiast",
+  title: "ML Engineer, Data Scientist & Developer",
+  subtitle: "Bridging Research & Production | LLMs, Systems & Data",
   location: {
     country: "India",
     city: "New Delhi",
@@ -18,11 +18,11 @@ export const personalInfo = {
     github: "https://github.com/riju-talk",
     linkedin: "https://www.linkedin.com/in/rijusmit-biswas/"
   },
-  tagline: "Building intelligent systems at the intersection of software engineering and machine learning",
+  tagline: "Building scalable intelligent systems at the intersection of Research and Engineering.",
   bio: [
-    "I'm a passionate engineer with deep interest in building intelligent, end-to-end systems that combine full-stack development, DevOps, and AI. My journey began with curiosity about system architectures—from web app backends to neural network internals.",
-    "With solid foundations in traditional software engineering and modern cloud-native architectures, I focus on building robust systems that bridge development and production. My experience spans containerized microservices, real-time APIs, and scalable ML deployment pipelines.",
-    "I'm particularly passionate about developing applications that bring cutting-edge research to life—making NLP and deep learning models accessible and efficient. From orchestrating deployments to scaling training jobs and fine-tuning transformers, I work across the stack to deliver production-ready solutions."
+    "I am an ML Engineer and Data Scientist with a strong foundation in full-stack development. My work bridges the gap between cutting-edge research and production-grade systems.",
+    "On the research front, I specialize in LLM finetuning, alignment (DPO, GRPO), and low-resource language modeling. I have worked on pretraining small language models and developing benchmarks for reasoning capabilities.",
+    "As a developer, I architect scalable backends and interactive frontends, ensuring that complex AI models are accessible and usable. From microservices to distributed training pipelines, I build the infrastructure that powers intelligence."
   ]
 }
 
@@ -32,18 +32,35 @@ export const languages = [
 ]
 
 export const skills = [
-  { label: "Python", value: 95 },
-  { label: "JavaScript", value: 88 },
-  { label: "Go", value: 80 },
-  { label: "React/Next.js", value: 90 },
-  { label: "Docker/K8s", value: 85 }
+  { label: "Python/PyTorch", value: 95 },
+  { label: "LLMs (Finetuning/RAG)", value: 92 },
+  { label: "Data Science", value: 88 },
+  { label: "Backend (Go/FastAPI)", value: 85 },
+  { label: "Full Stack (React/Next)", value: 85 }
 ]
 
 export const toolkit = [
-  "PyTorch, TensorFlow",
-  "Docker, Kubernetes",
-  "Git, GitHub Actions",
-  "PostgreSQL, MongoDB"
+  "PyTorch, Transformers, Unsloth",
+  "GRPO, DPO, RLHF",
+  "Docker, Kubernetes, AWS",
+  "Next.js, FastAPI, PostgreSQL"
+]
+
+export const research = [
+  {
+    title: "Pretraining and Benchmarking Small Language Models",
+    description: "Leading the pretraining and benchmarking of lightweight LLMs optimized for specialized tasks across healthcare, legal, and technical domains. Focused on maximizing performance-to-cost ratio through careful dataset curation, architecture tuning, and efficient training strategies.",
+    role: "Lead Researcher",
+    year: "2025",
+    link: ""
+  },
+  {
+    title: "SICKLE++: Satellite Imagery for Crop Knowledge Learning",
+    description: "Extended the SICKLE research to study crop patterns in Andhra Pradesh using Google Earth Engine and ML. Analyzing multi-spectral satellite data to predict crop yields and patterns, contributing to precision agriculture.",
+    role: "Research Intern",
+    year: "2025",
+    link: ""
+  }
 ]
 
 export const techStack = [
@@ -52,79 +69,62 @@ export const techStack = [
   { name: "JavaScript", icon: "/js.svg", category: "Language" },
   { name: "TypeScript", icon: "/ts.svg", category: "Language" },
   { name: "Go", icon: "/go.svg", category: "Language" },
-  { name: "Java", icon: "/java.svg", category: "Language" },
-  { name: "C++", icon: "/cpp.svg", category: "Language" },
-  { name: "R", icon: "/r.svg", category: "Language" },
-  
-  // Full Stack
-  { name: "React", icon: "/reactjs.svg", category: "Full Stack" },
-  { name: "Next.js", icon: "/nextjs.svg", category: "Full Stack" },
-  { name: "Flask", icon: "/flask.svg", category: "Full Stack" },
-  { name: "Express", icon: "/express.svg", category: "Full Stack" },
-  { name: "FastAPI", icon: "/fastapi.svg", category: "Full Stack" },
-  
-  // DevOps
-  { name: "Docker", icon: "/docker.svg", category: "DevOps" },
-  { name: "Kubernetes", icon: "/kubernetes.svg", category: "DevOps" },
-  { name: "GitHub Actions", icon: "/github.svg", category: "DevOps" },
-  { name: "Git", icon: "/git.svg", category: "DevOps" },
-  { name: "GitLab", icon: "/gitlab.svg", category: "DevOps" },
-  
-  // Database
-  { name: "PostgreSQL", icon: "/pgsql.svg", category: "Database" },
-  { name: "MongoDB", icon: "/mongo.svg", category: "Database" },
-  { name: "Redis", icon: "/redis.svg", category: "Database" },
-  { name: "MySQL", icon: "/mysql.svg", category: "Database" },
-  { name: "Firebase", icon: "/firebase.svg", category: "Database" },
-  { name: "ElasticSearch", icon: "/elasticsearch.svg", category: "Database" },
-  
+  { name: "SQL", icon: "/pgsql.svg", category: "Language" },
+
   // ML/AI
   { name: "PyTorch", icon: "/pytorch.svg", category: "ML/AI" },
   { name: "TensorFlow", icon: "/tensorflow.svg", category: "ML/AI" },
   { name: "Huggingface", icon: "/huggingface.svg", category: "ML/AI" },
-  { name: "OpenCV", icon: "/opencv.svg", category: "ML/AI" },
-  { name: "Unsloth", icon: "/unsloth.svg", category: "ML/AI" }
+  { name: "Unsloth", icon: "/unsloth.svg", category: "ML/AI" },
+  { name: "LangChain", icon: "/python.svg", category: "ML/AI" }, // Placeholder icon if needed
+
+  // Full Stack & DevOps
+  { name: "Next.js", icon: "/nextjs.svg", category: "Full Stack" },
+  { name: "FastAPI", icon: "/fastapi.svg", category: "Backend" },
+  { name: "Docker", icon: "/docker.svg", category: "DevOps" },
+  { name: "Kubernetes", icon: "/kubernetes.svg", category: "DevOps" },
+  { name: "PostgreSQL", icon: "/pgsql.svg", category: "Database" },
 ]
 
 export const projects = [
   {
-    title: "Multi-Modal Sarcasm Detection Tool",
-    description: "Built a multi-modal sarcasm detection tool combining image and text analysis. Combined BART Encoders with VIT backbone and extracted image segments. Based on 'Target-Augmented Shared Fusion-based Multimodal Sarcasm Explanation Generation'.",
-    tech: ["Python", "TensorFlow", "BART", "Vision Transformers", "Docker"],
-    github: "https://github.com/riju-talk/TURBO",
+    title: "Quench++ - LLM Reasoning Benchmark",
+    description: "Extends Indic reasoning benchmarks with bias injection and Chain-of-Thought cause-effect generation. Enables robust evaluation of LLM trustworthiness and reasoning capabilities (GRPO/DPO styles).",
+    tech: ["Python", "HuggingFace", "PyTorch", "Unsloth"],
+    github: "https://github.com/riju-talk/Quench-plus-plus",
     live: "",
-    type: "ML",
-    resource: "https://github.com/riju-talk/TURBO/blob/main/README.md",
+    type: "Research Code",
+    resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
     featured: true
   },
   {
-    title: "DreamDot - Microservices Social Platform",
-    description: "Scalable creator-first social media platform with microservices architecture. Features content monetization, real-time chat, media sharing, and NFT marketplace powered by Razorpay. Blockchain integration for secure transaction logging.",
-    tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
-    github: "https://github.com/riju-talk/DreamDot",
-    live: "",
+    title: "Entropy - Agentic Study Assistant",
+    description: "A semi-anonymous doubt solving platform featuring 4 AI study agents. Built with scalable async microservices, generating personalized content using pluggable LLM adapters.",
+    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres"],
+    github: "https://github.com/riju-talk/Entropy-Community-Forum",
+    live: "https://entropy-community-forum.vercel.app/",
     type: "Web App",
     resource: "",
     featured: true
   },
   {
-    title: "Entropy - A Semi-Anonymous Doubt Solving Platform with 4 AI Study Agents",
-    description: "Entropy — A study ecospace and agentic study assistant: Built in Python with FastAPI, I developed async microservice endpoints that generate personalized quizzes and study content using pluggable LLM adapters (primary groq_service with LangChain-compatible fallback)",
-    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
-    github: "https://github.com/riju-talk/Entropy-Community-Forum",
-    live: "https://entropy-community-forum.vercel.app/",
-    type: "Web App",
-    resource: "https://entropy-community-forum.vercel.app/",
+    title: "Multi-Modal Sarcasm Detection",
+    description: "Novel architecture combining BART Encoders with ViT backbones to detect sarcasm in image-text pairs. Based on 'Target-Augmented Shared Fusion-based Multimodal Sarcasm Explanation Generation'.",
+    tech: ["Python", "TensorFlow", "BART", "ViT"],
+    github: "https://github.com/riju-talk/TURBO",
+    live: "",
+    type: "ML Research",
+    resource: "https://github.com/riju-talk/TURBO/blob/main/README.md",
     featured: true
   },
   {
-    title: "Quench++ - Extending existing quench benchmark for LLM  capalibities in reasoning indic context",
-    description: "Quench++ extends Indic reasoning benchmarks with bias injection, three new languages, and structured Chain-of-Thought cause-effect generation in Boolean logic. It enables robust evaluation of LLM trustworthiness, reasoning, and bias mitigation through reproducible Jupyter notebooks.",
-    tech: ["Huggingface","Python","Pytorch","Unsloth"],
-    github: "https://github.com/riju-talk/Quench-plus-plus",
+    title: "DreamDot - Microservices Platform",
+    description: "Scalable creator economy platform with microservices. Features real-time chat, NFT marketplace, and secure transactions. Demonstrates complex backend orchestration.",
+    tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
+    github: "https://github.com/riju-talk/DreamDot",
     live: "",
-    type: "Data Science",
-    resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
+    type: "Web App",
+    resource: "",
     featured: true
   }
 ]
