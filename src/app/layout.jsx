@@ -1,13 +1,22 @@
 import React from "react"
-import { Inter } from "next/font/google"
+import { Instrument_Serif, Manrope } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const display = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: "400",
+})
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata = {
-  title: "Rijusmit Biswas - DevOps & MLOps ",
+  title: "Rijusmit Biswas — Software & ML Engineer",
   description:
-    "DevOps & MLOps Engineer building scalable, intelligent infrastructure. Specializing in cloud automation, ML pipelines, and full-stack solutions.",
+    "Rijusmit Biswas is a software and machine learning engineer building the layer between research prototypes and dependable developer systems.",
 }
 
 export const viewport = {
@@ -23,7 +32,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="view-transition" content="same-origin" />
       </head>
-      <body className={`${inter.className} bg-teal-950 text-white`}>{children}</body>
+      <body className={`${display.variable} ${manrope.variable}`}>{children}</body>
     </html>
   )
 }

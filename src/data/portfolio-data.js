@@ -1,188 +1,229 @@
-// ============================================
-// PORTFOLIO DATA CONFIGURATION
-// ============================================
-// Edit this file to update your portfolio content easily
+// Editable portfolio content. Keep project and profile links current as work changes.
 
 export const personalInfo = {
   name: "Rijusmit Biswas",
-  title: "ML Engineer, Data Scientist & Developer",
-  subtitle: "Bridging Research & Production | LLMs, Systems & Data",
+  title: "Software & Machine Learning Engineer",
+  subtitle: "Research prototypes, dependable developer systems",
   location: {
     country: "India",
     city: "New Delhi",
-    age: "21"
+    age: "21",
   },
   contact: {
     email: "rijusmit2004@gmail.com",
     phone: "+91 8929693930",
     github: "https://github.com/riju-talk",
-    linkedin: "https://www.linkedin.com/in/rijusmit-biswas/"
+    linkedin: "https://www.linkedin.com/in/rijusmit-biswas/",
   },
-  tagline: "Building scalable intelligent systems at the intersection of Research and Engineering.",
+  tagline: "I build the layer where ambitious research becomes useful software.",
   bio: [
-    "I am an ML Engineer and Data Scientist with a strong foundation in full-stack development. My work bridges the gap between cutting-edge research and production-grade systems.",
-    "On the research front, I specialize in LLM finetuning, alignment (DPO, GRPO), and low-resource language modeling. I have worked on pretraining small language models and developing benchmarks for reasoning capabilities.",
-    "As a developer, I architect scalable backends and interactive frontends, ensuring that complex AI models are accessible and usable. From microservices to distributed training pipelines, I build the infrastructure that powers intelligence."
-  ]
-}
+    "I am a software and machine learning engineer working between research prototypes and the dependable systems that let people use them. My practice moves from model behavior and dataset design to APIs, interfaces, deployment, and the operational details in between.",
+    "I care about the seam between an idea and its real-world constraint: a model that needs a measurable benchmark, a service that needs a clean failure mode, or a team that needs a system they can understand six months later.",
+    "This notebook collects selected work, research threads, and the tools I reach for when the work has to leave the lab.",
+  ],
+};
 
 export const languages = [
   { label: "English", value: 100 },
   { label: "Hindi", value: 100 },
-]
+];
 
 export const skills = [
-  { label: "Python/PyTorch", value: 95 },
-  { label: "LLMs (Finetuning/RAG)", value: 92 },
-  { label: "Data Science", value: 88 },
-  { label: "Backend (Go/FastAPI)", value: 85 },
-  { label: "Full Stack (React/Next)", value: 85 }
-]
+  { label: "Python", value: 95 },
+  { label: "JavaScript", value: 88 },
+  { label: "Go", value: 80 },
+  { label: "React / Next.js", value: 90 },
+  { label: "Docker / K8s", value: 85 },
+];
 
 export const toolkit = [
-  "PyTorch, Transformers, Unsloth",
-  "GRPO, DPO, RLHF",
-  "Docker, Kubernetes, AWS",
-  "Next.js, FastAPI, PostgreSQL"
-]
-
-export const research = [
-  {
-    title: "Pretraining and Benchmarking Small Language Models",
-    description: "Leading the pretraining and benchmarking of lightweight LLMs optimized for specialized tasks across healthcare, legal, and technical domains. Focused on maximizing performance-to-cost ratio through careful dataset curation, architecture tuning, and efficient training strategies.",
-    role: "Lead Researcher",
-    year: "2025",
-    link: ""
-  },
-  {
-    title: "SICKLE++: Satellite Imagery for Crop Knowledge Learning",
-    description: "Extended the SICKLE research to study crop patterns in Andhra Pradesh using Google Earth Engine and ML. Analyzing multi-spectral satellite data to predict crop yields and patterns, contributing to precision agriculture.",
-    role: "Research Intern",
-    year: "2025",
-    link: ""
-  }
-]
+  "PyTorch, TensorFlow",
+  "Docker, Kubernetes",
+  "Git, GitHub Actions",
+  "PostgreSQL, MongoDB",
+];
 
 export const techStack = [
-  // Languages
   { name: "Python", icon: "/python.svg", category: "Language" },
   { name: "JavaScript", icon: "/js.svg", category: "Language" },
   { name: "TypeScript", icon: "/ts.svg", category: "Language" },
   { name: "Go", icon: "/go.svg", category: "Language" },
-  { name: "SQL", icon: "/pgsql.svg", category: "Language" },
-
-  // ML/AI
-  { name: "PyTorch", icon: "/pytorch.svg", category: "ML/AI" },
-  { name: "TensorFlow", icon: "/tensorflow.svg", category: "ML/AI" },
-  { name: "Huggingface", icon: "/huggingface.svg", category: "ML/AI" },
-  { name: "Unsloth", icon: "/unsloth.svg", category: "ML/AI" },
-  { name: "LangChain", icon: "/python.svg", category: "ML/AI" }, // Placeholder icon if needed
-
-  // Full Stack & DevOps
+  { name: "Java", icon: "/java.svg", category: "Language" },
+  { name: "C++", icon: "/cpp.svg", category: "Language" },
+  { name: "R", icon: "/r.svg", category: "Language" },
+  { name: "React", icon: "/reactjs.svg", category: "Full Stack" },
   { name: "Next.js", icon: "/nextjs.svg", category: "Full Stack" },
-  { name: "FastAPI", icon: "/fastapi.svg", category: "Backend" },
+  { name: "Flask", icon: "/flask.svg", category: "Full Stack" },
+  { name: "Express", icon: "/express.svg", category: "Full Stack" },
+  { name: "FastAPI", icon: "/fastapi.svg", category: "Full Stack" },
   { name: "Docker", icon: "/docker.svg", category: "DevOps" },
   { name: "Kubernetes", icon: "/kubernetes.svg", category: "DevOps" },
+  { name: "GitHub Actions", icon: "/github.svg", category: "DevOps" },
+  { name: "Git", icon: "/git.svg", category: "DevOps" },
+  { name: "GitLab", icon: "/gitlab.svg", category: "DevOps" },
   { name: "PostgreSQL", icon: "/pgsql.svg", category: "Database" },
-]
+  { name: "MongoDB", icon: "/mongo.svg", category: "Database" },
+  { name: "Redis", icon: "/redis.svg", category: "Database" },
+  { name: "MySQL", icon: "/mysql.svg", category: "Database" },
+  { name: "Firebase", icon: "/firebase.svg", category: "Database" },
+  { name: "ElasticSearch", icon: "/elasticsearch.svg", category: "Database" },
+  { name: "PyTorch", icon: "/pytorch.svg", category: "ML / AI" },
+  { name: "TensorFlow", icon: "/tensorflow.svg", category: "ML / AI" },
+  { name: "Hugging Face", icon: "/huggingface.svg", category: "ML / AI" },
+  { name: "OpenCV", icon: "/opencv.svg", category: "ML / AI" },
+  { name: "Unsloth", icon: "/unsloth.svg", category: "ML / AI" },
+];
 
 export const projects = [
   {
-    title: "Quench++ - LLM Reasoning Benchmark",
-    description: "Extends Indic reasoning benchmarks with bias injection and Chain-of-Thought cause-effect generation. Enables robust evaluation of LLM trustworthiness and reasoning capabilities (GRPO/DPO styles).",
-    tech: ["Python", "HuggingFace", "PyTorch", "Unsloth"],
-    github: "https://github.com/riju-talk/Quench-plus-plus",
-    live: "",
-    type: "Research Code",
-    resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
-    featured: true
-  },
-  {
-    title: "Entropy - Agentic Study Assistant",
-    description: "A semi-anonymous doubt solving platform featuring 4 AI study agents. Built with scalable async microservices, generating personalized content using pluggable LLM adapters.",
-    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres"],
-    github: "https://github.com/riju-talk/Entropy-Community-Forum",
-    live: "https://entropy-community-forum.vercel.app/",
-    type: "Web App",
-    resource: "",
-    featured: true
-  },
-  {
-    title: "Multi-Modal Sarcasm Detection",
-    description: "Novel architecture combining BART Encoders with ViT backbones to detect sarcasm in image-text pairs. Based on 'Target-Augmented Shared Fusion-based Multimodal Sarcasm Explanation Generation'.",
-    tech: ["Python", "TensorFlow", "BART", "ViT"],
+    title: "Multi-Modal Sarcasm Detection Tool",
+    description:
+      "A multimodal sarcasm detection tool combining image and text analysis. It combines BART encoders with a ViT backbone and extracts image segments, based on target-augmented shared fusion research.",
+    tech: ["Python", "TensorFlow", "BART", "Vision Transformers", "Docker"],
     github: "https://github.com/riju-talk/TURBO",
     live: "",
-    type: "ML Research",
+    type: "Machine learning",
     resource: "https://github.com/riju-talk/TURBO/blob/main/README.md",
-    featured: true
+    featured: true,
   },
   {
-    title: "DreamDot - Microservices Platform",
-    description: "Scalable creator economy platform with microservices. Features real-time chat, NFT marketplace, and secure transactions. Demonstrates complex backend orchestration.",
+    title: "DreamDot",
+    description:
+      "A creator-first social platform shaped as a set of services: content monetization, real-time chat, media sharing, and an NFT marketplace with Razorpay and blockchain-backed transaction logging.",
     tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
     github: "https://github.com/riju-talk/DreamDot",
     live: "",
-    type: "Web App",
+    type: "Developer systems",
     resource: "",
-    featured: true
-  }
-]
+    featured: true,
+  },
+  {
+    title: "Entropy",
+    description:
+      "A study ecospace and agentic study assistant. Python and FastAPI power asynchronous endpoints for personalized quizzes and study content through pluggable LLM adapters.",
+    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
+    github: "https://github.com/riju-talk/Entropy-Community-Forum",
+    live: "https://entropy-community-forum.vercel.app/",
+    type: "Web application",
+    resource: "https://entropy-community-forum.vercel.app/",
+    featured: true,
+  },
+  {
+    title: "Quench++",
+    description:
+      "An extension of the Quench benchmark for reasoning in Indic contexts, adding bias injection, three languages, and structured cause-effect generation in Boolean logic for reproducible evaluation.",
+    tech: ["Hugging Face", "Python", "PyTorch", "Unsloth"],
+    github: "https://github.com/riju-talk/Quench-plus-plus",
+    live: "",
+    type: "Research tooling",
+    resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
+    featured: true,
+  },
+];
 
 export const experience = [
   {
     key: 1,
     title: "Product Developer",
-    company: "Student Council, IIIT-Delhi (Student Affairs, IIITD)",
-    name: "Student Council Web Eco-System",
-    period: "2025-2026",
-    description: [
-      "Revamped the IIIT-Delhi Student Council website, enhancing user experience and accessibility.",
-      "Developed a comprehensive Grievances Portal to streamline student issue reporting and resolution.",
-      "Built an Event Proposal Tracking system for efficient event management and approval workflows.",
-      "Designed and implemented a unified database to maintain complete records of all Student Council members and ongoing events.",
-      "Created a centralized system to manage detailed information for 30+ active student clubs.",
-      "Led the end-to-end design, development, and deployment of the entire web ecosystem.",
-      "Visit the live site: https://studentcouncil.iiitd.edu.in",
-    ].join("\n")
+    company: "Student Council, IIIT-Delhi",
+    name: "Student Council Web Ecosystem",
+    period: "2025–2026",
+    description:
+      "Revamped the council website and led the end-to-end design, development, and deployment of a web ecosystem spanning grievances, event proposals, member records, and 30+ student clubs. Visit the live site: studentcouncil.iiitd.edu.in",
+    kind: "Product engineering",
+    highlights: [
+      "Revamped the council website and improved the experience for students and administrators.",
+      "Built grievances, event proposal, member records, and club management workflows.",
+      "Led the end-to-end design, development, and deployment of the web ecosystem.",
+    ],
   },
   {
     key: 2,
     title: "Undergraduate Researcher",
     company: "MIDAS Lab, IIIT-Delhi",
     name: "Pretraining and Benchmarking Small Language Models",
-    period: "2025-2026",
-    description: "Leading the pretraining and benchmarking of lightweight LLMs optimized for specialized tasks across healthcare, legal, and technical domains. Focused on maximizing performance-to-cost ratio through careful dataset curation, architecture tuning, and efficient training strategies."
+    period: "2025–2026",
+    description:
+      "Leading the pretraining and benchmarking of lightweight language models for specialized healthcare, legal, and technical tasks. The work focuses on dataset curation, architecture tuning, and efficient training strategies.",
+    kind: "Research",
+    highlights: [
+      "Leading pretraining and benchmarking of lightweight language models for specialized tasks.",
+      "Curating datasets, tuning architectures, and testing efficient training strategies.",
+    ],
   },
   {
     key: 3,
-    title: "Research Intern",
-    company: "Computational Social Science Lab, IIIT-Delhi",
-    name: "Ground Work on SICKLE++",
-    period: "2025-2026",
-    description: "Did initial ground work study on SICKLE++ research to study crop patterns in India using satellite data. Extending the original study from Cauvery delta to Andhra Pradesh, using Google Earth Engine to extract crop patterns and ML to predict crop yields."
-  },
-  {
-    key: 4,
-    title: "Data Science Intern",
-    company: "Complex Systems Lab, IIIT-Delhi",
-    name: "Real-Time Data Integration & Interactive Web Visualization",
-    period: "2024",
-    description: "Designed and developed dynamic web applications for real-time complex dataset visualization. Led full-stack development from UI/UX design to backend optimization. Integrated multiple open-source datasets including OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS."
-  },
-  {
-    key: 5,
     title: "Open Source Contributor",
     company: "Meshery, Layer5",
-    name: "Layer5 Documentation and Meshery.io",
+    name: "Layer5 documentation and Meshery.io",
     period: "2025",
-    description: "Contributed to Meshery and Layer5 open-source projects by submitting bug reports, feature requests, editing documentation, and pull requests. Participated in code reviews and provided constructive feedback to improve the codebase."
+    description:
+      "Contributed bug reports, feature requests, documentation edits, and pull requests. Participated in reviews and gave feedback intended to make the codebase easier to use and maintain.",
+    kind: "Open source",
+    highlights: [
+      "Contributed bug reports, feature requests, documentation edits, and pull requests.",
+      "Participated in code reviews and gave feedback to improve maintainability.",
+    ],
   },
-]
+];
+
+// Replace these honest placeholders with final internship details when ready.
+export const internships = [
+  {
+    key: "intern-1",
+    title: "Research Intern",
+    company: "Computational Social Science Lab, IIIT-Delhi",
+    name: "Groundwork on SICKLE++",
+    period: "2025–2026",
+    description:
+      "Placeholder: document the satellite-data study, the Andhra Pradesh extension, and the Google Earth Engine and machine learning workflows used to explore crop patterns and yield prediction.",
+    kind: "Internship · research",
+    highlights: [
+      "Placeholder: add the research question, study area, and final outcomes.",
+      "Placeholder: document the Google Earth Engine and machine learning workflow.",
+    ],
+  },
+  {
+    key: "intern-2",
+    title: "Data Science Intern",
+    company: "Complex Systems Lab, IIIT-Delhi",
+    name: "Real-time data integration and interactive visualization",
+    period: "2024",
+    description:
+      "Placeholder: add the final impact, datasets, and technical decisions behind the real-time visualization work across OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS.",
+    kind: "Internship · data systems",
+    highlights: [
+      "Placeholder: add the final impact and scope of the visualization work.",
+      "Placeholder: document the datasets, architecture, and technical decisions.",
+    ],
+  },
+];
+
+// Replace this editable record with the final citation, venue, and publication link.
+export const publications = [
+  {
+    key: "publication-1",
+    label: "Publication 01",
+    title: "Publication details to be added",
+    description:
+      "Placeholder record for a publication or working paper. Add the final title, co-authors, venue, year, abstract, and DOI when the owner is ready to publish the work.",
+    status: "Details pending",
+    link: "",
+  },
+];
+
+export const skillGroups = [
+  { label: "Languages", value: "Python, JavaScript, TypeScript, Go, Java, C++, R" },
+  { label: "ML / AI", value: "PyTorch, TensorFlow, LLMs, model serving, inference optimization" },
+  { label: "Backend", value: "FastAPI, Flask, Express, REST APIs, async services" },
+  { label: "Data", value: "PostgreSQL, MongoDB, Redis, MySQL, Elasticsearch" },
+  { label: "Cloud / DevOps", value: "Docker, Kubernetes, GitHub Actions, Git, GitLab" },
+  { label: "Frontend", value: "React, Next.js, responsive interfaces, accessibility" },
+];
 
 export const stats = [
-  { label: "Years Experience", value: "3+" },
-  { label: "Projects Completed", value: "25+" },
-  { label: "Technologies", value: "30+" },
-  { label: "Research Papers", value: "2" }
-]
+  { label: "Years in the field", value: "3+" },
+  { label: "Projects completed", value: "25+" },
+  { label: "Tools in rotation", value: "30+" },
+  { label: "Research threads", value: "2" },
+];
