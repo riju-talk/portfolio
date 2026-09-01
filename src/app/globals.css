@@ -70,14 +70,6 @@ body {
   border-top-color: var(--green);
 }
 
-:root[data-theme="light"] .profile-avatar {
-  border-color: var(--green);
-  background:
-    radial-gradient(circle at 33% 26%, rgba(46, 106, 77, 0.18), transparent 45%),
-    linear-gradient(140deg, #cdddd0, #e6eae1 67%);
-  color: var(--paper);
-}
-
 body::before {
   position: fixed;
   inset: 0;
@@ -247,15 +239,18 @@ button:focus-visible {
   height: 7.4rem;
   flex: 0 0 7.4rem;
   place-items: center;
-  border: 1px solid #3f6753;
+  overflow: hidden;
+  border: 1px solid var(--green);
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 33% 26%, rgba(157, 196, 169, 0.25), transparent 18%),
-    linear-gradient(140deg, #274b39, #0d1d15 67%);
-  color: var(--paper);
-  font-family: var(--mono);
-  font-size: 1.35rem;
-  letter-spacing: -0.08em;
+  background: var(--forest-light);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
 }
 
 .profile-line h1 {

@@ -126,7 +126,9 @@ export default function HomePage() {
         <main>
           <section className="resume-hero">
             <div className="profile-line reveal">
-              <div className="profile-avatar" aria-hidden="true">RB</div>
+              <div className="profile-avatar">
+                <img src="/profile.webp" alt={`Portrait of ${personalInfo.name}`} width="118" height="118" />
+              </div>
               <div>
                 <h1>{personalInfo.name}</h1>
                 <p>{personalInfo.title}. {personalInfo.subtitle}.</p>
