@@ -457,6 +457,19 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
+.experience-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 0.9rem;
+}
+
+.experience-foot .experience-kind {
+  margin-top: 0;
+}
+
 .project-item {
   display: grid;
   grid-template-columns: 2rem minmax(0, 1fr) auto;

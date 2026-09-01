@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowLeft, ArrowUpRight, Github, Linkedin, Mail, Menu, X } from "lucide-react"
+import { ArrowLeft, ArrowUpRight, FileText, Github, Linkedin, Mail, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import ThemeToggle from "../(components)/ThemeToggle/ThemeToggle"
@@ -109,6 +109,8 @@ export default function AboutPage() {
                 <a href={personalInfo.contact.github} target="_blank" rel="noreferrer"><Github size={14} /> GitHub</a>
                 <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer"><Linkedin size={14} /> LinkedIn</a>
                 <a href={`mailto:${personalInfo.contact.email}`}><Mail size={14} /> Email</a>
+                <a href={personalInfo.resume.sde} target="_blank" rel="noreferrer"><FileText size={14} /> SDE resume</a>
+                <a href={personalInfo.resume.ds} target="_blank" rel="noreferrer"><FileText size={14} /> DS resume</a>
               </div>
             </div>
           </section>

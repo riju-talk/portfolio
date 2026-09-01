@@ -16,6 +16,10 @@ export const personalInfo = {
     linkedin: "https://www.linkedin.com/in/rijusmit-biswas/",
     website: "https://rijusmit.vercel.app",
   },
+  resume: {
+    sde: "/Rijusmit_Biswas_SDE_Resume.pdf",
+    ds: "/Rijusmit_Biswas_DS_Resume.pdf",
+  },
   openTo: "Open to roles: SDE, SDE Intern, MLE, MLE Intern, Data Scientist, DS Intern, Data Engineer, Data Engineering Intern",
   tagline: "I build software end to end and stay with it once it goes live.",
   bio: [
@@ -118,7 +122,7 @@ export const projects = [
       "A plant care assistant. The FastAPI backend runs several language model tool calls in sequence against outside APIs, with Firebase handling sign in and storage. Retries and graceful fallbacks keep a failure upstream from breaking what the user is doing.",
     tech: ["FastAPI", "LangChain", "Firebase", "Docker"],
     github: "https://github.com/riju-talk/Flourish",
-    live: "",
+    live: "https://flourish-web-iota.vercel.app/",
     type: "Agentic service",
     resource: "",
     featured: false,
@@ -154,6 +158,7 @@ export const experience = [
     company: "Student Council, IIIT Delhi",
     name: "A student services portal used across the institute",
     period: "2025 to now",
+    link: "https://studentcouncil.iiitd.edu.in",
     description:
       "I built and shipped a portal that more than 500 students use, and I own its database and the API the other engineers build against.",
     kind: "Product engineering",
@@ -162,11 +167,26 @@ export const experience = [
       "Own the database, the indexing, and the API the rest of the team builds against.",
       "Set up continuous integration with automated tests, and review the code for a team of eight.",
       "Swapped manual data entry for forms that validate, which cut the admin work by about 60 percent and put a stop to a recurring class of bad records.",
-      "Live at studentcouncil.iiitd.edu.in.",
     ],
   },
   {
     key: 2,
+    title: "Software Engineering Intern",
+    company: "Shipzee",
+    name: "A courier aggregation product, full stack work and a live stack migration",
+    period: "March 2026 to August 2026",
+    link: "https://www.shipzee.tech/",
+    description:
+      "I shipped features across a live courier aggregation product, from the React screens through the API down to the database.",
+    kind: "Engineering internship",
+    highlights: [
+      "Shipped features across a live courier aggregation product, from the React screens through the API down to the database, working with people inside the company and with outside partners.",
+      "Led a move to a new stack so the system would scale and stay maintainable, and planned the switch so no one saw an outage.",
+      "Chased down production failures that crossed service boundaries using logs and request traces, and wrote tests around the outside integrations that caught mismatched contracts before release.",
+    ],
+  },
+  {
+    key: 3,
     title: "AI Engineer and Undergraduate Researcher",
     company: "MIDAS Lab, IIIT Delhi",
     name: "HorusLLM, a tool for checking model output quality",
@@ -182,43 +202,12 @@ export const experience = [
     ],
   },
   {
-    key: 3,
-    title: "Open Source Contributor",
-    company: "Meshery, Layer5",
-    name: "Layer5 documentation and Meshery.io",
-    period: "2025",
-    description:
-      "I sent bug reports, feature requests, documentation fixes, and pull requests, and took part in reviews.",
-    kind: "Open source",
-    highlights: [
-      "Sent bug reports, feature requests, documentation fixes, and pull requests.",
-      "Took part in code reviews and gave feedback aimed at keeping the code easy to maintain.",
-    ],
-  },
-];
-
-export const internships = [
-  {
-    key: "intern-1",
-    title: "Software Engineering Intern",
-    company: "Shipzee",
-    name: "A courier aggregation product, full stack work and a live stack migration",
-    period: "March 2026 to August 2026",
-    description:
-      "I shipped features across a live courier aggregation product, from the React screens through the API down to the database.",
-    kind: "Engineering internship",
-    highlights: [
-      "Shipped features across a live courier aggregation product, from the React screens through the API down to the database, working with people inside the company and with outside partners.",
-      "Led a move to a new stack so the system would scale and stay maintainable, and planned the switch so no one saw an outage.",
-      "Chased down production failures that crossed service boundaries using logs and request traces, and wrote tests around the outside integrations that caught mismatched contracts before release.",
-    ],
-  },
-  {
-    key: "intern-2",
+    key: 4,
     title: "Machine Learning Research Intern",
     company: "Computational Social Science Lab, IIIT Delhi",
     name: "A satellite imagery pipeline for crop prediction",
     period: "January 2025 to May 2025",
+    link: "https://sickle-plus-plus.vercel.app/",
     description:
       "I built a satellite imagery pipeline on Google Earth Engine that produced segmentation masks and inputs with several channels at the scale of a district.",
     kind: "Research internship",
@@ -229,7 +218,7 @@ export const internships = [
     ],
   },
   {
-    key: "intern-3",
+    key: 5,
     title: "Data Science Intern",
     company: "Complex Systems Lab, IIIT Delhi",
     name: "Messy real world classification and interactive visualisation",
@@ -241,6 +230,20 @@ export const internships = [
       "Led a team of five building a 25 class classifier on messy real world data, reaching 84.5 and 74.5 percent on two splits, and traced the gap to a shift in the data between them.",
       "Built web apps that visualised complex datasets in real time, pulling in open data like OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS.",
       "Ran code reviews and mentored the junior members.",
+    ],
+  },
+  {
+    key: 6,
+    title: "Open Source Contributor",
+    company: "Meshery, Layer5",
+    name: "Layer5 documentation and Meshery.io",
+    period: "2025",
+    description:
+      "I sent bug reports, feature requests, documentation fixes, and pull requests, and took part in reviews.",
+    kind: "Open source",
+    highlights: [
+      "Sent bug reports, feature requests, documentation fixes, and pull requests.",
+      "Took part in code reviews and gave feedback aimed at keeping the code easy to maintain.",
     ],
   },
 ];

@@ -1,12 +1,11 @@
 "use client"
 
-import { ArrowUpRight, Github, Linkedin, Mail, Menu, X } from "lucide-react"
+import { ArrowUpRight, FileText, Github, Linkedin, Mail, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import ThemeToggle from "./(components)/ThemeToggle/ThemeToggle"
 import {
   experience,
-  internships,
   personalInfo,
   projects,
   publications,
@@ -67,6 +66,12 @@ function SocialLinks() {
       <a href={`mailto:${personalInfo.contact.email}`}>
         <Mail size={14} strokeWidth={1.6} /> Email
       </a>
+      <a href={personalInfo.resume.sde} target="_blank" rel="noreferrer">
+        <FileText size={14} strokeWidth={1.6} /> SDE resume
+      </a>
+      <a href={personalInfo.resume.ds} target="_blank" rel="noreferrer">
+        <FileText size={14} strokeWidth={1.6} /> DS resume
+      </a>
     </div>
   )
 }
@@ -86,7 +91,14 @@ function ExperienceItem({ item }) {
       <ul className="experience-highlights">
         {highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
       </ul>
-      <span className="experience-kind">{item.kind}</span>
+      <div className="experience-foot">
+        <span className="experience-kind">{item.kind}</span>
+        {item.link && (
+          <a className="item-link" href={item.link} target="_blank" rel="noreferrer">
+            Visit <ArrowUpRight size={13} strokeWidth={1.5} />
+          </a>
+        )}
+      </div>
     </article>
   )
 }
@@ -154,14 +166,6 @@ export default function HomePage() {
             <div className="section-label">Experience</div>
             <div className="section-content">
               {experience.map((item) => <ExperienceItem key={item.key} item={item} />)}
-            </div>
-          </section>
-
-          <section id="internships" className="resume-section">
-            <div className="section-label">Internships</div>
-            <div className="section-content">
-              <p className="section-note">Recent engineering and research internships.</p>
-              {internships.map((item) => <ExperienceItem key={item.key} item={item} />)}
             </div>
           </section>
 
