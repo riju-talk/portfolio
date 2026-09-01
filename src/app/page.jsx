@@ -3,6 +3,7 @@
 import { ArrowUpRight, Github, Linkedin, Mail, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import ThemeToggle from "./(components)/ThemeToggle/ThemeToggle"
 import {
   experience,
   internships,
@@ -22,31 +23,34 @@ function SiteNavigation({ menuOpen, setMenuOpen }) {
         <span className="brand-dot" aria-hidden="true" />
         <span>{personalInfo.name}</span>
       </Link>
-      <nav className="desktop-nav" aria-label="Primary navigation">
-        <a href="#experience">Experience</a>
-        <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#research">Research</a>
-        <Link href="/about">About</Link>
-      </nav>
-      <button
-        type="button"
-        className="menu-button"
-        aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-        aria-expanded={menuOpen}
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        {menuOpen ? <X size={18} strokeWidth={1.5} /> : <Menu size={18} strokeWidth={1.5} />}
-      </button>
-      {menuOpen && (
-        <nav className="mobile-nav" aria-label="Mobile navigation">
-          <a href="#experience" onClick={closeMenu}>Experience</a>
-          <a href="#work" onClick={closeMenu}>Work</a>
-          <a href="#skills" onClick={closeMenu}>Skills</a>
-          <a href="#research" onClick={closeMenu}>Research</a>
-          <Link href="/about" onClick={closeMenu}>About</Link>
+      <div className="topbar-actions">
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          <a href="#experience">Experience</a>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#research">Research</a>
+          <Link href="/about">About</Link>
         </nav>
-      )}
+        <ThemeToggle />
+        <button
+          type="button"
+          className="menu-button"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <X size={18} strokeWidth={1.5} /> : <Menu size={18} strokeWidth={1.5} />}
+        </button>
+        {menuOpen && (
+          <nav className="mobile-nav" aria-label="Mobile navigation">
+            <a href="#experience" onClick={closeMenu}>Experience</a>
+            <a href="#work" onClick={closeMenu}>Work</a>
+            <a href="#skills" onClick={closeMenu}>Skills</a>
+            <a href="#research" onClick={closeMenu}>Research</a>
+            <Link href="/about" onClick={closeMenu}>About</Link>
+          </nav>
+        )}
+      </div>
     </header>
   )
 }
@@ -130,7 +134,7 @@ export default function HomePage() {
               </div>
             </div>
             <p className="hero-intro reveal delay-1">
-              {personalInfo.tagline} I work across model behavior, APIs, deployment, and the product decisions that make intelligent systems useful.
+              {personalInfo.tagline} That runs from the React screens through the API layer down to the database and the infrastructure that keeps it running — plus machine learning in production when the work calls for it.
             </p>
             <div className="reveal delay-2"><SocialLinks /></div>
           </section>
@@ -154,7 +158,7 @@ export default function HomePage() {
           <section id="internships" className="resume-section">
             <div className="section-label">Internships</div>
             <div className="section-content">
-              <p className="section-note">Two editable entries for research and data systems work.</p>
+              <p className="section-note">Recent engineering and research internships.</p>
               {internships.map((item) => <ExperienceItem key={item.key} item={item} />)}
             </div>
           </section>

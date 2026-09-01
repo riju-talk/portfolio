@@ -26,11 +26,15 @@ export const viewport = {
   userScalable: true,
 }
 
+// Apply the saved (or system) theme before first paint to avoid a flash.
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
         <meta name="view-transition" content="same-origin" />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className={`${display.variable} ${manrope.variable}`}>{children}</body>
     </html>

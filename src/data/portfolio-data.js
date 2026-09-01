@@ -1,25 +1,26 @@
-// Editable portfolio content. Keep project and profile links current as work changes.
+// Editable portfolio content. Kept in sync with the résumé (last updated Sept 2026).
 
 export const personalInfo = {
   name: "Rijusmit Biswas",
-  title: "Software & Machine Learning Engineer",
-  subtitle: "Research prototypes, dependable developer systems",
+  title: "Software & ML Engineer",
+  subtitle: "research prototypes to dependable systems",
   location: {
     country: "India",
     city: "New Delhi",
-    age: "21",
+    age: "22",
   },
   contact: {
-    email: "rijusmit2004@gmail.com",
+    email: "rijusmit.biswas@gmail.com",
     phone: "+91 8929693930",
     github: "https://github.com/riju-talk",
     linkedin: "https://www.linkedin.com/in/rijusmit-biswas/",
+    website: "https://rijusmit.vercel.app",
   },
-  tagline: "I build the layer where ambitious research becomes useful software.",
+  tagline: "I ship software end to end, and stay with it after it goes live.",
   bio: [
-    "I am a software and machine learning engineer working between research prototypes and the dependable systems that let people use them. My practice moves from model behavior and dataset design to APIs, interfaces, deployment, and the operational details in between.",
-    "I care about the seam between an idea and its real-world constraint: a model that needs a measurable benchmark, a service that needs a clean failure mode, or a team that needs a system they can understand six months later.",
-    "This notebook collects selected work, research threads, and the tools I reach for when the work has to leave the lab.",
+    "I am a final-year CS student at IIIT-Delhi, graduating September 2026. I build software end to end, from the React screens through the API layer down to the database and the infrastructure that keeps it running.",
+    "I have taken a SaaS product from an idea to a running deployment on AWS, led a stack migration on a live system with no user-facing downtime, and built a student-services portal that 500+ students use on a schema and API contracts I designed for other engineers to build against. Around the code I build the parts that keep it working: Dockerised services, CI that runs tests and static analysis on every pull request, retry and rate-limit handling, and structured logging.",
+    "On the research side I have put machine learning into production: HorusLLM, a semantic evaluation pipeline my lab still uses, and satellite-imagery pipelines for crop prediction where I measured how far models drift across districts. I am first author on a paper on HorusLLM, currently under review at AAAI 2027.",
   ],
 };
 
@@ -29,126 +30,152 @@ export const languages = [
 ];
 
 export const skills = [
-  { label: "Python", value: 95 },
-  { label: "JavaScript", value: 88 },
-  { label: "Go", value: 80 },
-  { label: "React / Next.js", value: 90 },
-  { label: "Docker / K8s", value: 85 },
+  { label: "Python / PyTorch", value: 92 },
+  { label: "Backend (Node.js / FastAPI)", value: 90 },
+  { label: "React / Next.js", value: 85 },
+  { label: "PostgreSQL / data modeling", value: 85 },
+  { label: "Docker / CI/CD / AWS", value: 82 },
 ];
 
 export const toolkit = [
-  "PyTorch, TensorFlow",
-  "Docker, Kubernetes",
-  "Git, GitHub Actions",
-  "PostgreSQL, MongoDB",
+  "Node.js, Express, FastAPI, GraphQL",
+  "React, Next.js, Tailwind CSS",
+  "PostgreSQL, MongoDB, Prisma, Pinecone",
+  "Docker, AWS, GitHub Actions",
+  "PyTorch, HuggingFace, LoRA / QLoRA",
 ];
 
 export const techStack = [
   { name: "Python", icon: "/python.svg", category: "Language" },
-  { name: "JavaScript", icon: "/js.svg", category: "Language" },
   { name: "TypeScript", icon: "/ts.svg", category: "Language" },
-  { name: "Go", icon: "/go.svg", category: "Language" },
-  { name: "Java", icon: "/java.svg", category: "Language" },
+  { name: "JavaScript", icon: "/js.svg", category: "Language" },
   { name: "C++", icon: "/cpp.svg", category: "Language" },
-  { name: "R", icon: "/r.svg", category: "Language" },
+  { name: "SQL", icon: "/pgsql.svg", category: "Language" },
   { name: "React", icon: "/reactjs.svg", category: "Full Stack" },
   { name: "Next.js", icon: "/nextjs.svg", category: "Full Stack" },
-  { name: "Flask", icon: "/flask.svg", category: "Full Stack" },
   { name: "Express", icon: "/express.svg", category: "Full Stack" },
   { name: "FastAPI", icon: "/fastapi.svg", category: "Full Stack" },
   { name: "Docker", icon: "/docker.svg", category: "DevOps" },
-  { name: "Kubernetes", icon: "/kubernetes.svg", category: "DevOps" },
   { name: "GitHub Actions", icon: "/github.svg", category: "DevOps" },
   { name: "Git", icon: "/git.svg", category: "DevOps" },
-  { name: "GitLab", icon: "/gitlab.svg", category: "DevOps" },
   { name: "PostgreSQL", icon: "/pgsql.svg", category: "Database" },
   { name: "MongoDB", icon: "/mongo.svg", category: "Database" },
-  { name: "Redis", icon: "/redis.svg", category: "Database" },
-  { name: "MySQL", icon: "/mysql.svg", category: "Database" },
   { name: "Firebase", icon: "/firebase.svg", category: "Database" },
-  { name: "ElasticSearch", icon: "/elasticsearch.svg", category: "Database" },
   { name: "PyTorch", icon: "/pytorch.svg", category: "ML / AI" },
-  { name: "TensorFlow", icon: "/tensorflow.svg", category: "ML / AI" },
   { name: "Hugging Face", icon: "/huggingface.svg", category: "ML / AI" },
   { name: "OpenCV", icon: "/opencv.svg", category: "ML / AI" },
-  { name: "Unsloth", icon: "/unsloth.svg", category: "ML / AI" },
 ];
 
 export const projects = [
   {
-    title: "Multi-Modal Sarcasm Detection Tool",
+    title: "Hostiggo",
     description:
-      "A multimodal sarcasm detection tool combining image and text analysis. It combines BART encoders with a ViT backbone and extracts image segments, based on target-augmented shared fusion research.",
-    tech: ["Python", "TensorFlow", "BART", "Vision Transformers", "Docker"],
-    github: "https://github.com/riju-talk/TURBO",
+      "An idea taken to a running cloud deployment on AWS. I own the React front end, the whole backend, the database design, and the infrastructure, with CI/CD and monitoring in place from day one so deploys stayed reliable as usage grew.",
+    tech: ["Node.js", "React", "PostgreSQL", "AWS", "Docker"],
+    github: "https://github.com/riju-talk/Hostiggo-full-website",
     live: "",
-    type: "Machine learning",
-    resource: "https://github.com/riju-talk/TURBO/blob/main/README.md",
-    featured: true,
-  },
-  {
-    title: "DreamDot",
-    description:
-      "A creator-first social platform shaped as a set of services: content monetization, real-time chat, media sharing, and an NFT marketplace with Razorpay and blockchain-backed transaction logging.",
-    tech: ["Go", "Docker", "Kubernetes", "PostgreSQL", "React"],
-    github: "https://github.com/riju-talk/DreamDot",
-    live: "",
-    type: "Developer systems",
+    type: "Production SaaS",
     resource: "",
     featured: true,
   },
   {
-    title: "Entropy",
+    title: "DreamDOT",
     description:
-      "A study ecospace and agentic study assistant. Python and FastAPI power asynchronous endpoints for personalized quizzes and study content through pluggable LLM adapters.",
-    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
-    github: "https://github.com/riju-talk/Entropy-Community-Forum",
-    live: "https://entropy-community-forum.vercel.app/",
-    type: "Web application",
-    resource: "https://entropy-community-forum.vercel.app/",
+      "A creator platform — subscriptions, pay-per-view, media sharing — built as a federated GraphQL backend across multiple services that resolves cross-service queries without N+1 blowups. I defined the service boundaries and schema contracts so teams could ship independently.",
+    tech: ["GraphQL", "Node.js", "Microservices", "MongoDB", "Docker"],
+    github: "https://github.com/riju-talk/DreamDOT",
+    live: "",
+    type: "Distributed backend",
+    resource: "",
     featured: true,
+  },
+  {
+    title: "MineMEETS",
+    description:
+      "Ingestion pipelines that generate visual, text, and audio embeddings behind one interface, with dimension checks and idempotent reprocessing so a failed run can simply be re-run. Pinecone namespace isolation makes reindexing and rollback safe; CI runs Pytest, Black, Pylint, and MyPy.",
+    tech: ["CLIP", "Whisper", "Pinecone", "Docker", "Pytest"],
+    github: "https://github.com/riju-talk/MineMEETS",
+    live: "",
+    type: "Multimodal retrieval",
+    resource: "https://github.com/riju-talk/MineMEETS/blob/main/README.md",
+    featured: true,
+  },
+  {
+    title: "TURBO",
+    description:
+      "Independent reimplementation of Goel et al. (arXiv:2502.07391): cross-attention fusion between Vision Transformer image features and a modified BART text encoder, trained on MORE+ and evaluated with BLEU / ROUGE / METEOR.",
+    tech: ["PyTorch", "ViT", "BART", "Hugging Face"],
+    github: "https://github.com/riju-talk/TURBO",
+    live: "",
+    type: "ML research",
+    resource: "https://github.com/riju-talk/TURBO/blob/main/README.md",
+    featured: true,
+  },
+  {
+    title: "Flourish",
+    description:
+      "A plant-care assistant with a FastAPI backend that runs multi-step LLM tool calls against external APIs, with Firebase Auth and Firestore for identity and storage. Retry logic and graceful degradation keep an upstream failure from breaking the user flow.",
+    tech: ["FastAPI", "LangChain", "Firebase", "Docker"],
+    github: "https://github.com/riju-talk/Flourish",
+    live: "",
+    type: "Agentic service",
+    resource: "",
+    featured: false,
   },
   {
     title: "Quench++",
     description:
-      "An extension of the Quench benchmark for reasoning in Indic contexts, adding bias injection, three languages, and structured cause-effect generation in Boolean logic for reproducible evaluation.",
-    tech: ["Hugging Face", "Python", "PyTorch", "Unsloth"],
+      "Extends Indic reasoning benchmarks with bias injection and structured Chain-of-Thought cause-effect generation in Boolean logic, for reproducible evaluation of LLM trustworthiness and reasoning.",
+    tech: ["Hugging Face", "Python", "PyTorch", "LoRA / QLoRA"],
     github: "https://github.com/riju-talk/Quench-plus-plus",
     live: "",
     type: "Research tooling",
     resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
-    featured: true,
+    featured: false,
+  },
+  {
+    title: "Entropy",
+    description:
+      "A study ecospace with an agentic study assistant. Python and FastAPI power asynchronous endpoints for personalized quizzes and study content through pluggable LLM adapters.",
+    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
+    github: "https://github.com/riju-talk/Entropy-Community-Forum",
+    live: "https://entropy-community-forum.vercel.app/",
+    type: "Web application",
+    resource: "",
+    featured: false,
   },
 ];
 
 export const experience = [
   {
     key: 1,
-    title: "Product Developer",
+    title: "Head of Product Development",
     company: "Student Council, IIIT-Delhi",
-    name: "Student Council Web Ecosystem",
-    period: "2025–2026",
+    name: "Student-services portal at institutional scale",
+    period: "2025–Present",
     description:
-      "Revamped the council website and led the end-to-end design, development, and deployment of a web ecosystem spanning grievances, event proposals, member records, and 30+ student clubs. Visit the live site: studentcouncil.iiitd.edu.in",
+      "Built and shipped a portal that 500+ students use, owning the schema, indexing, and API contracts other engineers build against.",
     kind: "Product engineering",
     highlights: [
-      "Revamped the council website and improved the experience for students and administrators.",
-      "Built grievances, event proposal, member records, and club management workflows.",
-      "Led the end-to-end design, development, and deployment of the web ecosystem.",
+      "Built and shipped a portal 500+ students use, with React, Node.js, Express, and PostgreSQL; owned the schema, indexing, and API contracts other engineers build against.",
+      "Set up GitHub Actions CI/CD with automated tests and ran code review for a team of 8.",
+      "Replaced manual data entry with validated forms, cutting admin work 60% and removing a recurring class of data-integrity bugs.",
+      "Live at studentcouncil.iiitd.edu.in.",
     ],
   },
   {
     key: 2,
-    title: "Undergraduate Researcher",
+    title: "AI Engineer & Undergraduate Researcher",
     company: "MIDAS Lab, IIIT-Delhi",
-    name: "Pretraining and Benchmarking Small Language Models",
-    period: "2025–2026",
+    name: "HorusLLM — semantic evaluation for model outputs",
+    period: "May 2025–Jan 2026",
     description:
-      "Leading the pretraining and benchmarking of lightweight language models for specialized healthcare, legal, and technical tasks. The work focuses on dataset curation, architecture tuning, and efficient training strategies.",
+      "Built HorusLLM, a semantic evaluation pipeline that scores model generations along alignment dimensions and flags degraded outputs automatically.",
     kind: "Research",
     highlights: [
-      "Leading pretraining and benchmarking of lightweight language models for specialized tasks.",
-      "Curating datasets, tuning architectures, and testing efficient training strategies.",
+      "Built HorusLLM, a semantic evaluation pipeline scoring generations along several alignment dimensions and auto-flagging degraded outputs; the auditing stage cut hallucinations 20% and the lab still uses it.",
+      "Ran reproducible pipelines over three datasets with retry and rate-limit handling; trained models with LoRA / QLoRA under 4-bit quantization.",
+      "First author on a paper under review at AAAI 2027; evaluation harness and benchmarks open-sourced.",
     ],
   },
   {
@@ -158,7 +185,7 @@ export const experience = [
     name: "Layer5 documentation and Meshery.io",
     period: "2025",
     description:
-      "Contributed bug reports, feature requests, documentation edits, and pull requests. Participated in reviews and gave feedback intended to make the codebase easier to use and maintain.",
+      "Contributed bug reports, feature requests, documentation edits, and pull requests, and took part in reviews.",
     kind: "Open source",
     highlights: [
       "Contributed bug reports, feature requests, documentation edits, and pull requests.",
@@ -167,63 +194,78 @@ export const experience = [
   },
 ];
 
-// Replace these honest placeholders with final internship details when ready.
 export const internships = [
   {
     key: "intern-1",
-    title: "Research Intern",
-    company: "Computational Social Science Lab, IIIT-Delhi",
-    name: "Groundwork on SICKLE++",
-    period: "2025–2026",
+    title: "Software Engineering Intern",
+    company: "Shipzee",
+    name: "Courier-aggregation SaaS — full-stack delivery & a live stack migration",
+    period: "Mar 2026–Aug 2026",
     description:
-      "Placeholder: document the satellite-data study, the Andhra Pradesh extension, and the Google Earth Engine and machine learning workflows used to explore crop patterns and yield prediction.",
-    kind: "Internship · research",
+      "Shipped features across a live courier-aggregation SaaS, from the React screens through the API layer down to the database.",
+    kind: "Internship · engineering",
     highlights: [
-      "Placeholder: add the research question, study area, and final outcomes.",
-      "Placeholder: document the Google Earth Engine and machine learning workflow.",
+      "Shipped features across a live courier-aggregation SaaS, from the React screens through the API layer down to the database, alongside internal teams and outside partners.",
+      "Led a stack migration for scalability and maintainability, sequencing the cutover with no user-facing downtime.",
+      "Traced cross-service production failures via logs and request traces; wrote unit and integration tests over third-party integrations that caught contract mismatches before release.",
     ],
   },
   {
     key: "intern-2",
+    title: "ML Research Intern",
+    company: "Computational Social Science Lab, IIIT-Delhi",
+    name: "Geospatial pipeline for agricultural prediction",
+    period: "Jan 2025–May 2025",
+    description:
+      "Built a satellite-imagery pipeline on Google Earth Engine producing segmentation masks and multi-channel inputs at district scale.",
+    kind: "Internship · research",
+    highlights: [
+      "Built a satellite-imagery pipeline on Google Earth Engine with parallel preprocessing, producing segmentation masks and multi-channel inputs at district scale.",
+      "Benchmarked CNN backbones across phenology-date prediction, crop-type classification, and yield estimation under one shared evaluation harness.",
+      "Measured domain shift across 10+ districts with difference-in-differences and fixed-effects models, establishing accuracy outside the training distribution.",
+    ],
+  },
+  {
+    key: "intern-3",
     title: "Data Science Intern",
     company: "Complex Systems Lab, IIIT-Delhi",
-    name: "Real-time data integration and interactive visualization",
-    period: "2024",
+    name: "Noisy real-world classification & interactive visualization",
+    period: "Aug 2024–Dec 2024",
     description:
-      "Placeholder: add the final impact, datasets, and technical decisions behind the real-time visualization work across OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS.",
+      "Led a team of five building a 25-class classifier on noisy real-world data, and built real-time dataset visualizations.",
     kind: "Internship · data systems",
     highlights: [
-      "Placeholder: add the final impact and scope of the visualization work.",
-      "Placeholder: document the datasets, architecture, and technical decisions.",
+      "Led a team of five building a 25-class classifier on noisy real-world data, reaching 84.5% and 74.5% across two splits and tracing the gap to distribution shift.",
+      "Built dynamic web apps for real-time visualization, integrating OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS.",
+      "Ran code review and mentored junior members.",
     ],
   },
 ];
 
-// Replace this editable record with the final citation, venue, and publication link.
 export const publications = [
   {
     key: "publication-1",
     label: "Publication 01",
-    title: "Publication details to be added",
+    title: "HorusLLM: A Cross-Evaluation Protocol for Tri-Vector Alignment Interference",
     description:
-      "Placeholder record for a publication or working paper. Add the final title, co-authors, venue, year, abstract, and DOI when the owner is ready to publish the work.",
-    status: "Details pending",
+      "First-author work (R. Biswas, A. G. Kumar, A. Anand, E. Cambria, Z. Wang, R. R. Shah). A semantic evaluation pipeline that scores model generations along several alignment dimensions and flags degraded outputs automatically; the auditing stage cut hallucinations by 20%. Evaluation harness and benchmarks open-sourced.",
+    status: "Under review · AAAI 2027",
     link: "",
   },
 ];
 
 export const skillGroups = [
-  { label: "Languages", value: "Python, JavaScript, TypeScript, Go, Java, C++, R" },
-  { label: "ML / AI", value: "PyTorch, TensorFlow, LLMs, model serving, inference optimization" },
-  { label: "Backend", value: "FastAPI, Flask, Express, REST APIs, async services" },
-  { label: "Data", value: "PostgreSQL, MongoDB, Redis, MySQL, Elasticsearch" },
-  { label: "Cloud / DevOps", value: "Docker, Kubernetes, GitHub Actions, Git, GitLab" },
-  { label: "Frontend", value: "React, Next.js, responsive interfaces, accessibility" },
+  { label: "Languages", value: "Python, TypeScript, JavaScript, C++, SQL, C" },
+  { label: "Backend & APIs", value: "Node.js, Express, FastAPI, REST & GraphQL, GraphQL federation, WebSockets, retry / rate-limit handling" },
+  { label: "Frontend", value: "React, Next.js, Tailwind CSS, dashboards, WebSocket UIs" },
+  { label: "Infra & delivery", value: "AWS, Docker, GitHub Actions CI/CD, Linux, Vercel, Pytest, structured logging, static analysis" },
+  { label: "Data & distributed", value: "PostgreSQL, MongoDB, Prisma, Pinecone, schema design, indexing, PySpark, Airflow, ETL" },
+  { label: "ML & research", value: "PyTorch, Hugging Face, LoRA / QLoRA, LangChain, RAG, CLIP & Whisper, Google Earth Engine" },
 ];
 
 export const stats = [
-  { label: "Years in the field", value: "3+" },
-  { label: "Projects completed", value: "25+" },
-  { label: "Tools in rotation", value: "30+" },
-  { label: "Research threads", value: "2" },
+  { label: "Production deploys", value: "3+" },
+  { label: "Portal users", value: "500+" },
+  { label: "First-author papers", value: "1" },
+  { label: "LeetCode solved", value: "2500+" },
 ];

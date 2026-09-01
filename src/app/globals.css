@@ -1,19 +1,35 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: dark;
   --bg: #070908;
   --forest: #0b1712;
   --forest-light: #10241b;
   --paper: #f1f2ed;
-  --muted: #a6ada6;
-  --quiet: #68726b;
-  --line: rgba(211, 221, 213, 0.16);
-  --line-strong: rgba(211, 221, 213, 0.3);
-  --green: #8eaf9a;
-  --blue: #9eb8c0;
+  --muted: #b6bdb5;
+  --quiet: #8b958c;
+  --line: rgba(211, 221, 213, 0.18);
+  --line-strong: rgba(211, 221, 213, 0.34);
+  --green: #9fc1ac;
+  --blue: #a9c3cb;
   --ink: #080c0a;
   --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
   --sans: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f3f4ef;
+  --forest: #e6eae1;
+  --forest-light: #dbe3da;
+  --paper: #16221c;
+  --muted: #45504a;
+  --quiet: #626c64;
+  --line: rgba(20, 32, 26, 0.16);
+  --line-strong: rgba(20, 32, 26, 0.34);
+  --green: #2e6a4d;
+  --blue: #2c637a;
+  --ink: #f3f4ef;
 }
 
 * {
@@ -37,6 +53,29 @@ body {
     var(--bg);
   color: var(--paper);
   font-family: var(--sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(circle at 50% -15%, rgba(46, 106, 77, 0.12), transparent 34rem),
+    var(--bg);
+}
+
+:root[data-theme="light"] body::before {
+  opacity: 0.015;
+}
+
+:root[data-theme="light"] .site-shell {
+  border-top-color: var(--green);
+}
+
+:root[data-theme="light"] .profile-avatar {
+  border-color: var(--green);
+  background:
+    radial-gradient(circle at 33% 26%, rgba(46, 106, 77, 0.18), transparent 45%),
+    linear-gradient(140deg, #cdddd0, #e6eae1 67%);
+  color: var(--paper);
 }
 
 body::before {
@@ -114,7 +153,7 @@ button:focus-visible {
   align-items: center;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.61rem;
+  font-size: 0.71rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   transition: color 180ms ease;
@@ -138,7 +177,7 @@ button:focus-visible {
   align-items: center;
   color: var(--quiet);
   font-family: var(--mono);
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -161,6 +200,31 @@ button:focus-visible {
   background: transparent;
   color: var(--paper);
   cursor: pointer;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.theme-toggle:hover {
+  color: var(--paper);
+  border-color: var(--line-strong);
 }
 
 .mobile-nav {
@@ -206,7 +270,7 @@ button:focus-visible {
 .profile-line p {
   margin: 0.2rem 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.99rem;
   line-height: 1.45;
 }
 
@@ -214,7 +278,7 @@ button:focus-visible {
   max-width: 42rem;
   margin: 2rem 0 1.35rem;
   color: var(--paper);
-  font-size: 1rem;
+  font-size: 1.06rem;
   line-height: 1.72;
 }
 
@@ -234,7 +298,7 @@ button:focus-visible {
   border-radius: 99px;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.04em;
   transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
 }
@@ -276,7 +340,7 @@ button:focus-visible {
   margin-top: 0.42rem;
   color: var(--quiet);
   font-family: var(--mono);
-  font-size: 0.55rem;
+  font-size: 0.67rem;
   line-height: 1.45;
   text-transform: uppercase;
 }
@@ -293,7 +357,7 @@ button:focus-visible {
 .section-label {
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 0.61rem;
+  font-size: 0.71rem;
   letter-spacing: 0.1em;
   line-height: 1.5;
   text-transform: uppercase;
@@ -315,7 +379,7 @@ button:focus-visible {
 .section-note {
   margin: 0 0 1.5rem;
   color: var(--quiet);
-  font-size: 0.77rem;
+  font-size: 0.86rem;
   line-height: 1.55;
 }
 
@@ -338,7 +402,7 @@ button:focus-visible {
 .experience-heading h3 {
   margin: 0;
   color: var(--paper);
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   font-weight: 650;
   letter-spacing: -0.025em;
   line-height: 1.4;
@@ -352,7 +416,7 @@ button:focus-visible {
 .experience-heading p {
   margin: 0.15rem 0 0;
   color: var(--quiet);
-  font-size: 0.74rem;
+  font-size: 0.83rem;
   line-height: 1.45;
 }
 
@@ -360,7 +424,7 @@ button:focus-visible {
   padding-top: 0.12rem;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   white-space: nowrap;
 }
 
@@ -376,7 +440,7 @@ button:focus-visible {
   position: relative;
   padding-left: 1.1rem;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 1.02rem;
   line-height: 1.6;
 }
 
@@ -393,7 +457,7 @@ button:focus-visible {
   margin-top: 0.9rem;
   color: var(--green);
   font-family: var(--mono);
-  font-size: 0.57rem;
+  font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -413,7 +477,7 @@ button:focus-visible {
 .item-index {
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 0.62rem;
+  font-size: 0.72rem;
 }
 
 .project-heading {
@@ -428,7 +492,7 @@ button:focus-visible {
 .publication-item h2 {
   margin: 0;
   color: var(--paper);
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   font-weight: 650;
   letter-spacing: -0.025em;
 }
@@ -436,7 +500,7 @@ button:focus-visible {
 .project-heading span {
   color: var(--quiet);
   font-family: var(--mono);
-  font-size: 0.55rem;
+  font-size: 0.67rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -446,7 +510,7 @@ button:focus-visible {
 .publication-item div > p {
   margin: 0.65rem 0 0;
   color: var(--muted);
-  font-size: 0.77rem;
+  font-size: 0.86rem;
   line-height: 1.65;
 }
 
@@ -462,7 +526,7 @@ button:focus-visible {
   border: 1px solid var(--line);
   color: var(--quiet);
   font-family: var(--mono);
-  font-size: 0.54rem;
+  font-size: 0.66rem;
 }
 
 .item-link,
@@ -473,7 +537,7 @@ button:focus-visible {
   align-items: center;
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 0.59rem;
+  font-size: 0.69rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: color 180ms ease;
@@ -508,14 +572,14 @@ button:focus-visible {
 .skill-row h3 {
   margin: 0;
   color: var(--paper);
-  font-size: 0.77rem;
+  font-size: 0.86rem;
   font-weight: 650;
 }
 
 .skill-row p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.77rem;
+  font-size: 0.86rem;
   line-height: 1.55;
 }
 
@@ -529,7 +593,7 @@ button:focus-visible {
 
 .publication-item h3,
 .publication-item h2 {
-  font-size: 1.15rem;
+  font-size: 1.22rem;
 }
 
 .publication-item .item-link {
@@ -557,7 +621,7 @@ button:focus-visible {
   max-width: 25rem;
   margin: 0;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 1.02rem;
   line-height: 1.65;
 }
 
@@ -576,7 +640,7 @@ button:focus-visible {
   border-top: 1px solid var(--line);
   color: var(--quiet);
   font-family: var(--mono);
-  font-size: 0.55rem;
+  font-size: 0.67rem;
   letter-spacing: 0.04em;
   line-height: 1.5;
   text-transform: uppercase;
@@ -614,7 +678,7 @@ button:focus-visible {
   max-width: 35rem;
   margin: 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.06rem;
   line-height: 1.7;
 }
 
@@ -626,7 +690,7 @@ button:focus-visible {
 .about-copy p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.87rem;
+  font-size: 1.02rem;
   line-height: 1.8;
 }
 
@@ -647,14 +711,14 @@ button:focus-visible {
 .data-list dt {
   color: var(--quiet);
   font-family: var(--mono);
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
 }
 
 .data-list dd {
   margin: 0;
   color: var(--paper);
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   text-align: right;
 }
 
@@ -711,7 +775,7 @@ button:focus-visible {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
     color: var(--muted);
     font-family: var(--mono);
-    font-size: 0.63rem;
+    font-size: 0.73rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
@@ -732,7 +796,7 @@ button:focus-visible {
     width: 5.7rem;
     height: 5.7rem;
     flex-basis: 5.7rem;
-    font-size: 1.05rem;
+    font-size: 1.12rem;
   }
 
   .profile-line h1 {
@@ -740,11 +804,11 @@ button:focus-visible {
   }
 
   .profile-line p {
-    font-size: 0.75rem;
+    font-size: 0.84rem;
   }
 
   .hero-intro {
-    font-size: 0.9rem;
+    font-size: 0.97rem;
   }
 
   .metrics {

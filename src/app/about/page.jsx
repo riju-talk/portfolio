@@ -3,6 +3,7 @@
 import { ArrowLeft, ArrowUpRight, Github, Linkedin, Mail, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import ThemeToggle from "../(components)/ThemeToggle/ThemeToggle"
 import { personalInfo, publications, skillGroups } from "@/data/portfolio-data"
 
 export default function AboutPage() {
@@ -16,31 +17,34 @@ export default function AboutPage() {
             <span className="brand-dot" aria-hidden="true" />
             <span>{personalInfo.name}</span>
           </Link>
-          <nav className="desktop-nav" aria-label="Primary navigation">
-            <Link href="/#experience">Experience</Link>
-            <Link href="/#work">Work</Link>
-            <Link href="/#skills">Skills</Link>
-            <Link href="/#research">Research</Link>
-            <Link href="/about" className="active">About</Link>
-          </nav>
-          <button
-            type="button"
-            className="menu-button"
-            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            {menuOpen ? <X size={18} strokeWidth={1.5} /> : <Menu size={18} strokeWidth={1.5} />}
-          </button>
-          {menuOpen && (
-            <nav className="mobile-nav" aria-label="Mobile navigation">
+          <div className="topbar-actions">
+            <nav className="desktop-nav" aria-label="Primary navigation">
               <Link href="/#experience">Experience</Link>
               <Link href="/#work">Work</Link>
               <Link href="/#skills">Skills</Link>
               <Link href="/#research">Research</Link>
-              <Link href="/about">About</Link>
+              <Link href="/about" className="active">About</Link>
             </nav>
-          )}
+            <ThemeToggle />
+            <button
+              type="button"
+              className="menu-button"
+              aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? <X size={18} strokeWidth={1.5} /> : <Menu size={18} strokeWidth={1.5} />}
+            </button>
+            {menuOpen && (
+              <nav className="mobile-nav" aria-label="Mobile navigation">
+                <Link href="/#experience">Experience</Link>
+                <Link href="/#work">Work</Link>
+                <Link href="/#skills">Skills</Link>
+                <Link href="/#research">Research</Link>
+                <Link href="/about">About</Link>
+              </nav>
+            )}
+          </div>
         </header>
 
         <main>
