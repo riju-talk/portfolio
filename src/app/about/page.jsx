@@ -49,16 +49,16 @@ export default function AboutPage() {
 
         <main>
           <section className="about-hero">
-            <Link href="/" className="back-link"><ArrowLeft size={14} strokeWidth={1.5} /> Back to the notebook</Link>
-            <p className="section-label">About the practice</p>
-            <h1>Research-minded. <em>System-aware.</em></h1>
+            <Link href="/" className="back-link"><ArrowLeft size={14} strokeWidth={1.5} /> Back to the home page</Link>
+            <p className="section-label">About</p>
+            <h1>Where research <em>meets working software.</em></h1>
             <p className="about-lede">
-              I am {personalInfo.name}, a {personalInfo.title.toLowerCase()} who likes the stretch between an uncertain idea and a reliable implementation.
+              I am {personalInfo.name}. I work as a {personalInfo.title.toLowerCase()}, and I enjoy the stretch between an idea that might not pan out and something people can actually depend on.
             </p>
           </section>
 
           <section className="about-copy resume-section">
-            <div className="section-label">Working notes</div>
+            <div className="section-label">How I work</div>
             <div className="section-content">
               {personalInfo.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
@@ -68,8 +68,8 @@ export default function AboutPage() {
             <div className="section-label">Coordinates</div>
             <dl className="section-content data-list">
               <div><dt>Based in</dt><dd>{personalInfo.location.city}, {personalInfo.location.country}</dd></div>
-              <div><dt>Focus</dt><dd>Software / ML / platform work</dd></div>
-              <div><dt>Availability</dt><dd>Open to thoughtful opportunities</dd></div>
+              <div><dt>Focus</dt><dd>Software, machine learning, and platform work</dd></div>
+              <div><dt>Open to</dt><dd>SDE, SDE Intern, MLE, MLE Intern, Data Scientist, DS Intern, Data Engineer</dd></div>
               <div><dt>Reach me</dt><dd>{personalInfo.contact.email}</dd></div>
             </dl>
           </section>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             <div className="section-content">
               {publications.map((publication) => (
                 <article className="publication-item" key={publication.key}>
-                  <p className="publication-meta">{publication.label} · {publication.status}</p>
+                  <p className="publication-meta">{publication.label}, {publication.status}</p>
                   <h2>{publication.title}</h2>
                   <p>{publication.description}</p>
                   {publication.link && <a className="item-link" href={publication.link} target="_blank" rel="noreferrer">Open citation <ArrowUpRight size={13} /></a>}
@@ -102,8 +102,9 @@ export default function AboutPage() {
 
           <section className="contact-section">
             <div>
-              <div className="section-label">Open channel</div>
+              <div className="section-label">Get in touch</div>
               <h2>Let&apos;s compare notes.</h2>
+              <p>{personalInfo.openTo}.</p>
               <div className="social-links">
                 <a href={personalInfo.contact.github} target="_blank" rel="noreferrer"><Github size={14} /> GitHub</a>
                 <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer"><Linkedin size={14} /> LinkedIn</a>
@@ -114,7 +115,7 @@ export default function AboutPage() {
         </main>
 
         <footer className="footer-meta">
-          <span>{personalInfo.name} · {personalInfo.subtitle}</span>
+          <span>{personalInfo.name}, {personalInfo.location.city}</span>
           <span><Link href="/">Return home</Link></span>
         </footer>
       </div>

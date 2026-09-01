@@ -16,7 +16,7 @@ export default function ThemeToggle() {
     try {
       localStorage.setItem("theme", next)
     } catch (e) {
-      /* storage unavailable — theme still applies for this session */
+      /* storage unavailable. theme still applies for this session */
     }
     setTheme(next)
   }

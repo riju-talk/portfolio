@@ -78,7 +78,7 @@ function ExperienceItem({ item }) {
     <article className="experience-item reveal">
       <div className="experience-heading">
         <div>
-          <h3>{item.title} <span>· {item.company}</span></h3>
+          <h3>{item.title} <span>at {item.company}</span></h3>
           <p>{item.name}</p>
         </div>
         <time>{item.period}</time>
@@ -129,12 +129,12 @@ export default function HomePage() {
               <div className="profile-avatar" aria-hidden="true">RB</div>
               <div>
                 <h1>{personalInfo.name}</h1>
-                <p>{personalInfo.title} — {personalInfo.subtitle}.</p>
+                <p>{personalInfo.title}. {personalInfo.subtitle}.</p>
                 <p>{personalInfo.location.city}, {personalInfo.location.country}.</p>
               </div>
             </div>
             <p className="hero-intro reveal delay-1">
-              {personalInfo.tagline} That runs from the React screens through the API layer down to the database and the infrastructure that keeps it running — plus machine learning in production when the work calls for it.
+              {personalInfo.tagline} In practice that means the React screens, the API in the middle, the database underneath, and the servers it all runs on, plus some machine learning when a problem calls for it.
             </p>
             <div className="reveal delay-2"><SocialLinks /></div>
           </section>
@@ -188,7 +188,7 @@ export default function HomePage() {
               {publications.map((publication) => (
                 <article className="publication-item reveal" key={publication.key}>
                   <div>
-                    <p className="publication-meta">{publication.label} · {publication.status}</p>
+                    <p className="publication-meta">{publication.label}, {publication.status}</p>
                     <h3>{publication.title}</h3>
                     <p>{publication.description}</p>
                     {publication.link && (
@@ -206,7 +206,8 @@ export default function HomePage() {
             <div>
               <div className="section-label">Contact</div>
               <h2>Let&apos;s build something useful.</h2>
-              <p>For thoughtful collaborations, difficult systems questions, or a good research lead, email is the most direct route.</p>
+              <p>If you have a hard systems problem, a project worth doing, or a good research lead, email is the quickest way to reach me.</p>
+              <p>{personalInfo.openTo}.</p>
             </div>
             <a className="contact-link" href={`mailto:${personalInfo.contact.email}`}>
               {personalInfo.contact.email} <ArrowUpRight size={14} strokeWidth={1.5} />
@@ -215,8 +216,8 @@ export default function HomePage() {
         </main>
 
         <footer className="footer-meta">
-          <span>{personalInfo.name} · {personalInfo.location.city}</span>
-          <span>Living document / 2026</span>
+          <span>{personalInfo.name}, {personalInfo.location.city}</span>
+          <span>Kept current through 2026</span>
         </footer>
       </div>
     </div>

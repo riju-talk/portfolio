@@ -448,7 +448,7 @@ button:focus-visible {
   position: absolute;
   left: 0;
   color: var(--green);
-  content: "—";
+  content: "•";
 }
 
 .experience-kind,

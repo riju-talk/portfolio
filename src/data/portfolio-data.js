@@ -1,9 +1,9 @@
-// Editable portfolio content. Kept in sync with the résumé (last updated Sept 2026).
+// Editable portfolio content. Kept in line with the résumé (last updated September 2026).
 
 export const personalInfo = {
   name: "Rijusmit Biswas",
-  title: "Software & ML Engineer",
-  subtitle: "research prototypes to dependable systems",
+  title: "Software and Machine Learning Engineer",
+  subtitle: "I turn research into software people can rely on",
   location: {
     country: "India",
     city: "New Delhi",
@@ -16,11 +16,12 @@ export const personalInfo = {
     linkedin: "https://www.linkedin.com/in/rijusmit-biswas/",
     website: "https://rijusmit.vercel.app",
   },
-  tagline: "I ship software end to end, and stay with it after it goes live.",
+  openTo: "Open to roles: SDE, SDE Intern, MLE, MLE Intern, Data Scientist, DS Intern, Data Engineer",
+  tagline: "I build software end to end and stay with it once it goes live.",
   bio: [
-    "I am a final-year CS student at IIIT-Delhi, graduating September 2026. I build software end to end, from the React screens through the API layer down to the database and the infrastructure that keeps it running.",
-    "I have taken a SaaS product from an idea to a running deployment on AWS, led a stack migration on a live system with no user-facing downtime, and built a student-services portal that 500+ students use on a schema and API contracts I designed for other engineers to build against. Around the code I build the parts that keep it working: Dockerised services, CI that runs tests and static analysis on every pull request, retry and rate-limit handling, and structured logging.",
-    "On the research side I have put machine learning into production: HorusLLM, a semantic evaluation pipeline my lab still uses, and satellite-imagery pipelines for crop prediction where I measured how far models drift across districts. I am first author on a paper on HorusLLM, currently under review at AAAI 2027.",
+    "I am in my final year of a computer science degree at IIIT Delhi and I graduate in September 2026. I like building the whole thing: the screens people click, the API behind them, the database under that, and the servers it all runs on.",
+    "So far I have taken a product from a rough idea to something live on AWS, moved a running system onto a new stack without anyone noticing an outage, and built a portal that more than 500 students use. I designed its database and the API the rest of the team builds against. I also look after the quieter parts that keep software healthy, like containers, tests and checks that run on every pull request, sensible retries, and logs you can actually read.",
+    "On the research side I have shipped machine learning that people keep using. HorusLLM is an evaluation tool my lab still runs to catch when a model starts giving worse answers. Before that I built satellite imagery pipelines for predicting crops and measured how much the models slip from one district to the next. I am the first author on a paper about HorusLLM that is under review at AAAI 2027.",
   ],
 };
 
@@ -30,11 +31,11 @@ export const languages = [
 ];
 
 export const skills = [
-  { label: "Python / PyTorch", value: 92 },
-  { label: "Backend (Node.js / FastAPI)", value: 90 },
-  { label: "React / Next.js", value: 85 },
-  { label: "PostgreSQL / data modeling", value: 85 },
-  { label: "Docker / CI/CD / AWS", value: 82 },
+  { label: "Python and PyTorch", value: 92 },
+  { label: "Backend with Node.js and FastAPI", value: 90 },
+  { label: "React and Next.js", value: 85 },
+  { label: "PostgreSQL and data modelling", value: 85 },
+  { label: "Docker, CI and AWS", value: 82 },
 ];
 
 export const toolkit = [
@@ -42,7 +43,7 @@ export const toolkit = [
   "React, Next.js, Tailwind CSS",
   "PostgreSQL, MongoDB, Prisma, Pinecone",
   "Docker, AWS, GitHub Actions",
-  "PyTorch, HuggingFace, LoRA / QLoRA",
+  "PyTorch, HuggingFace, LoRA and QLoRA",
 ];
 
 export const techStack = [
@@ -61,16 +62,16 @@ export const techStack = [
   { name: "PostgreSQL", icon: "/pgsql.svg", category: "Database" },
   { name: "MongoDB", icon: "/mongo.svg", category: "Database" },
   { name: "Firebase", icon: "/firebase.svg", category: "Database" },
-  { name: "PyTorch", icon: "/pytorch.svg", category: "ML / AI" },
-  { name: "Hugging Face", icon: "/huggingface.svg", category: "ML / AI" },
-  { name: "OpenCV", icon: "/opencv.svg", category: "ML / AI" },
+  { name: "PyTorch", icon: "/pytorch.svg", category: "ML and AI" },
+  { name: "Hugging Face", icon: "/huggingface.svg", category: "ML and AI" },
+  { name: "OpenCV", icon: "/opencv.svg", category: "ML and AI" },
 ];
 
 export const projects = [
   {
     title: "Hostiggo",
     description:
-      "An idea taken to a running cloud deployment on AWS. I own the React front end, the whole backend, the database design, and the infrastructure, with CI/CD and monitoring in place from day one so deploys stayed reliable as usage grew.",
+      "I took this from an idea to a product running on AWS. I own the React front end, the whole backend, the database, and the servers, and I put continuous integration and monitoring in place from the first week so releases stayed calm as more people used it.",
     tech: ["Node.js", "React", "PostgreSQL", "AWS", "Docker"],
     github: "https://github.com/riju-talk/Hostiggo-full-website",
     live: "",
@@ -81,7 +82,7 @@ export const projects = [
   {
     title: "DreamDOT",
     description:
-      "A creator platform — subscriptions, pay-per-view, media sharing — built as a federated GraphQL backend across multiple services that resolves cross-service queries without N+1 blowups. I defined the service boundaries and schema contracts so teams could ship independently.",
+      "A platform for creators with subscriptions, pay per view, and media sharing. The backend is a set of GraphQL services that answer queries spanning several of them without firing a cascade of extra requests. I set the service boundaries and the schema contracts so teams could work in parallel without breaking the shared graph.",
     tech: ["GraphQL", "Node.js", "Microservices", "MongoDB", "Docker"],
     github: "https://github.com/riju-talk/DreamDOT",
     live: "",
@@ -92,7 +93,7 @@ export const projects = [
   {
     title: "MineMEETS",
     description:
-      "Ingestion pipelines that generate visual, text, and audio embeddings behind one interface, with dimension checks and idempotent reprocessing so a failed run can simply be re-run. Pinecone namespace isolation makes reindexing and rollback safe; CI runs Pytest, Black, Pylint, and MyPy.",
+      "Pipelines that turn images, text, and audio into embeddings behind one interface. Every step checks its dimensions and is safe to run again, so a failed run just gets rerun. Pinecone namespaces keep reindexing and rollback safe, and the test suite plus formatting and type checks run on every pull request.",
     tech: ["CLIP", "Whisper", "Pinecone", "Docker", "Pytest"],
     github: "https://github.com/riju-talk/MineMEETS",
     live: "",
@@ -103,7 +104,7 @@ export const projects = [
   {
     title: "TURBO",
     description:
-      "Independent reimplementation of Goel et al. (arXiv:2502.07391): cross-attention fusion between Vision Transformer image features and a modified BART text encoder, trained on MORE+ and evaluated with BLEU / ROUGE / METEOR.",
+      "My own reimplementation of the paper by Goel and colleagues (arXiv 2502.07391). It fuses image features from a Vision Transformer with a modified BART text encoder, trains on the MORE+ dataset, and is scored with BLEU, ROUGE, and METEOR.",
     tech: ["PyTorch", "ViT", "BART", "Hugging Face"],
     github: "https://github.com/riju-talk/TURBO",
     live: "",
@@ -114,7 +115,7 @@ export const projects = [
   {
     title: "Flourish",
     description:
-      "A plant-care assistant with a FastAPI backend that runs multi-step LLM tool calls against external APIs, with Firebase Auth and Firestore for identity and storage. Retry logic and graceful degradation keep an upstream failure from breaking the user flow.",
+      "A plant care assistant. The FastAPI backend runs several language model tool calls in sequence against outside APIs, with Firebase handling sign in and storage. Retries and graceful fallbacks keep a failure upstream from breaking what the user is doing.",
     tech: ["FastAPI", "LangChain", "Firebase", "Docker"],
     github: "https://github.com/riju-talk/Flourish",
     live: "",
@@ -125,8 +126,8 @@ export const projects = [
   {
     title: "Quench++",
     description:
-      "Extends Indic reasoning benchmarks with bias injection and structured Chain-of-Thought cause-effect generation in Boolean logic, for reproducible evaluation of LLM trustworthiness and reasoning.",
-    tech: ["Hugging Face", "Python", "PyTorch", "LoRA / QLoRA"],
+      "An extension of Indic reasoning benchmarks. It adds injected bias and structured chains of reasoning about cause and effect in Boolean logic, so trustworthiness and reasoning can be measured in a repeatable way.",
+    tech: ["Hugging Face", "Python", "PyTorch", "LoRA", "QLoRA"],
     github: "https://github.com/riju-talk/Quench-plus-plus",
     live: "",
     type: "Research tooling",
@@ -136,7 +137,7 @@ export const projects = [
   {
     title: "Entropy",
     description:
-      "A study ecospace with an agentic study assistant. Python and FastAPI power asynchronous endpoints for personalized quizzes and study content through pluggable LLM adapters.",
+      "A study space with an assistant that helps you work through doubts. Python and FastAPI power the async endpoints that generate personalised quizzes and study material through language model adapters you can swap out.",
     tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
     github: "https://github.com/riju-talk/Entropy-Community-Forum",
     live: "https://entropy-community-forum.vercel.app/",
@@ -150,32 +151,34 @@ export const experience = [
   {
     key: 1,
     title: "Head of Product Development",
-    company: "Student Council, IIIT-Delhi",
-    name: "Student-services portal at institutional scale",
-    period: "2025–Present",
+    company: "Student Council, IIIT Delhi",
+    name: "A student services portal used across the institute",
+    period: "2025 to now",
     description:
-      "Built and shipped a portal that 500+ students use, owning the schema, indexing, and API contracts other engineers build against.",
+      "I built and shipped a portal that more than 500 students use, and I own its database and the API the other engineers build against.",
     kind: "Product engineering",
     highlights: [
-      "Built and shipped a portal 500+ students use, with React, Node.js, Express, and PostgreSQL; owned the schema, indexing, and API contracts other engineers build against.",
-      "Set up GitHub Actions CI/CD with automated tests and ran code review for a team of 8.",
-      "Replaced manual data entry with validated forms, cutting admin work 60% and removing a recurring class of data-integrity bugs.",
+      "Built and shipped a portal that more than 500 students use, with React on the front and Node.js, Express, and PostgreSQL behind it.",
+      "Own the database, the indexing, and the API the rest of the team builds against.",
+      "Set up continuous integration with automated tests, and review the code for a team of eight.",
+      "Swapped manual data entry for forms that validate, which cut the admin work by about 60 percent and put a stop to a recurring class of bad records.",
       "Live at studentcouncil.iiitd.edu.in.",
     ],
   },
   {
     key: 2,
-    title: "AI Engineer & Undergraduate Researcher",
-    company: "MIDAS Lab, IIIT-Delhi",
-    name: "HorusLLM — semantic evaluation for model outputs",
-    period: "May 2025–Jan 2026",
+    title: "AI Engineer and Undergraduate Researcher",
+    company: "MIDAS Lab, IIIT Delhi",
+    name: "HorusLLM, a tool for checking model output quality",
+    period: "May 2025 to January 2026",
     description:
-      "Built HorusLLM, a semantic evaluation pipeline that scores model generations along alignment dimensions and flags degraded outputs automatically.",
+      "I built HorusLLM, a tool that scores what a model generates against a few notions of alignment and flags on its own when the quality drops.",
     kind: "Research",
     highlights: [
-      "Built HorusLLM, a semantic evaluation pipeline scoring generations along several alignment dimensions and auto-flagging degraded outputs; the auditing stage cut hallucinations 20% and the lab still uses it.",
-      "Ran reproducible pipelines over three datasets with retry and rate-limit handling; trained models with LoRA / QLoRA under 4-bit quantization.",
-      "First author on a paper under review at AAAI 2027; evaluation harness and benchmarks open-sourced.",
+      "Built HorusLLM, which scores model output against several notions of alignment and flags on its own when quality drops. The checking step cut made up answers by about 20 percent, and the lab still uses it.",
+      "Ran the pipelines over three datasets so a rerun gives the same result, with retries and rate limit handling for outside APIs.",
+      "Trained models with LoRA and QLoRA at four bit precision to fit the memory we had.",
+      "First author on a paper about the work, now under review at AAAI 2027, with the harness and benchmarks released as open source.",
     ],
   },
   {
@@ -185,11 +188,11 @@ export const experience = [
     name: "Layer5 documentation and Meshery.io",
     period: "2025",
     description:
-      "Contributed bug reports, feature requests, documentation edits, and pull requests, and took part in reviews.",
+      "I sent bug reports, feature requests, documentation fixes, and pull requests, and took part in reviews.",
     kind: "Open source",
     highlights: [
-      "Contributed bug reports, feature requests, documentation edits, and pull requests.",
-      "Participated in code reviews and gave feedback to improve maintainability.",
+      "Sent bug reports, feature requests, documentation fixes, and pull requests.",
+      "Took part in code reviews and gave feedback aimed at keeping the code easy to maintain.",
     ],
   },
 ];
@@ -199,45 +202,45 @@ export const internships = [
     key: "intern-1",
     title: "Software Engineering Intern",
     company: "Shipzee",
-    name: "Courier-aggregation SaaS — full-stack delivery & a live stack migration",
-    period: "Mar 2026–Aug 2026",
+    name: "A courier aggregation product, full stack work and a live stack migration",
+    period: "March 2026 to August 2026",
     description:
-      "Shipped features across a live courier-aggregation SaaS, from the React screens through the API layer down to the database.",
-    kind: "Internship · engineering",
+      "I shipped features across a live courier aggregation product, from the React screens through the API down to the database.",
+    kind: "Engineering internship",
     highlights: [
-      "Shipped features across a live courier-aggregation SaaS, from the React screens through the API layer down to the database, alongside internal teams and outside partners.",
-      "Led a stack migration for scalability and maintainability, sequencing the cutover with no user-facing downtime.",
-      "Traced cross-service production failures via logs and request traces; wrote unit and integration tests over third-party integrations that caught contract mismatches before release.",
+      "Shipped features across a live courier aggregation product, from the React screens through the API down to the database, working with people inside the company and with outside partners.",
+      "Led a move to a new stack so the system would scale and stay maintainable, and planned the switch so no one saw an outage.",
+      "Chased down production failures that crossed service boundaries using logs and request traces, and wrote tests around the outside integrations that caught mismatched contracts before release.",
     ],
   },
   {
     key: "intern-2",
-    title: "ML Research Intern",
-    company: "Computational Social Science Lab, IIIT-Delhi",
-    name: "Geospatial pipeline for agricultural prediction",
-    period: "Jan 2025–May 2025",
+    title: "Machine Learning Research Intern",
+    company: "Computational Social Science Lab, IIIT Delhi",
+    name: "A satellite imagery pipeline for crop prediction",
+    period: "January 2025 to May 2025",
     description:
-      "Built a satellite-imagery pipeline on Google Earth Engine producing segmentation masks and multi-channel inputs at district scale.",
-    kind: "Internship · research",
+      "I built a satellite imagery pipeline on Google Earth Engine that produced segmentation masks and inputs with several channels at the scale of a district.",
+    kind: "Research internship",
     highlights: [
-      "Built a satellite-imagery pipeline on Google Earth Engine with parallel preprocessing, producing segmentation masks and multi-channel inputs at district scale.",
-      "Benchmarked CNN backbones across phenology-date prediction, crop-type classification, and yield estimation under one shared evaluation harness.",
-      "Measured domain shift across 10+ districts with difference-in-differences and fixed-effects models, establishing accuracy outside the training distribution.",
+      "Built a satellite imagery pipeline on Google Earth Engine with preprocessing that runs in parallel, producing segmentation masks and inputs with several channels at the scale of a district.",
+      "Compared several CNN backbones on predicting phenology dates, sorting crops by type, and estimating yield, all under one shared setup for a fair comparison.",
+      "Measured how far the data drifts across more than ten districts using difference in differences and fixed effects models, so accuracy was checked outside the training area rather than on one held out split.",
     ],
   },
   {
     key: "intern-3",
     title: "Data Science Intern",
-    company: "Complex Systems Lab, IIIT-Delhi",
-    name: "Noisy real-world classification & interactive visualization",
-    period: "Aug 2024–Dec 2024",
+    company: "Complex Systems Lab, IIIT Delhi",
+    name: "Messy real world classification and interactive visualisation",
+    period: "August 2024 to December 2024",
     description:
-      "Led a team of five building a 25-class classifier on noisy real-world data, and built real-time dataset visualizations.",
-    kind: "Internship · data systems",
+      "I led a team of five building a 25 class classifier on messy real world data, and built web apps that visualised the data as it came in.",
+    kind: "Data internship",
     highlights: [
-      "Led a team of five building a 25-class classifier on noisy real-world data, reaching 84.5% and 74.5% across two splits and tracing the gap to distribution shift.",
-      "Built dynamic web apps for real-time visualization, integrating OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS.",
-      "Ran code review and mentored junior members.",
+      "Led a team of five building a 25 class classifier on messy real world data, reaching 84.5 and 74.5 percent on two splits, and traced the gap to a shift in the data between them.",
+      "Built web apps that visualised complex datasets in real time, pulling in open data like OpenFoodFacts, RecipeDB, Carbon Footprint DB, and FNDDS.",
+      "Ran code reviews and mentored the junior members.",
     ],
   },
 ];
@@ -245,27 +248,27 @@ export const internships = [
 export const publications = [
   {
     key: "publication-1",
-    label: "Publication 01",
-    title: "HorusLLM: A Cross-Evaluation Protocol for Tri-Vector Alignment Interference",
+    label: "Publication one",
+    title: "HorusLLM, a Cross Evaluation Protocol for Tri Vector Alignment Interference",
     description:
-      "First-author work (R. Biswas, A. G. Kumar, A. Anand, E. Cambria, Z. Wang, R. R. Shah). A semantic evaluation pipeline that scores model generations along several alignment dimensions and flags degraded outputs automatically; the auditing stage cut hallucinations by 20%. Evaluation harness and benchmarks open-sourced.",
-    status: "Under review · AAAI 2027",
+      "My first author work, with A. G. Kumar, A. Anand, E. Cambria, Z. Wang, and R. R. Shah. It is a tool that scores what a model generates against several notions of alignment and flags on its own when the quality drops. The checking step cut made up answers by about 20 percent. The harness and benchmarks are released as open source.",
+    status: "Under review at AAAI 2027",
     link: "",
   },
 ];
 
 export const skillGroups = [
   { label: "Languages", value: "Python, TypeScript, JavaScript, C++, SQL, C" },
-  { label: "Backend & APIs", value: "Node.js, Express, FastAPI, REST & GraphQL, GraphQL federation, WebSockets, retry / rate-limit handling" },
-  { label: "Frontend", value: "React, Next.js, Tailwind CSS, dashboards, WebSocket UIs" },
-  { label: "Infra & delivery", value: "AWS, Docker, GitHub Actions CI/CD, Linux, Vercel, Pytest, structured logging, static analysis" },
-  { label: "Data & distributed", value: "PostgreSQL, MongoDB, Prisma, Pinecone, schema design, indexing, PySpark, Airflow, ETL" },
-  { label: "ML & research", value: "PyTorch, Hugging Face, LoRA / QLoRA, LangChain, RAG, CLIP & Whisper, Google Earth Engine" },
+  { label: "Backend and APIs", value: "Node.js, Express, FastAPI, REST and GraphQL, GraphQL federation, WebSockets, retries and rate limiting" },
+  { label: "Frontend", value: "React, Next.js, Tailwind CSS, dashboards, live interfaces over WebSockets" },
+  { label: "Infrastructure and delivery", value: "AWS, Docker, GitHub Actions, Linux, Vercel, Pytest, structured logging, static analysis" },
+  { label: "Data and distributed systems", value: "PostgreSQL, MongoDB, Prisma, Pinecone, schema design, indexing, PySpark, Airflow, ETL" },
+  { label: "Machine learning and research", value: "PyTorch, Hugging Face, LoRA and QLoRA, LangChain, RAG, CLIP and Whisper, Google Earth Engine" },
 ];
 
 export const stats = [
-  { label: "Production deploys", value: "3+" },
-  { label: "Portal users", value: "500+" },
-  { label: "First-author papers", value: "1" },
-  { label: "LeetCode solved", value: "2500+" },
+  { label: "Live deployments", value: "3+" },
+  { label: "Students on the portal", value: "500+" },
+  { label: "First author papers", value: "1" },
+  { label: "LeetCode problems", value: "2500+" },
 ];

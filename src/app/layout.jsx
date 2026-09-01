@@ -14,9 +14,9 @@ const manrope = Manrope({
 })
 
 export const metadata = {
-  title: "Rijusmit Biswas — Software & ML Engineer",
+  title: "Rijusmit Biswas, Software and Machine Learning Engineer",
   description:
-    "Rijusmit Biswas is a software and machine learning engineer building the layer between research prototypes and dependable developer systems.",
+    "Rijusmit Biswas is a software and machine learning engineer. He builds full stack products and puts machine learning to work in ways people can rely on.",
 }
 
 export const viewport = {
