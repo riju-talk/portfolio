@@ -311,14 +311,14 @@ button:focus-visible {
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .metric {
   min-height: 6.9rem;
-  padding: 1.25rem 0.95rem 1.25rem 0;
+  padding: 1.25rem 0.9rem 1.25rem 0;
 }
 
 .metric + .metric {
@@ -820,12 +820,13 @@ button:focus-visible {
     padding: 1rem 0.7rem 1rem 0;
   }
 
-  .metric:nth-child(3) {
+  .metric:nth-child(n + 3) {
     border-top: 1px solid var(--line);
   }
 
-  .metric:nth-child(4) {
-    border-top: 1px solid var(--line);
+  .metric:nth-child(odd) {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .metric strong {

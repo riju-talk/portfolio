@@ -267,6 +267,7 @@ export const skillGroups = [
 ];
 
 export const stats = [
+  { label: "Live deployments", value: "10+" },
   { label: "Students on the portal", value: "500+" },
   { label: "First author papers", value: "1" },
   { label: "LeetCode problems", value: "150+" },
