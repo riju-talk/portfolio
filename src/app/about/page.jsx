@@ -69,7 +69,7 @@ export default function AboutPage() {
             <dl className="section-content data-list">
               <div><dt>Based in</dt><dd>{personalInfo.location.city}, {personalInfo.location.country}</dd></div>
               <div><dt>Focus</dt><dd>Software, machine learning, and platform work</dd></div>
-              <div><dt>Open to</dt><dd>SDE, SDE Intern, MLE, MLE Intern, Data Scientist, DS Intern, Data Engineer</dd></div>
+              <div><dt>Open to</dt><dd>SDE, SDE Intern, MLE, MLE Intern, Data Scientist, DS Intern, Data Engineer, Data Engineering Intern</dd></div>
               <div><dt>Reach me</dt><dd>{personalInfo.contact.email}</dd></div>
             </dl>
           </section>

@@ -16,7 +16,7 @@ export const personalInfo = {
     linkedin: "https://www.linkedin.com/in/rijusmit-biswas/",
     website: "https://rijusmit.vercel.app",
   },
-  openTo: "Open to roles: SDE, SDE Intern, MLE, MLE Intern, Data Scientist, DS Intern, Data Engineer",
+  openTo: "Open to roles: SDE, SDE Intern, MLE, MLE Intern, Data Scientist, DS Intern, Data Engineer, Data Engineering Intern",
   tagline: "I build software end to end and stay with it once it goes live.",
   bio: [
     "I am in my final year of a computer science degree at IIIT Delhi and I graduate in September 2026. I like building the whole thing: the screens people click, the API behind them, the database under that, and the servers it all runs on.",
@@ -267,8 +267,8 @@ export const skillGroups = [
 ];
 
 export const stats = [
-  { label: "Live deployments", value: "3+" },
   { label: "Students on the portal", value: "500+" },
   { label: "First author papers", value: "1" },
-  { label: "LeetCode problems", value: "2500+" },
+  { label: "LeetCode problems", value: "150+" },
+  { label: "Codeforces rating", value: "1403" },
 ];
