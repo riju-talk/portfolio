@@ -305,11 +305,8 @@ export const skillGroups = [
 
 export const stats = [
   { label: "Live deployments", value: "12+" },
-  { label: "Students on the portal", value: "500+" },
   { label: "First author papers", value: "1" },
   { label: "LeetCode problems", value: "150+" },
   { label: "Codeforces rating", value: "1403" },
-  { label: "Agents in swarm", value: "7" },
   { label: "Models evaluated", value: "13" },
-  { label: "Est. savings (credit risk)", value: "$18.7M" },
 ];
