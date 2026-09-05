@@ -172,17 +172,6 @@ export const projects = [
     resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
     featured: true,
   },
-  {
-    title: "Delhi Crime Boundary Analysis",
-    description:
-      "A spatial study of whether crime concentrates at socio-economic discontinuities between adjacent Delhi wards, rather than being explained by ward-level averages alone. The feature pipeline computes a boundary sharpness index per ward from its queen-contiguity neighbours, alongside spatial-lag, point-of-interest density, and within-ward inequality (Gini, entropy, HHI) features. It runs end to end today on synthetic Delhi-shaped data while I source the real NCRB crime, Census, and ward shapefile inputs it is built to take unchanged.",
-    tech: ["Python", "GeoPandas", "PySAL (esda)", "scikit-learn", "Pandas", "uv"],
-    github: "https://github.com/riju-talk/socio-economic-crime-study",
-    live: "",
-    type: "Spatial data science",
-    resource: "https://github.com/riju-talk/socio-economic-crime-study/blob/main/README.md",
-    featured: true,
-  },
 ];
 
 export const experience = [
