@@ -26,6 +26,7 @@ export const personalInfo = {
     "I am in my final year of a computer science degree at IIIT Delhi and I graduate in September 2026. I like building the whole thing: the screens people click, the API behind them, the database under that, and the servers it all runs on.",
     "So far I have taken a product from a rough idea to something live on AWS, moved a running system onto a new stack without anyone noticing an outage, and built a portal that more than 500 students use. I designed its database and the API the rest of the team builds against. I also look after the quieter parts that keep software healthy, like containers, tests and checks that run on every pull request, sensible retries, and logs you can actually read.",
     "On the research side I have shipped machine learning that people keep using. HorusLLM is an evaluation tool my lab still runs to catch when a model starts giving worse answers. Before that I built satellite imagery pipelines for predicting crops and measured how much the models slip from one district to the next. I am the first author on a paper about HorusLLM that is under review at AAAI 2027.",
+    "I also built a cross-portfolio credit risk system predicting defaults on credit cards and installment loans (XGBoost 0.7769 ROC-AUC, $18.7M estimated savings), a 7-agent swarm that runs a private executive job search offline, and a distributed creator platform with GraphQL federation. I care about the craft: clean boundaries, observable systems, and code that survives contact with production.",
   ],
 };
 
@@ -73,36 +74,14 @@ export const techStack = [
 
 export const projects = [
   {
-    title: "Hostiggo",
+    title: "Executive Career Agent",
     description:
-      "I took this from an idea to a product running on AWS. I own the React front end, the whole backend, the database, and the servers, and I put continuous integration and monitoring in place from the first week so releases stayed calm as more people used it.",
-    tech: ["Node.js", "React", "PostgreSQL", "AWS", "Docker"],
-    github: "https://github.com/riju-talk/Hostiggo-full-website",
+      "A private, local-first workspace that helps a senior executive run a deliberate job search. Seven cooperating agents (scout, reader, curator, assessor, scribe, conductor, harvester) discover, read, de-duplicate, score, and tailor roles against the candidate's real, self-declared experience. Runs fully offline on a bundled corpus or against the real internet. Features anti-fabrication validator that checks every claim against the Master Résumé, deterministic fit scoring via rule-based rubric, and MCP server for Claude Desktop integration.",
+    tech: ["React", "TypeScript", "Electron", "Node.js", "MCP", "LangChain", "Docker"],
+    github: "https://github.com/riju-talk/executive-career-agent",
     live: "",
-    type: "Production SaaS",
-    resource: "",
-    featured: true,
-  },
-  {
-    title: "DreamDOT",
-    description:
-      "A platform for creators with subscriptions, pay per view, and media sharing. The backend is a set of GraphQL services that answer queries spanning several of them without firing a cascade of extra requests. I set the service boundaries and the schema contracts so teams could work in parallel without breaking the shared graph.",
-    tech: ["GraphQL", "Node.js", "Microservices", "MongoDB", "Docker"],
-    github: "https://github.com/riju-talk/DreamDOT",
-    live: "",
-    type: "Distributed backend",
-    resource: "",
-    featured: true,
-  },
-  {
-    title: "MineMEETS",
-    description:
-      "Pipelines that turn images, text, and audio into embeddings behind one interface. Every step checks its dimensions and is safe to run again, so a failed run just gets rerun. Pinecone namespaces keep reindexing and rollback safe, and the test suite plus formatting and type checks run on every pull request.",
-    tech: ["CLIP", "Whisper", "Pinecone", "Docker", "Pytest"],
-    github: "https://github.com/riju-talk/MineMEETS",
-    live: "",
-    type: "Multimodal retrieval",
-    resource: "https://github.com/riju-talk/MineMEETS/blob/main/README.md",
+    type: "Agent swarm / Desktop app",
+    resource: "https://github.com/riju-talk/executive-career-agent/blob/main/USING.md",
     featured: true,
   },
   {
@@ -117,15 +96,59 @@ export const projects = [
     featured: true,
   },
   {
-    title: "Flourish",
+    title: "MineMEETS",
     description:
-      "A plant care assistant. The FastAPI backend runs several language model tool calls in sequence against outside APIs, with Firebase handling sign in and storage. Retries and graceful fallbacks keep a failure upstream from breaking what the user is doing.",
-    tech: ["FastAPI", "LangChain", "Firebase", "Docker"],
-    github: "https://github.com/riju-talk/Flourish",
-    live: "https://flourish-web-iota.vercel.app/",
-    type: "Agentic service",
+      "Pipelines that turn images, text, and audio into embeddings behind one interface. Every step checks its dimensions and is safe to run again, so a failed run just gets rerun. Pinecone namespaces keep reindexing and rollback safe, and the test suite plus formatting and type checks run on every pull request.",
+    tech: ["CLIP", "Whisper", "Pinecone", "Docker", "Pytest"],
+    github: "https://github.com/riju-talk/MineMEETS",
+    live: "",
+    type: "Multimodal retrieval",
+    resource: "https://github.com/riju-talk/MineMEETS/blob/main/README.md",
+    featured: true,
+  },
+  {
+    title: "Delhi Crime Boundary Analysis",
+    description:
+      "A spatial study of whether crime concentrates at socio-economic discontinuities between adjacent Delhi wards, rather than being explained by ward-level averages alone. The feature pipeline computes a boundary sharpness index per ward from its queen-contiguity neighbours, alongside spatial-lag, point-of-interest density, and within-ward inequality (Gini, entropy, HHI) features. It runs end to end today on synthetic Delhi-shaped data while I source the real NCRB crime, Census, and ward shapefile inputs it is built to take unchanged.",
+    tech: ["Python", "GeoPandas", "PySAL (esda)", "scikit-learn", "Pandas", "uv"],
+    github: "https://github.com/riju-talk/socio-economic-crime-study",
+    live: "",
+    type: "Spatial data science",
+    resource: "https://github.com/riju-talk/socio-economic-crime-study/blob/main/README.md",
+    featured: true,
+  },
+  {
+    title: "DreamDOT",
+    description:
+      "A platform for creators with subscriptions, pay per view, and media sharing. The backend is a set of GraphQL services that answer queries spanning several of them without firing a cascade of extra requests. I set the service boundaries and the schema contracts so teams could work in parallel without breaking the shared graph.",
+    tech: ["GraphQL", "Node.js", "Microservices", "MongoDB", "Docker"],
+    github: "https://github.com/riju-talk/DreamDOT",
+    live: "",
+    type: "Distributed backend",
     resource: "",
-    featured: false,
+    featured: true,
+  },
+  {
+    title: "Hostiggo",
+    description:
+      "I took this from an idea to a product running on AWS. I own the React front end, the whole backend, the database, and the servers, and I put continuous integration and monitoring in place from the first week so releases stayed calm as more people used it.",
+    tech: ["Node.js", "React", "PostgreSQL", "AWS", "Docker"],
+    github: "https://github.com/riju-talk/Hostiggo-full-website",
+    live: "",
+    type: "Production SaaS",
+    resource: "",
+    featured: true,
+  },
+  {
+    title: "Entropy",
+    description:
+      "A study space with an assistant that helps you work through doubts. Python and FastAPI power the async endpoints that generate personalised quizzes and study material through language model adapters you can swap out.",
+    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
+    github: "https://github.com/riju-talk/Entropy-Community-Forum",
+    live: "https://entropy-community-forum.vercel.app/",
+    type: "Web application",
+    resource: "",
+    featured: true,
   },
   {
     title: "Quench++",
@@ -136,16 +159,27 @@ export const projects = [
     live: "",
     type: "Research tooling",
     resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
-    featured: false,
+    featured: true,
   },
   {
-    title: "Entropy",
+    title: "Cross-Portfolio Default Risk Prediction",
     description:
-      "A study space with an assistant that helps you work through doubts. Python and FastAPI power the async endpoints that generate personalised quizzes and study material through language model adapters you can swap out.",
-    tech: ["Next.js", "FastAPI", "LangChain", "Docker", "Postgres", "Prisma"],
-    github: "https://github.com/riju-talk/Entropy-Community-Forum",
-    live: "https://entropy-community-forum.vercel.app/",
-    type: "Web application",
+      "Dual-study data science investigation into credit default prediction across credit cards (UCI, 30K rows) and installment loans (LendingClub, 5K rows). Engineered 31+ features including utilization ratios, payment trends, delinquency aggregates, and sorting-smoothing probability of default estimates. Built 13 models with isotonic calibration, SHAP explainability, cost-sensitive threshold optimization, and business impact assessment. XGBoost achieved 0.7769 ROC-AUC on cards; Random Forest 0.7467 on loans. Estimated $18.7M annual savings (18,641% ROI) on card portfolio.",
+    tech: ["Python", "XGBoost", "LightGBM", "Random Forest", "SHAP", "scikit-learn", "Pandas", "Optuna"],
+    github: "https://github.com/riju-talk/loan-defaulter-prediction-study",
+    live: "",
+    type: "Data science research",
+    resource: "https://github.com/riju-talk/loan-defaulter-prediction-study/blob/main/CREDIT_RISK_ANALYSIS_REPORT.md",
+    featured: true,
+  },
+  {
+    title: "Flourish",
+    description:
+      "A plant care assistant. The FastAPI backend runs several language model tool calls in sequence against outside APIs, with Firebase handling sign in and storage. Retries and graceful fallbacks keep a failure upstream from breaking what the user is doing.",
+    tech: ["FastAPI", "LangChain", "Firebase", "Docker"],
+    github: "https://github.com/riju-talk/Flourish",
+    live: "https://flourish-web-iota.vercel.app/",
+    type: "Agentic service",
     resource: "",
     featured: false,
   },
@@ -270,9 +304,12 @@ export const skillGroups = [
 ];
 
 export const stats = [
-  { label: "Live deployments", value: "10+" },
+  { label: "Live deployments", value: "12+" },
   { label: "Students on the portal", value: "500+" },
   { label: "First author papers", value: "1" },
   { label: "LeetCode problems", value: "150+" },
   { label: "Codeforces rating", value: "1403" },
+  { label: "Agents in swarm", value: "7" },
+  { label: "Models evaluated", value: "13" },
+  { label: "Est. savings (credit risk)", value: "$18.7M" },
 ];
