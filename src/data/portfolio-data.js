@@ -107,14 +107,25 @@ export const projects = [
     featured: true,
   },
   {
-    title: "Delhi Crime Boundary Analysis",
+    title: "Flourish",
     description:
-      "A spatial study of whether crime concentrates at socio-economic discontinuities between adjacent Delhi wards, rather than being explained by ward-level averages alone. The feature pipeline computes a boundary sharpness index per ward from its queen-contiguity neighbours, alongside spatial-lag, point-of-interest density, and within-ward inequality (Gini, entropy, HHI) features. It runs end to end today on synthetic Delhi-shaped data while I source the real NCRB crime, Census, and ward shapefile inputs it is built to take unchanged.",
-    tech: ["Python", "GeoPandas", "PySAL (esda)", "scikit-learn", "Pandas", "uv"],
-    github: "https://github.com/riju-talk/socio-economic-crime-study",
+      "A plant care assistant. The FastAPI backend runs several language model tool calls in sequence against outside APIs, with Firebase handling sign in and storage. Retries and graceful fallbacks keep a failure upstream from breaking what the user is doing.",
+    tech: ["FastAPI", "LangChain", "Firebase", "Docker"],
+    github: "https://github.com/riju-talk/Flourish",
+    live: "https://flourish-web-iota.vercel.app/",
+    type: "Agentic service",
+    resource: "",
+    featured: false,
+  },
+  {
+    title: "Cross-Portfolio Default Risk Prediction",
+    description:
+      "Dual-study data science investigation into credit default prediction across credit cards (UCI, 30K rows) and installment loans (LendingClub, 5K rows). Engineered 31+ features including utilization ratios, payment trends, delinquency aggregates, and sorting-smoothing probability of default estimates. Built 13 models with isotonic calibration, SHAP explainability, cost-sensitive threshold optimization, and business impact assessment. XGBoost achieved 0.7769 ROC-AUC on cards; Random Forest 0.7467 on loans. Estimated $18.7M annual savings (18,641% ROI) on card portfolio.",
+    tech: ["Python", "XGBoost", "LightGBM", "Random Forest", "SHAP", "scikit-learn", "Pandas", "Optuna"],
+    github: "https://github.com/riju-talk/loan-defaulter-prediction-study",
     live: "",
-    type: "Spatial data science",
-    resource: "https://github.com/riju-talk/socio-economic-crime-study/blob/main/README.md",
+    type: "Data science research",
+    resource: "https://github.com/riju-talk/loan-defaulter-prediction-study/blob/main/CREDIT_RISK_ANALYSIS_REPORT.md",
     featured: true,
   },
   {
@@ -162,26 +173,15 @@ export const projects = [
     featured: true,
   },
   {
-    title: "Cross-Portfolio Default Risk Prediction",
+    title: "Delhi Crime Boundary Analysis",
     description:
-      "Dual-study data science investigation into credit default prediction across credit cards (UCI, 30K rows) and installment loans (LendingClub, 5K rows). Engineered 31+ features including utilization ratios, payment trends, delinquency aggregates, and sorting-smoothing probability of default estimates. Built 13 models with isotonic calibration, SHAP explainability, cost-sensitive threshold optimization, and business impact assessment. XGBoost achieved 0.7769 ROC-AUC on cards; Random Forest 0.7467 on loans. Estimated $18.7M annual savings (18,641% ROI) on card portfolio.",
-    tech: ["Python", "XGBoost", "LightGBM", "Random Forest", "SHAP", "scikit-learn", "Pandas", "Optuna"],
-    github: "https://github.com/riju-talk/loan-defaulter-prediction-study",
+      "A spatial study of whether crime concentrates at socio-economic discontinuities between adjacent Delhi wards, rather than being explained by ward-level averages alone. The feature pipeline computes a boundary sharpness index per ward from its queen-contiguity neighbours, alongside spatial-lag, point-of-interest density, and within-ward inequality (Gini, entropy, HHI) features. It runs end to end today on synthetic Delhi-shaped data while I source the real NCRB crime, Census, and ward shapefile inputs it is built to take unchanged.",
+    tech: ["Python", "GeoPandas", "PySAL (esda)", "scikit-learn", "Pandas", "uv"],
+    github: "https://github.com/riju-talk/socio-economic-crime-study",
     live: "",
-    type: "Data science research",
-    resource: "https://github.com/riju-talk/loan-defaulter-prediction-study/blob/main/CREDIT_RISK_ANALYSIS_REPORT.md",
+    type: "Spatial data science",
+    resource: "https://github.com/riju-talk/socio-economic-crime-study/blob/main/README.md",
     featured: true,
-  },
-  {
-    title: "Flourish",
-    description:
-      "A plant care assistant. The FastAPI backend runs several language model tool calls in sequence against outside APIs, with Firebase handling sign in and storage. Retries and graceful fallbacks keep a failure upstream from breaking what the user is doing.",
-    tech: ["FastAPI", "LangChain", "Firebase", "Docker"],
-    github: "https://github.com/riju-talk/Flourish",
-    live: "https://flourish-web-iota.vercel.app/",
-    type: "Agentic service",
-    resource: "",
-    featured: false,
   },
 ];
 
