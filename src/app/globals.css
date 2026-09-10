@@ -537,6 +537,75 @@ button:focus-visible {
   font-size: 0.66rem;
 }
 
+/* Section header as a toggle (dropdown on mobile, plain label on desktop) */
+.section-toggle {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--blue);
+  font: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.section-toggle > span {
+  display: inline;
+}
+
+.section-count {
+  color: var(--quiet);
+}
+
+.section-toggle-icon {
+  display: none;
+  flex: none;
+}
+
+/* Two-column grid for Experience and Selected work */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.2rem 1.6rem;
+  align-items: start;
+}
+
+.section-grid .experience-item,
+.section-grid .project-item {
+  padding: 1.4rem 0 0.3rem;
+  border-top: 1px solid var(--line);
+}
+
+.section-grid .experience-item + .experience-item {
+  padding-top: 1.4rem;
+}
+
+.section-grid .experience-heading {
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
+}
+
+.section-grid .experience-heading time {
+  order: -1;
+  justify-self: start;
+}
+
+.section-grid .experience-highlights li {
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.section-grid .project-item {
+  grid-template-columns: 1.7rem minmax(0, 1fr);
+}
+
+.section-grid .project-item .item-link {
+  grid-column: 2;
+  margin-top: 0.55rem;
+}
+
 .item-link,
 .contact-link,
 .back-link {
@@ -849,6 +918,41 @@ button:focus-visible {
 
   .section-label {
     margin-bottom: 0.1rem;
+  }
+
+  .section-toggle {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--line);
+    cursor: pointer;
+  }
+
+  .section-toggle-icon {
+    display: block;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+  }
+
+  .section-toggle[aria-expanded="true"] .section-toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .section-content.section-grid {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .section-content.section-grid.is-open {
+    display: grid;
+  }
+
+  .section-grid .experience-item:first-child,
+  .section-grid .project-item:first-child {
+    border-top: 0;
+    padding-top: 0.4rem;
   }
 
   .experience-heading {

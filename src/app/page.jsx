@@ -1,8 +1,8 @@
 "use client"
 
-import { ArrowUpRight, FileText, Github, Linkedin, Mail, Menu, X } from "lucide-react"
+import { ArrowUpRight, ChevronDown, FileText, Github, Linkedin, Mail, Menu, X } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ThemeToggle from "./(components)/ThemeToggle/ThemeToggle"
 import {
   experience,
@@ -127,6 +127,37 @@ function ProjectItem({ project, index }) {
   )
 }
 
+function CollapsibleSection({ id, label, count, children }) {
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    const openIfTargeted = () => {
+      if (window.location.hash === `#${id}`) setOpen(true)
+    }
+    openIfTargeted()
+    window.addEventListener("hashchange", openIfTargeted)
+    return () => window.removeEventListener("hashchange", openIfTargeted)
+  }, [id])
+
+  return (
+    <section id={id} className="resume-section">
+      <button
+        type="button"
+        className="section-label section-toggle"
+        aria-expanded={open}
+        aria-controls={`${id}-content`}
+        onClick={() => setOpen((value) => !value)}
+      >
+        <span>{label}{count ? <span className="section-count"> ({count})</span> : null}</span>
+        <ChevronDown className="section-toggle-icon" size={14} strokeWidth={1.5} aria-hidden="true" />
+      </button>
+      <div id={`${id}-content`} className={`section-content section-grid${open ? " is-open" : ""}`}>
+        {children}
+      </div>
+    </section>
+  )
+}
+
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -162,19 +193,13 @@ export default function HomePage() {
             ))}
           </section>
 
-          <section id="experience" className="resume-section">
-            <div className="section-label">Experience</div>
-            <div className="section-content">
-              {experience.map((item) => <ExperienceItem key={item.key} item={item} />)}
-            </div>
-          </section>
+          <CollapsibleSection id="experience" label="Experience" count={experience.length}>
+            {experience.map((item) => <ExperienceItem key={item.key} item={item} />)}
+          </CollapsibleSection>
 
-          <section id="work" className="resume-section">
-            <div className="section-label">Selected work</div>
-            <div className="section-content">
-              {projects.map((project, index) => <ProjectItem key={project.title} project={project} index={index} />)}
-            </div>
-          </section>
+          <CollapsibleSection id="work" label="Selected work" count={projects.length}>
+            {projects.map((project, index) => <ProjectItem key={project.title} project={project} index={index} />)}
+          </CollapsibleSection>
 
           <section id="skills" className="resume-section">
             <div className="section-label">Skills</div>
