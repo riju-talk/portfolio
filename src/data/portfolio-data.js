@@ -161,17 +161,6 @@ export const projects = [
     resource: "",
     featured: true,
   },
-  {
-    title: "Quench++",
-    description:
-      "An extension of Indic reasoning benchmarks. It adds injected bias and structured chains of reasoning about cause and effect in Boolean logic, so trustworthiness and reasoning can be measured in a repeatable way.",
-    tech: ["Hugging Face", "Python", "PyTorch", "LoRA", "QLoRA"],
-    github: "https://github.com/riju-talk/Quench-plus-plus",
-    live: "",
-    type: "Research tooling",
-    resource: "https://github.com/riju-talk/Quench-plus-plus/blob/main/README.md",
-    featured: true,
-  },
 ];
 
 export const experience = [

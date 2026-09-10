@@ -193,13 +193,15 @@ export default function HomePage() {
             ))}
           </section>
 
-          <CollapsibleSection id="experience" label="Experience" count={experience.length}>
-            {experience.map((item) => <ExperienceItem key={item.key} item={item} />)}
-          </CollapsibleSection>
+          <div className="resume-columns">
+            <CollapsibleSection id="experience" label="Experience" count={experience.length}>
+              {experience.map((item) => <ExperienceItem key={item.key} item={item} />)}
+            </CollapsibleSection>
 
-          <CollapsibleSection id="work" label="Selected work" count={projects.length}>
-            {projects.map((project, index) => <ProjectItem key={project.title} project={project} index={index} />)}
-          </CollapsibleSection>
+            <CollapsibleSection id="work" label="Selected work" count={projects.length}>
+              {projects.map((project, index) => <ProjectItem key={project.title} project={project} index={index} />)}
+            </CollapsibleSection>
+          </div>
 
           <section id="skills" className="resume-section">
             <div className="section-label">Skills</div>

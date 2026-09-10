@@ -564,22 +564,41 @@ button:focus-visible {
   flex: none;
 }
 
-/* Two-column grid for Experience and Selected work */
-.section-grid {
+/* Experience and Selected work as two side-by-side columns */
+.resume-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.2rem 1.6rem;
-  align-items: start;
+  gap: 1.25rem 2.75rem;
+  padding: 2.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-columns .resume-section {
+  display: block;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.resume-columns .section-label,
+.resume-columns .section-toggle {
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.section-grid {
+  min-width: 0;
 }
 
 .section-grid .experience-item,
 .section-grid .project-item {
-  padding: 1.4rem 0 0.3rem;
+  padding: 1.3rem 0 0.3rem;
   border-top: 1px solid var(--line);
 }
 
-.section-grid .experience-item + .experience-item {
-  padding-top: 1.4rem;
+.section-grid .experience-item:first-child,
+.section-grid .project-item:first-child {
+  padding-top: 0.2rem;
+  border-top: 0;
 }
 
 .section-grid .experience-heading {
@@ -593,8 +612,8 @@ button:focus-visible {
 }
 
 .section-grid .experience-highlights li {
-  font-size: 0.86rem;
-  line-height: 1.55;
+  font-size: 0.88rem;
+  line-height: 1.58;
 }
 
 .section-grid .project-item {
@@ -920,11 +939,22 @@ button:focus-visible {
     margin-bottom: 0.1rem;
   }
 
+  .resume-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 2.25rem 0 0.5rem;
+  }
+
+  .resume-columns .section-toggle,
+  .resume-columns .resume-section .section-label {
+    margin-bottom: 0;
+  }
+
   .section-toggle {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    padding: 0.7rem 0;
+    padding: 0.85rem 0;
     border-top: 1px solid var(--line);
     cursor: pointer;
   }
@@ -941,12 +971,11 @@ button:focus-visible {
 
   .section-content.section-grid {
     display: none;
-    grid-template-columns: 1fr;
-    gap: 0;
+    padding-bottom: 0.6rem;
   }
 
   .section-content.section-grid.is-open {
-    display: grid;
+    display: block;
   }
 
   .section-grid .experience-item:first-child,
