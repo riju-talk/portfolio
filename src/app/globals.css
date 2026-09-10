@@ -845,9 +845,54 @@ button:focus-visible {
   }
 }
 
+/* Tablets and small laptops: stack the two-up columns, ease the gutters */
+@media (max-width: 820px) {
+  .page-wrap {
+    width: min(calc(100% - 2.75rem), 760px);
+  }
+
+  .desktop-nav {
+    gap: 0.8rem;
+    font-size: 0.65rem;
+  }
+
+  .topbar-actions {
+    gap: 0.9rem;
+  }
+
+  .resume-hero {
+    padding: 4.6rem 0 2.9rem;
+  }
+
+  .resume-section {
+    gap: 1rem;
+  }
+
+  .resume-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 2.5rem 0;
+  }
+
+  .resume-columns .resume-section + .resume-section {
+    margin-top: 1.9rem;
+    padding-top: 1.9rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-grid .experience-highlights li {
+    font-size: 0.92rem;
+    line-height: 1.62;
+  }
+
+  .contact-section {
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 700px) {
   .page-wrap {
-    width: min(calc(100% - 1.5rem), 760px);
+    width: min(calc(100% - 2.1rem), 760px);
   }
 
   .desktop-nav {
@@ -881,7 +926,7 @@ button:focus-visible {
   }
 
   .resume-hero {
-    padding: 4.2rem 0 2.7rem;
+    padding: 3.2rem 0 2.3rem;
   }
 
   .profile-line {
@@ -942,7 +987,13 @@ button:focus-visible {
   .resume-columns {
     grid-template-columns: 1fr;
     gap: 0;
-    padding: 2.25rem 0 0.5rem;
+    padding: 2rem 0 0.5rem;
+  }
+
+  .resume-columns .resume-section + .resume-section {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
   }
 
   .resume-columns .section-toggle,
@@ -1043,6 +1094,53 @@ button:focus-visible {
 
   .data-list dd {
     text-align: left;
+  }
+}
+
+/* Small phones: trim internal padding so content keeps its side margins */
+@media (max-width: 400px) {
+  .page-wrap {
+    width: calc(100% - 1.9rem);
+  }
+
+  .resume-hero {
+    padding-top: 2.6rem;
+  }
+
+  .profile-line {
+    gap: 0.85rem;
+  }
+
+  .profile-avatar {
+    width: 4.7rem;
+    height: 4.7rem;
+    flex-basis: 4.7rem;
+  }
+
+  .metric {
+    min-height: 5.2rem;
+    padding-right: 0.45rem;
+  }
+
+  .metric strong {
+    font-size: 1.3rem;
+  }
+
+  .social-links a {
+    padding: 0.4rem 0.62rem;
+  }
+
+  .resume-section {
+    padding-top: 1.9rem;
+    padding-bottom: 1.9rem;
+  }
+
+  .resume-columns {
+    padding-top: 1.9rem;
+  }
+
+  .contact-section {
+    padding-top: 2.2rem;
   }
 }
 
