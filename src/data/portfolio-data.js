@@ -25,7 +25,7 @@ export const personalInfo = {
   bio: [
     "I am in my final year of a computer science degree at IIIT Delhi and I graduate in September 2026. I like building the whole thing: the screens people click, the API behind them, the database under that, and the servers it all runs on.",
     "So far I have taken a product from a rough idea to something live on AWS, moved a running system onto a new stack without anyone noticing an outage, and built a portal that more than 500 students use. I designed its database and the API the rest of the team builds against. I also look after the quieter parts that keep software healthy, like containers, tests and checks that run on every pull request, sensible retries, and logs you can actually read.",
-    "On the research side I have shipped machine learning that people keep using. HorusLLM is an evaluation tool my lab still runs to catch when a model starts giving worse answers. Before that I built satellite imagery pipelines for predicting crops and measured how much the models slip from one district to the next. I am the first author on a paper about HorusLLM that is under review at AAAI 2027.",
+    "On the research side I have shipped machine learning that people keep using. My lab still runs an evaluation tool I built to catch when a model starts giving worse answers. Before that I built satellite imagery pipelines for predicting crops and measured how much the models slip from one district to the next. I am the first author on a paper about that work, under review at AAAI 2027 (title withheld until review is complete).",
     "I also built a cross-portfolio credit risk system predicting defaults on credit cards and installment loans (XGBoost 0.7769 ROC-AUC, $18.7M estimated savings), a 7-agent swarm that runs a private executive job search offline, and a distributed creator platform with GraphQL federation. I care about the craft: clean boundaries, observable systems, and code that survives contact with production.",
   ],
 };
@@ -212,13 +212,13 @@ export const experience = [
     key: 3,
     title: "AI Engineer and Undergraduate Researcher",
     company: "MIDAS Lab, IIIT Delhi",
-    name: "HorusLLM, a tool for checking model output quality",
+    name: "An evaluation tool for checking model output quality",
     period: "May 2025 to January 2026",
     description:
-      "I built HorusLLM, a tool that scores what a model generates against a few notions of alignment and flags on its own when the quality drops.",
+      "I built an evaluation tool that scores what a model generates against a few notions of alignment and flags on its own when the quality drops.",
     kind: "Research",
     highlights: [
-      "Built HorusLLM, which scores model output against several notions of alignment and flags on its own when quality drops. The checking step cut made up answers by about 20 percent, and the lab still uses it.",
+      "Built an evaluation tool that scores model output against several notions of alignment and flags on its own when quality drops. The checking step cut made up answers by about 20 percent, and the lab still uses it.",
       "Ran the pipelines over three datasets so a rerun gives the same result, with retries and rate limit handling for outside APIs.",
       "Trained models with LoRA and QLoRA at four bit precision to fit the memory we had.",
       "First author on a paper about the work, now under review at AAAI 2027, with the harness and benchmarks released as open source.",
@@ -275,7 +275,7 @@ export const publications = [
   {
     key: "publication-1",
     label: "Publication one",
-    title: "HorusLLM, a Cross Evaluation Protocol for Tri Vector Alignment Interference",
+    title: "Title undisclosed, revealed after review",
     description:
       "My first author work, with A. G. Kumar, A. Anand, E. Cambria, Z. Wang, and R. R. Shah. It is a tool that scores what a model generates against several notions of alignment and flags on its own when the quality drops. The checking step cut made up answers by about 20 percent. The harness and benchmarks are released as open source.",
     status: "Under review at AAAI 2027",
