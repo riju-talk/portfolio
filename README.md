@@ -24,7 +24,10 @@ This portfolio is built using:
 
 ## 🌐 Deployment
 
-Deployed via **Vercel**.
+The site builds to a fully static export (`output: "export"` in
+`next.config.mjs`). `npm run build` writes it to `./out`, which can be
+served by any static host. See [`DEPLOY.md`](./DEPLOY.md) for VPS/nginx
+steps; a sample config lives in [`deploy/nginx.conf`](./deploy/nginx.conf).
 
 ## 🛠️ Features
 
