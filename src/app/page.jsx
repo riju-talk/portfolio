@@ -116,6 +116,16 @@ function ProjectItem({ project, index }) {
           <span>{project.type}</span>
         </div>
         <p>{project.description}</p>
+        {project.metrics?.length > 0 && (
+          <dl className="metric-row">
+            {project.metrics.map(([label, value]) => (
+              <div key={label}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
         <div className="tag-row">
           {project.tech.map((tech) => <span key={tech}>{tech}</span>)}
         </div>
