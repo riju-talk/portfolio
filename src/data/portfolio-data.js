@@ -75,6 +75,7 @@ export const techStack = [
 export const projects = [
   {
     title: "Executive Career Agent",
+    selected: true,
     description:
       "A private, local-first workspace that helps a senior executive run a deliberate job search. Seven cooperating agents (scout, reader, curator, assessor, scribe, conductor, harvester) discover, read, de-duplicate, score, and tailor roles against the candidate's real, self-declared experience. Runs fully offline on a bundled corpus or against the real internet. Features anti-fabrication validator that checks every claim against the Master Résumé, deterministic fit scoring via rule-based rubric, and MCP server for Claude Desktop integration.",
     tech: ["React", "TypeScript", "Electron", "Node.js", "MCP", "LangChain", "Docker"],
@@ -86,6 +87,7 @@ export const projects = [
   },
   {
     title: "TURBO",
+    selected: true,
     description:
       "My own reimplementation of the paper by Goel and colleagues (arXiv 2502.07391). It fuses image features from a Vision Transformer with a modified BART text encoder, trains on the MORE+ dataset, and is scored with BLEU, ROUGE, and METEOR.",
     metrics: [
@@ -110,6 +112,7 @@ export const projects = [
   },
   {
     title: "SICKLE++",
+    selected: true,
     description:
       "Takes the pretrained SICKLE satellite crop models (Sentinel-2, Landsat-8 and Sentinel-1 fusion) from Tamil Nadu to Andhra Pradesh and measures what transfers. I rebuilt the dataset from 1,744 farmer survey records into 509 model-ready rice fields, split by location so neighbouring farms never land on both sides, then scored three architectures (ConvLSTM, U-TAE, UNet3D) before and after fine-tuning, each against a predict-the-training-mean reference. ConvLSTM adapts best, but no fine-tuned model beats the mean reference yet, and the write-up says so.",
     metrics: [
@@ -238,6 +241,7 @@ export const projects = [
   },
   {
     title: "ShipCast",
+    selected: true,
     description:
       "Forecasts daily shipment volume for each of 27 Brazilian states 14 days ahead, and models delivery-time promises, on the Olist e-commerce dataset. Backtested with a rolling origin so no test dates leak into training. LightGBM cut forecast error (WAPE) by 29.5% against a seasonal-naive baseline and beat an LSTM at most horizons. A quantile LightGBM, with the pre-registered P90 setting, gives delivery promises 2.76 days (10.9%) shorter than Olist's own at a 4.66% late rate against Olist's 4.24%.",
     metrics: [
@@ -274,6 +278,7 @@ export const projects = [
   },
   {
     title: "Hostiggo",
+    selected: true,
     description:
       "I took this from an idea to a product running on AWS. I own the React front end, the whole backend, the database, and the servers, and I put continuous integration and monitoring in place from the first week so releases stayed calm as more people used it.",
     tech: ["Node.js", "React", "PostgreSQL", "AWS", "Docker"],

@@ -104,21 +104,24 @@ function ExperienceItem({ item }) {
 }
 
 function ProjectItem({ project, index }) {
+  const [open, setOpen] = useState(false)
   const link = project.live || project.resource || project.github
   const linkLabel = project.live ? "Live" : project.resource ? "Notes" : "Code"
+  const metrics = project.metrics || []
+  const expandable = metrics.length > 0 || project.description.length > 190
 
   return (
     <article className="project-item reveal">
-      <span className="item-index">0{index + 1}</span>
+      <span className="item-index">{String(index + 1).padStart(2, "0")}</span>
       <div className="project-copy">
         <div className="project-heading">
           <h3>{project.title}</h3>
           <span>{project.type}</span>
         </div>
-        <p>{project.description}</p>
-        {project.metrics?.length > 0 && (
+        <p className={open ? undefined : "is-clamped"}>{project.description}</p>
+        {open && metrics.length > 0 && (
           <dl className="metric-row">
-            {project.metrics.map(([label, value]) => (
+            {metrics.map(([label, value]) => (
               <div key={label}>
                 <dt>{label}</dt>
                 <dd>{value}</dd>
@@ -129,13 +132,50 @@ function ProjectItem({ project, index }) {
         <div className="tag-row">
           {project.tech.map((tech) => <span key={tech}>{tech}</span>)}
         </div>
+        <div className="project-actions">
+          {expandable && (
+            <button
+              type="button"
+              className="metric-toggle"
+              aria-expanded={open}
+              onClick={() => setOpen((value) => !value)}
+            >
+              {open ? "Less" : metrics.length > 0 ? `Details and ${metrics.length} metrics` : "Read more"}
+              <ChevronDown className="metric-toggle-icon" size={12} strokeWidth={1.5} aria-hidden="true" />
+            </button>
+          )}
+          <a className="item-link" href={link} target="_blank" rel="noreferrer">
+            {linkLabel} <ArrowUpRight size={13} strokeWidth={1.5} />
+          </a>
+        </div>
       </div>
-      <a className="item-link" href={link} target="_blank" rel="noreferrer">
-        {linkLabel} <ArrowUpRight size={13} strokeWidth={1.5} />
-      </a>
     </article>
   )
 }
+
+function MoreProjects({ items, startIndex }) {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <div className="more-projects">
+      <button
+        type="button"
+        className="metric-toggle more-projects-toggle"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+      >
+        {open ? "Hide other projects" : `More projects (${items.length})`}
+        <ChevronDown className="metric-toggle-icon" size={12} strokeWidth={1.5} aria-hidden="true" />
+      </button>
+      {open && items.map((project, i) => (
+        <ProjectItem key={project.title} project={project} index={startIndex + i} />
+      ))}
+    </div>
+  )
+}
+
+const selectedProjects = projects.filter((project) => project.selected)
+const otherProjects = projects.filter((project) => !project.selected)
 
 function CollapsibleSection({ id, label, count, children }) {
   const [open, setOpen] = useState(false)
@@ -209,7 +249,8 @@ export default function HomePage() {
             </CollapsibleSection>
 
             <CollapsibleSection id="work" label="Selected work" count={projects.length}>
-              {projects.map((project, index) => <ProjectItem key={project.title} project={project} index={index} />)}
+              {selectedProjects.map((project, index) => <ProjectItem key={project.title} project={project} index={index} />)}
+              {otherProjects.length > 0 && <MoreProjects items={otherProjects} startIndex={selectedProjects.length} />}
             </CollapsibleSection>
           </div>
 
