@@ -267,7 +267,7 @@ export default function HomePage() {
           </section>
 
           <section id="research" className="resume-section">
-            <div className="section-label">Publication</div>
+            <div className="section-label">Publications</div>
             <div className="section-content">
               {publications.map((publication) => (
                 <article className="publication-item reveal" key={publication.key}>

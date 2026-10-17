@@ -408,6 +408,15 @@ export const publications = [
     status: "Under review at AAAI 2027",
     link: "",
   },
+  {
+    key: "publication-2",
+    label: "Publication two",
+    title: "Title undisclosed, revealed after review",
+    description:
+      "An anonymous submission. The title, co-authors, and details are withheld until review is complete.",
+    status: "Under review at NAACL",
+    link: "",
+  },
 ];
 
 export const skillGroups = [
