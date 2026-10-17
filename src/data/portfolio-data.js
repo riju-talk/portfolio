@@ -399,24 +399,8 @@ export const experience = [
 ];
 
 export const publications = [
-  {
-    key: "publication-1",
-    label: "Publication one",
-    title: "Title undisclosed, revealed after review",
-    description:
-      "My first author work, with A. G. Kumar, A. Anand, E. Cambria, Z. Wang, and R. R. Shah. It is a tool that scores what a model generates against several notions of alignment and flags on its own when the quality drops. The checking step cut made up answers by about 20 percent. The harness and benchmarks are released as open source.",
-    status: "Under review at AAAI 2027",
-    link: "",
-  },
-  {
-    key: "publication-2",
-    label: "Publication two",
-    title: "Title undisclosed, revealed after review",
-    description:
-      "An anonymous submission. The title, co-authors, and details are withheld until review is complete.",
-    status: "Under review at NAACL",
-    link: "",
-  },
+  { key: "publication-1", title: "Publication 1", status: "AAAI 2027" },
+  { key: "publication-2", title: "Publication 2", status: "NAACL 2027" },
 ];
 
 export const skillGroups = [
