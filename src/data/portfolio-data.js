@@ -137,6 +137,7 @@ export const projects = [
   },
   {
     title: "ResonantBERT",
+    selected: true,
     description:
       "A two-stage system that ranks news articles by how newsworthy they are, using only the text of the article. A ModernBERT encoder with LoRA adapters scores seven news values (impact, conflict, novelty, proximity, prominence, timeliness, human interest), and a ranking tower turns those into a ranked list. Trained on BBC articles and tested on a separate CNN split of 201 groups and 1,860 articles, where it beats TF-IDF + Ridge even though that baseline was trained on CNN itself.",
     metrics: [
@@ -160,6 +161,7 @@ export const projects = [
   },
   {
     title: "SpanBERT-CRF",
+    selected: true,
     description:
       "A SpanBERT encoder with a linear-chain CRF that I wrote from scratch, used for both question answering on SQuAD v2.0 (answers as a BIO span, with unanswerable questions as a valid prediction) and named entity recognition on CoNLL-2003. The CRF loss is unit-tested against brute-force path enumeration, with optional LoRA fine-tuning and a published model on the Hugging Face Hub.",
     metrics: [
@@ -181,6 +183,7 @@ export const projects = [
   },
   {
     title: "MineMEETS",
+    selected: true,
     description:
       "Pipelines that turn images, text, and audio into embeddings behind one interface. Every step checks its dimensions and is safe to run again, so a failed run just gets rerun. Pinecone namespaces keep reindexing and rollback safe, and the test suite plus formatting and type checks run on every pull request.",
     metrics: [
@@ -209,6 +212,7 @@ export const projects = [
   },
   {
     title: "Cross-Portfolio Default Risk Prediction",
+    selected: true,
     description:
       "Dual-study data science investigation into credit default prediction across credit cards (UCI, 30K rows) and installment loans (LendingClub, 5K rows). Engineered 31+ features including utilization ratios, payment trends, delinquency aggregates, and sorting-smoothing probability of default estimates. Built 13 models with isotonic calibration, SHAP explainability, cost-sensitive threshold optimization, and business impact assessment. XGBoost achieved 0.7769 ROC-AUC on cards; Random Forest 0.7467 on loans. Estimated $18.7M annual savings (18,641% ROI) on card portfolio.",
     metrics: [
@@ -267,6 +271,7 @@ export const projects = [
   },
   {
     title: "DreamDOT",
+    selected: true,
     description:
       "A platform for creators with subscriptions, pay per view, and media sharing. The backend is a set of GraphQL services that answer queries spanning several of them without firing a cascade of extra requests. I set the service boundaries and the schema contracts so teams could work in parallel without breaking the shared graph.",
     tech: ["GraphQL", "Node.js", "Microservices", "MongoDB", "Docker"],
