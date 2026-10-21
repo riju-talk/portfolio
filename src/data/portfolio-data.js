@@ -25,7 +25,7 @@ export const personalInfo = {
   bio: [
     "I am in my final year of a computer science degree at IIIT Delhi and I graduate in September 2026. I like building the whole thing: the screens people click, the API behind them, the database under that, and the servers it all runs on.",
     "So far I have taken a product from a rough idea to something live on AWS, moved a running system onto a new stack without anyone noticing an outage, and built a portal that more than 500 students use. I designed its database and the API the rest of the team builds against. I also look after the quieter parts that keep software healthy, like containers, tests and checks that run on every pull request, sensible retries, and logs you can actually read.",
-    "On the research side I have shipped machine learning that people keep using. My lab still runs an evaluation tool I built to catch when a model starts giving worse answers. Before that I built satellite imagery pipelines for predicting crops and measured how much the models slip from one district to the next. I am the first author on a paper about that work, under review at AAAI 2027 (title withheld until review is complete).",
+    "On the research side I have shipped machine learning that people keep using. My lab still runs an evaluation tool I built to catch when a model starts giving worse answers. Before that I built satellite imagery pipelines for predicting crops and measured how much the models slip from one district to the next. I am the first author on two papers, under review at AAAI 2027 and ACL ARR 2026 October (titles withheld until review is complete).",
     "I also built a cross-portfolio credit risk system predicting defaults on credit cards and installment loans (XGBoost 0.7769 ROC-AUC, $18.7M estimated savings), a 7-agent swarm that runs a private executive job search offline, and a distributed creator platform with GraphQL federation. I care about the craft: clean boundaries, observable systems, and code that survives contact with production.",
   ],
 };
@@ -404,8 +404,20 @@ export const experience = [
 ];
 
 export const publications = [
-  { key: "publication-1", title: "Publication 1", status: "AAAI 2027" },
-  { key: "publication-2", title: "Publication 2", status: "NAACL 2027" },
+  {
+    key: "publication-1",
+    title: "Anonymous Publication",
+    status: "AAAI 2027, AI Alignment Track (under review)",
+    description:
+      "A cross evaluation protocol for tri vector alignment interference, with alignment aware evaluation and constrained RL post training for LLM safety and factuality.",
+  },
+  {
+    key: "publication-2",
+    title: "Anonymous Publication",
+    status: "ACL ARR 2026 October (under review)",
+    description:
+      "Content only news ranking via editorial values, using a factor grounded transformer for cross publisher zero shot virality ranking.",
+  },
 ];
 
 export const skillGroups = [
@@ -419,7 +431,7 @@ export const skillGroups = [
 
 export const stats = [
   { label: "Live deployments", value: "12+" },
-  { label: "First author papers", value: "1" },
+  { label: "First author papers", value: "2" },
   { label: "LeetCode problems", value: "150+" },
   { label: "Codeforces rating", value: "1403" },
   { label: "Models evaluated", value: "13" },

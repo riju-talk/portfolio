@@ -79,7 +79,7 @@ export default function AboutPage() {
             <div className="section-content">
               {publications.map((publication) => (
                 <article className="publication-item" key={publication.key}>
-                  <p className="publication-meta">{publication.label}, {publication.status}</p>
+                  <p className="publication-meta">{publication.status}</p>
                   <h2>{publication.title}</h2>
                   <p>{publication.description}</p>
                   {publication.link && <a className="item-link" href={publication.link} target="_blank" rel="noreferrer">Open citation <ArrowUpRight size={13} /></a>}

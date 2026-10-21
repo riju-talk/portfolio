@@ -274,6 +274,7 @@ export default function HomePage() {
                   <div>
                     <p className="publication-meta">{publication.status}</p>
                     <h3>{publication.title}</h3>
+                    <p>{publication.description}</p>
                     {publication.link && (
                       <a className="item-link" href={publication.link} target="_blank" rel="noreferrer">
                         Read publication <ArrowUpRight size={13} strokeWidth={1.5} />
