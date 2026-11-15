@@ -29,6 +29,21 @@ The site builds to a fully static export (`output: "export"` in
 served by any static host. See [`DEPLOY.md`](./DEPLOY.md) for VPS/nginx
 steps; a sample config lives in [`deploy/nginx.conf`](./deploy/nginx.conf).
 
+## 🔗 Live Projects
+
+Projects from my portfolio that are deployed and reachable online:
+
+| Project | Live link |
+| --- | --- |
+| Portfolio | [rijusmit.vercel.app](https://rijusmit.vercel.app) |
+| Hostiggo | [hostiggo.com](https://www.hostiggo.com/) |
+| DreamDOT | [dreamdot-web.vercel.app](https://dreamdot-web.vercel.app/) |
+| Entropy | [entropy-app-psi.vercel.app](https://entropy-app-psi.vercel.app/) |
+| NEXGO | [nexgo-beta.vercel.app](https://nexgo-beta.vercel.app/) |
+| VarshaDhan | [gaon-ka-pani-zeta.vercel.app](https://gaon-ka-pani-zeta.vercel.app/) |
+| Flourish | [flourish-web-iota.vercel.app](https://flourish-web-iota.vercel.app/) |
+| SICKLE++ | [sickle-plus-plus.vercel.app](https://sickle-plus-plus.vercel.app/) |
+
 ## 🛠️ Features
 
 - Responsive design
