@@ -337,6 +337,39 @@ export const projects = [
     resource: "",
     featured: false,
   },
+  {
+    title: "Sentinel-Eval",
+    description:
+      "An interpretability-first evaluation harness for agentic systems. Instead of only scoring an agent, it records step-by-step traces, localises the first wrong step with judge juries, and replays a patched step to confirm the root cause. It also stress-tests agents with indirect prompt injection, reporting attack success alongside task success so refusing everything does not look safe. Diagnosed failures become permanent regression cases that fail the build if they return.",
+    tech: ["Python", "PyTorch", "TRL", "QLoRA", "Streamlit", "Pytest"],
+    github: "https://github.com/riju-talk/Sentinel-Eval-Game-theoretic-Aligment",
+    live: "",
+    type: "LLM evaluation",
+    resource: "https://github.com/riju-talk/Sentinel-Eval-Game-theoretic-Aligment/blob/main/README.md",
+    featured: false,
+  },
+  {
+    title: "IndicAgri-Stream",
+    description:
+      "An event-driven decision-support pipeline for smallholder farms in Guntur, Andhra Pradesh. Weather, optical and radar satellite, market price, farmer call and groundwater data stream through Kafka into stateful stream processors that issue per-plot advisories, each with its evidence, confidence, input freshness and the right time to act. Replaying the September 2024 floods, it kept advising from Sentinel-1 radar while optical imagery was stale on 81% of plot-days. Runs on a laptop with Docker and Kubernetes.",
+    tech: ["Kafka", "Kubernetes", "Docker", "PostgreSQL", "Python", "Grafana"],
+    github: "https://github.com/riju-talk/IndicAgri-Stream",
+    live: "",
+    type: "Data engineering",
+    resource: "https://github.com/riju-talk/IndicAgri-Stream/blob/main/README.md",
+    featured: false,
+  },
+  {
+    title: "Quench++",
+    description:
+      "Extends Indic reasoning benchmarks with injected bias and structured cause and effect chains in Boolean logic, so trustworthiness and reasoning can be measured repeatably.",
+    tech: ["Hugging Face", "PyTorch", "LoRA", "QLoRA"],
+    github: "https://github.com/riju-talk/Quench-plus-plus",
+    live: "",
+    type: "Research tooling",
+    resource: "",
+    featured: false,
+  },
 ];
 
 export const experience = [
