@@ -326,6 +326,17 @@ export const projects = [
     resource: "",
     featured: false,
   },
+  {
+    title: "ArgusPay",
+    description:
+      "A real-time fraud detection dashboard with explainable decisions. Transactions come in over a REST API and are scored by a rule engine, with alerts raised above a score threshold and a scoring interface ready for ML models. Email and password auth uses signed session cookies backed by a server-side allowlist, and the dashboard shows live transactions, alerts and rules.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Docker"],
+    github: "https://github.com/riju-talk/ArgusPay-fraud-platform",
+    live: "https://arguspay.vercel.app/",
+    type: "Fraud detection platform",
+    resource: "",
+    featured: false,
+  },
 ];
 
 export const experience = [
