@@ -310,7 +310,7 @@ export const projects = [
       "A multi-courier shipping platform for Indian sellers. A seller workspace covers orders, courier rate comparison and booking, shipments, NDR, wallet, COD and invoices, and a separate admin workspace handles sellers, KYC, courier rate cards, COD payouts and audit. A Fastify and PostgreSQL API with a job worker sits behind a Next.js front end.",
     tech: ["Next.js", "React", "Fastify", "TypeScript", "PostgreSQL", "Docker"],
     github: "https://github.com/riju-talk/Nexgo",
-    live: "https://nexgo-beta.vercel.app/",
+    live: "https://mynexgo.com/",
     type: "Logistics platform",
     resource: "",
     featured: false,
